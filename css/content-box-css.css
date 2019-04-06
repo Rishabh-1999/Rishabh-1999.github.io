@@ -1,0 +1,122 @@
+		.container
+		{
+			position: relative;
+			display:flex;
+		}
+		
+		.container .box
+		{
+			margin: 5px;
+			flex: 1;
+			position: relative;
+			width: 100%;
+			height: 250px;
+			box-sizing: border-box;
+			overflow: hidden;
+			border-radius: 10px;
+		}
+		.container .box .icon
+		{
+			position: absolute;
+			top:0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #f00;
+			transition: 0.5s;
+			z-index: 1;
+		}
+		.container .box:hover .icon
+		{
+			top: 5px;
+			padding-left: 2px;
+			opacity: 0;
+			padding-right: 2px;
+			width: 100%;
+			height: 80px;
+			
+		}
+
+		.container .box .icon #headname
+		{
+			position: absolute;
+			top:calc(30% - 30px);
+			text-align: center;
+			display: flex;
+			width: 100%;
+			justify-content: center;
+			font-size: 40px;
+			transition: 0.5s;
+			color:#fff;
+		}
+		.container .box .content
+		{
+			position: absolute;
+			top:100%;
+			height: calc(100% - 100px);
+			text-align: center;
+			padding: 20px;
+			box-sizing: border-box;
+			transition: 0.5s;
+		}
+		.container .box:hover .content
+		{
+			display: flex;
+       		justify-content: center;
+        	align-items: center;
+			top:0px;
+			flex-direction: column;
+			height : 100%;
+			opacity: 1;
+		}
+		.container .box .content h3
+		{
+			padding: 0;
+			width: 100%;
+			text-decoration: underline;
+			color:#fff;
+			font-size: 25px;
+		}
+		.container .box .content p
+		{
+			margin: 0;
+			width: 100%;
+			padding: 0;
+			size: 150%;
+			color:#fff;
+		}
+		.container .box .content a, a:visited, a:active
+		{
+			font-weight: 200%;
+			padding-top: 5px;
+			text-decoration: none;
+			color: #ffff00;
+		}
+		.container .box .content a:hover
+		{
+			color: inherit;
+		}
+		.container .box:nth-child(1) .icon
+		{
+			background: #319635;
+		}
+		.container .box:nth-child(1)
+		{
+			background: #4caf50;
+		}
+		.container .box:nth-child(2) .icon
+		{
+			background: #d03852;
+		}
+		.container .box:nth-child(2)
+		{
+			background: #f54967;
+		}
+		.container .box:nth-child(3) .icon
+		{
+			background: #23798e;
+		}
+		.container .box:nth-child(3)
+		{
+			background: #328fa5;
+		}

@@ -10,7 +10,7 @@ body
 {
 	font-family: Roboto,sans-serif;
 	text-align: center;
-	font-size: 30px;
+	font-size: 200%;
 	margin-bottom: 0px;
 }
 /*   Underline   */
@@ -105,7 +105,7 @@ body
 #aboutme
 {
 	height: %20;
-	padding: 50px;
+	padding: 15px;
 }
 /*   About Me   --P */
 #aboutme-para
@@ -113,15 +113,34 @@ body
 	text-align: justify;
 	font-weight: 400px;
 	word-spacing: 10 ed;
-	padding: 10px;
+	padding-left: 24px;
+	padding-right: 25px;
 	letter-spacing: 2px;
 	font-family: Roboto,sans-serif;
 }
 
-
 #importantProject-div
 {
-	margin-bottom: 10px;
+	background: #ccffff;
+}
+
+#seeMoreProject-div
+{
+	background: inherit;
+	right: 0px;
+	margin-bottom: 5px;
+	text-align: right;
+}
+#seeMoreProject-div a, a:visited, a:active
+{
+	color: inherit;
+	font-size: 170%;
+	text-decoration: none;
+	padding: 0px;
+	padding-right: 1%;
+	right: 0px;
+	margin: 0px;
+
 }
 
 /*   Tech I Use   */

@@ -5,65 +5,64 @@ body
 	padding: 0px;
 	margin: 0px;
 }
-/*   Heading Of Module  */
-#section-heading
-{
+
+/*   Section heading   */
+.section-heading-div {
+	text-decoration: underline;
 	font-family: Roboto,sans-serif;
 	text-align: center;
 	font-size: 200%;
-	margin-bottom: 0px;
-}
-/*   Underline   */
-#section-heading-div
-{
-	 text-decoration: underline;
 	text-underline-position: under;
-  	text-decoration-color: red;
-  	margin-bottom: 10px;
+  text-decoration-color: red;
+  margin-bottom: 5px;
 }
 
 /*   Header   */
-/*   Header   --Div */
-#header
-{
-	background:#65349c;
+.header-div {
+	background:linear-gradient(#03A9F4,#E91E63);
 	padding-top:5%;
 	width: 100%;
 	height: 40%;
 }
-/*   Header   --H1 */
-#header-heading
-{
+.header-heading {
 	display: inline;
-	font-size: 60px;
+	font-size: 300%;
 	align-content: center;
 	text-align: center;
 	color: #FFFFFF;
 	font-family:"Roboto Slab",sans-serif;
 }
-/*   Header   --H1 NAME */
-#headername
-{
-	font-size: 60px;
+#myname {
+	font-size: 350%;
 	align-content: center;
 	text-align: center;
 	color: #FFFFFF;
 	margin-top: 0px;
 	font-family:"Roboto Slab",sans-serif;
 }
-/*   Header   --P */
-#header-par{
+.header-para {
 	color: #FFFFFF;
 	text-align: center;
 	padding-top: 10px;
 }
 
+@media only screen and  (max-width:980px) {
+.header-heading {
+	display: block;
+	font-size: 300%;
+	padding-left: 10%;
+	align-content:left;
+	text-align: left;
+	color: #FFFFFF;
+	font-family:"Roboto Slab",sans-serif;
+}
+}
+
 /*   Static Bar    */
-/*   Sticky Bar    */
 .sticky {
   position: fixed;
   top: 0;
-  z-index: 150;
+  z-index: 5;
   width: 100%;
 }
 .sticky + .content {
@@ -72,67 +71,84 @@ body
 .content {
   padding: 16px;
 }
-/*   navBar   --Div */
 #navbar {
-  overflow: hidden;
-  background-color: #333;
 	width: 100%;
+	background: #333;
+	color:white;
+	padding: 5px;
+	font-size: 20px;
+}
+#navbar ul {
+	list-style: none;
+	width:80%;
+	margin: 0 auto;
+	padding: 0px;
+}
+#navbar ul li{
 	margin: 0px;
+	padding-left: 5px;
+	padding-right: 10px;
+	border-left: 2px solid white;
+	display: inline-block;
 }
-/*   navBar   --a */
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+#navbar a,a:hover,a:active{
+	margin: 0px;
+	padding: 0px;
+	color: white;
+	text-decoration: none;
 }
-/*   navBar   --a:hover */
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
+.toggle {
+	width: 100%;
+	padding: 10px 20px;
+	background: #001f44;
+	text-align: right;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 30px;
+	display: none;
 }
-/*   navBar   --a:active */
-#navbar a.active {
-  background-color: #4CAF50;
-  color: white;
+@media only screen and  (max-width:980px) {
+	.toggle {
+			width: 100%;
+			display: block;
+	}
+	#navbar ul{
+		width: 100;
+		display: none;
+	}
+	#navbar ul li{
+		display: block;
+		text-align: center;
+	}
+	.active{
+		display:block;
+	}
 }
 
 /*   About Me   */
-/*   About Me   --Div */
-#aboutme
-{
-	height: %20;
+.aboutme-div {
 	padding: 15px;
 }
-/*   About Me   --P */
-#aboutme-para
-{
+.aboutme-para {
 	text-align: justify;
-	font-weight: 400px;
 	word-spacing: 10 ed;
-	padding-left: 24px;
-	padding-right: 25px;
+	padding-left: 30px;
+	padding-right: 30px;
 	letter-spacing: 2px;
 	font-family: Roboto,sans-serif;
 }
 
-#importantProject-div
-{
+
+.importantProject-div {
 	background: #ccffff;
 }
-
-#seeMoreProject-div
-{
+.seeMoreProject-div {
 	background: inherit;
 	right: 0px;
 	margin-bottom: 5px;
 	text-align: right;
 }
-#seeMoreProject-div a, a:visited, a:active
-{
+.seeMoreProject-div a, a:visited, a:active {
 	color: inherit;
 	font-size: 170%;
 	text-decoration: none;
@@ -140,77 +156,104 @@ body
 	padding-right: 1%;
 	right: 0px;
 	margin: 0px;
-
 }
 
 /*   Tech I Use   */
-/*   Tech I Use   --Div */
-#teschiuse
-{
+.teschiuse {
 	width: 100%;
 	margin: 0px;
-	padding-left: 0px;
-	padding-right: 0px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background:#D1D0D0;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
-
-/*   Tech I Use   --MarqueeDiv */
-#movingmarquee
-{
+.movingmarquee {
 	border: 10px double #9B0279;
 	border-radius: 150px;
+	margin-top: 0px;
+	padding-top: 0px;
 	padding-left: 70px;
-	padding-bottom: 5px;
-	padding-top: 5px;
 	padding-right: 70px;
 }
-
-/*   Tech I Use   --SVG */
-#logo
-{
+.logo {
 	width:200px;
 	height:200px;
 	margin-left: 5px;
 	margin-right: 5px;
 }
 
-/*   About Me   */
-/*   About Me   --Div */
-#contactme
-{
+/*   Contact Me			*/
+#contactme-div {
 	width: 100%;
 	padding: 0px;
 	margin: 0px;
-	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+#contactme-div ul{
+	margin: 0px;
+	padding: 0px;
+	display: flex;
+	flex-direction: row;
 }
 
-#contactme-inside 
-{
-	width: 100%;
+#contactme-div ul li{
+	list-style: none;
+	margin: 0 5px;
+}
+
+#contactme-div ul li i {
 	font-size: 50px;
 }
 
-#contactme-inside i
-{
-	color: #4F67B1;
-}
-#contactlogo
-{
-	text-align: center;
-	width: 100px;
-	display: inline-block;
-	height:  50px;
-	border-bottom: 2px solid #CB0E11;
+#contactme-div ul li a {
+	position: relative;
+	display: flex;
 	justify-content: center;
-	padding: 10px;
-	border-top: 2px solid #CB0E11;
+	align-items: center;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	text-decoration: none;
+	font-size: 30px;
+	color: #000;
+	transition: 0.5s;
 }
-#contactlogo :hover
+
+#contactme-div ul li a::before{
+	content:'';
+	position: absolute;
+	top:0px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	background: #000;
+	border-radius: 50%;
+	z-index: -1;
+	transform: scale(0);
+	transition: 0.5s;
+
+}
+#contactme-div ul li a:hover{
+	color:#fff;
+}
+#contactme-div ul li a:hover::before{
+	transform: scale(1);
+}
+#contactme-div :nth-child(1) a:hover::before
 {
-	border-left: 2px solid #CB0E11;
-	border-right: 2px solid #CB0E11;
-	border-top:none;
-	border-bottom: none;
+	background: #000;
+}
+#contactme-div :nth-child(2) a:hover::before
+{
+	background: #55acee;
+}
+#contactme-div :nth-child(3) a:hover::before
+{
+	background: #ff0000;
+}
+#contactme-div :nth-child(4) a:hover::before
+{
+	background: #55acee;
 }

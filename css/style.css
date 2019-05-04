@@ -149,6 +149,12 @@ html,body {
 .header-container p {
 	height: 100px;
 }
+@media(max-width: 698px)
+{
+	.header-container h2 {
+		font-size: 50px;
+	}
+}
 
 .section2 {
    	width: 100%;

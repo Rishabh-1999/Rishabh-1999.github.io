@@ -245,7 +245,14 @@ html,body {
 }
 .logo {
 	width:200px;
+	background-color: #efe9e9;
 	height:200px;
+	border-radius: 15%;
+}
+.shadow {
+   --moz-box-shadow: 0 0 5px 5px #888;
+-webkit-box-shadow: 0 0 5px 5px#888;
+box-shadow: 0 0 5px 5px #888;
 }
 .movinglogo {
 	position: relative;

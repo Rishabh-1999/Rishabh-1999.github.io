@@ -11,6 +11,7 @@
 {
 	position: relative;
 	width: 250px;
+	cursor: pointer;
 	height: 500px;
 	background: #ccc;
 	transition: 0.5s;

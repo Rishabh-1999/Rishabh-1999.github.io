@@ -27,6 +27,13 @@ html,body {
     background: linear-gradient(125deg,#3498db,#34495e);
 }
 
+@media(max-width: 678px)
+{
+	::-webkit-scrollbar{
+		display: none;
+	}
+}
+
 .navbar {
 	background: white;
 	margin:5px; 

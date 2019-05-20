@@ -5,7 +5,7 @@ function perloadfunction()
 }
 $(document).ready(()=>{
     var typed=new Typed('.typed',{
-        strings : ['Student.','Web Developer.','Android Deveoper','Coder.','Indian.'],
+        strings : ['Student.','Web Developer.','Android Developer','Coder.','Indian.'],
         typeSpeed : 70,
         loop : true,
         startDelay : 1000,

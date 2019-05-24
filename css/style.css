@@ -17,21 +17,12 @@ html,body {
     background: #ddd;
     width: 14px;
 }
-
 ::-webkit-scrollbar-track { 
     box-shadow: inset 0 0 10px #00000070;
     border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb { 
     background: linear-gradient(125deg,#3498db,#34495e);
-}
-
-@media(max-width: 678px)
-{
-	::-webkit-scrollbar{
-		display: none;
-	}
 }
 
 .navbar {
@@ -55,7 +46,6 @@ html,body {
 .navbar-brand:hover {
 	transform: scale(1.2);
 }
-
 
 #contact ul {
 	margin: 0px;
@@ -83,7 +73,7 @@ html,body {
 	color: #000;
 	transition: 0.5s;
 }
-#contact ul li a::before{
+#contact ul li a:before{
 	content:'';
 	position: absolute;
 	top:0px;
@@ -114,6 +104,14 @@ html,body {
 #contact :nth-child(4) a:hover::before {
 	background: green;
 }
+@media (max-width: 698px){
+	#contact ul li i {
+		font-size: 37px;
+	}
+	#contact ul li {
+		margin: 10px 0 10px 0;
+	}
+}
 
 .content {
 	position: relative;
@@ -137,31 +135,31 @@ html,body {
 	}
 	.section2 {
 		padding-top:15px; 
-		height: auto;
+	}
+	::-webkit-scrollbar{
+		display: none;
 	}
 	.navbar ul {
 		display: none;
 	}
 }
 .section:nth-child(1) {
-	width: 100%;
 	height: 100%;
 	background-image: url("../images/bg.jpg");
 	background-size: cover;
 }
 .section:nth-child(2) {
-	width: 100%;
+	height: 100%;
  	background-image: url("../images/bg.jpg");
  	background-size: cover;
 }
 .section:nth-child(3) {
-	width: 100%;
 	height: 100%;
 }
 .section:nth-child(4) {
+	height: 100%;
 	background-image: url("../images/bg.jpg");
 	background-size: cover;
-	width: 100%;
 }
 
 .header-container {
@@ -180,8 +178,7 @@ html,body {
 .header-container p {
 	height: 100px;
 }
-@media(max-width: 698px)
-{
+@media(max-width: 698px) {
 	.header-container h2 {
 		font-size: 50px;
 	}
@@ -194,7 +191,7 @@ html,body {
   	align-items: center;
 }
 .aboutme-container {
-	margin:10%;
+	margin:0 10% 0 10%;
 }
 .circle {
 	width: 200px;
@@ -291,8 +288,8 @@ html,body {
 	height: 100%;
 	z-index: 2;
 }
-.section4
-{
+
+.section4 {
 	width: 100%;
 	display: flex;
   	justify-content: center;

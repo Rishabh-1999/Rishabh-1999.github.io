@@ -1,163 +1,396 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Rishabh Anand  | Portfolio</title>
+  <title>Rishabh Anand | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/myproject-style.css">
+
   <!--Libaray-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/static-css/bootstarp.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="./script/index-js.js"></script>
 </head>
+
 <body onload="perloadfunction()">
 
-<div id="loading"></div>
+  <div id="loading"></div>
 
-<nav class="navbar navbar-expand-sm  navbar-dark fixed-top">
-  <a class="navbar-brand" href="#">Rishabh<span style="color:#333;"> Anand</span></a>
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#section1" style="color:black;" id="homenav">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#section2" style="color:black;" id="aboutmenav">About Me</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#section3" style="color:black;" id="techiusenav">Tech I USE</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#section4" style="color:black;" id="impprojectnav">Important Project</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="./allproject.html" style="color:black;" id="allproject">All Project</a>
-    </li>
-  </ul>
-  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-</nav>
-<div class="content">
-	<div class="section section1" id="section1">
-    <div class="header-container">
-      <h2>Rishabh Anand</h2><br>
+  <nav id="navbarri" class="navbar navbar-light bg-white fixed-top rounded-sm navbar-collapse navbar-expand-lg">
+    <a class="navbar-brand" href="#">Rishabh<span style="color:#333;"> Anand</span></a>
+    <div id="navbarnavri" class="collapse navbar-collapse">
+      <ul class="navbar-nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#section1" style="color:black;">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section2" style="color:black;">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section3" style="color:black;">Tech I USE</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section5" style="color:black;">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section6" style="color:black;">React Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section7" style="color:black;">Android Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#section4" style="color:black;">Other Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./allproject.html" style="color:black;" id="allproject">All Other Projects</a>
+        </li>
+      </ul>
+    </div>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarnavri"
+      aria-controls="navbarnavri" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+
+  <div class="content" data-spy="scroll" data-target="#navbarri">
+    <div class="section section1" id="section1">
+      <div class="header-container">
+        <h2>Rishabh Anand</h2><br>
         <p class="sub typed"></p>
-          <div id="contact">
-            <ul>
-              <li><a href="https://www.facebook.com/rishabh.anand.902"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="https://www.linkedin.com/in/rishabh-anand-b76711161/"><i class="fab fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fas fa-envelope"></i></a></li>
-              <li><a href="https://github.com/Rishabh-1999?tab=repositories"><i class="fab fa-github-square"></i></a></li>
-            </ul>
-          </div>
-    </div>
-  </div>
-
-  <div class="section section2" id="section2">
-    <div class="aboutme-container">
-      <h1>About Me</h1>
-      <div class="circle"></div>
-      <p>Well, I'm Rishabh Anand. Currently, I'm pursuing B.E from Chitkara University, Rajpura in Computer Science stream. On the tech side, I like to do front end development and Android Development. My strengths are my attitude that I like to take up challenges that I can do it.My short term goal is I want such a platform where I can grow my career along with the organization growth.My long term goal is I want to be one of the reasons for the success of the organization.My ethic is "Never neglect any opportunity that comes your way".</p>
-    </div>
-  </div>
-
-	<div class="section section3" id="section3">
-    <div class="techiuse">
-      <h1>Tech I Use</h1>
-      <div class="movingmarquee">
-        <marquee behavior="alternate" scrollamount="17" class="movinglogo">
-
-        <img src="images/svg/c.svg" class="logo" alt="c-logo">
-
-        <img src="images/svg/c++.svg" class="logo" alt="c++-logo">
-
-        <img src="images/svg/android.svg" class="logo" alt="android-logo">
-        
-        <img src="images/svg/html.svg" class="logo" alt="html-logo">
-
-        <img src="images/svg/css.svg" class="logo" alt="css-logo">
-
-        <img src="images/svg/js.svg" class="logo" alt="js-logo">
-
-        <img src="images/svg/github.svg" class="logo" alt="github">
-
-        <img src="images/svg/git.svg" class="logo" alt="git">
-
-        <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
-
-        <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
-
-        <img src="images/svg/mysql.svg" class="logo" alt="mysql-logo">
-
-        <img src="images/svg/python.svg" class="logo" alt="python-logo">
-
-        <img src="images/svg/ubuntu.svg" class="logo" alt="ubuntu">
-
-        <img src="images/svg/java.svg" class="logo" alt="java-logo">
-
-      </marquee>
+        <div id="contact">
+          <ul>
+            <li><a href="https://www.facebook.com/rishabh.anand.902"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/rishabh-anand-b76711161/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+            <li><a href="https://github.com/Rishabh-1999?tab=repositories"><i class="fab fa-github-square"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="section section4" id="section4">
-    <div class="myprojectcontainer">
-      <div class="myprojectbox">
-        <div class="myprojectthumb">
-          <img src="https://user-images.githubusercontent.com/38128234/56104019-669cff00-5f53-11e9-9d45-a51e1ab1fb8a.jpeg">
-        </div>
-        <div class="myprojectdetails">
-          <div class="myprojectcontent">
-            <i class="fab fa-android"></i>
-            <h3>MusicPlayer</h3>
-            <a href="https://github.com/Rishabh-1999/MusicPlayer_In_Android">Get On GitHub</a>
-          </div>
-        </div>  
-      </div>
 
-      <div class="myprojectbox">
-        <div class="myprojectthumb">
-          <img src="images/search-engines.png">
-        </div>
-        <div class="myprojectdetails">
-          <div class="myprojectcontent">
-            <i class="fas fa-code"></i>
-            <h3>Search-Engine</h3>
-            <a href="https://github.com/Rishabh-1999/Search-Engine">Get On GitHub</a>
-          </div>
-        </div>  
-      </div>
-
-      <div class="myprojectbox">
-        <div class="myprojectthumb">
-          <img src="https://user-images.githubusercontent.com/38128234/57751823-967f2400-7704-11e9-95c3-5b433b599300.png">
-        </div>
-        <div class="myprojectdetails">
-          <div class="myprojectcontent">
-            <i class="fab fa-android"></i>
-            <h3>Note Pad</h3>
-            <a href="https://github.com/Rishabh-1999/NotePad_In_Android">Get On GitHub</a>
-          </div>
-        </div>  
-      </div>
-
-      <div class="myprojectbox">
-        <div class="myprojectthumb">
-          <img src="https://user-images.githubusercontent.com/38128234/57752421-c0394a80-7706-11e9-8af1-ee821544d18c.JPG">
-        </div>
-        <div class="myprojectdetails">
-          <div class="myprojectcontent">
-            <i class="fab fa-raspberry-pi"></i>
-            <h3 style="font-size: 25px;">Face Recognition Using<br>Raspberrypi</h3>
-            <a href="https://github.com/Rishabh-1999/Face-Recognition-Using-Raspberry-pi">Get On GitHub</a>
-          </div>
-        </div>  
+    <div class="p-5" id="section2">
+      <div class="aboutme-container">
+        <h1>About Me</h1>
+        <div class="circle"></div>
+        <p>Well, I'm Rishabh Anand. Currently, I'm pursuing B.E from Chitkara University, Rajpura in Computer Science
+          stream. On the tech side, I like to do front end development and Android Development. My strengths are my
+          attitude that I like to take up challenges that I can do it.My short term goal is I want such a platform where
+          I can grow my career along with the organization growth.My long term goal is I want to be one of the reasons
+          for the success of the organization.My ethic is "Never neglect any opportunity that comes your way".</p>
       </div>
     </div>
+
+    <div class="p-5" id="section3">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center aboutme-container font-weight-bold">
+              <h1 class="riheading">
+                Education
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="row p-5">
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i style="font-size: 2em;" class="fas fa-school"></i></span>
+              </div>
+              <div class="service-content"><br>
+                <h2 class="s-title text-center">School</h2>
+                <p style="text-align: center;font-size: 100%">2014-2015</p>
+                <p class="s-description text-center">
+                  KV No.2 AFS,Srinagar,J&K
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i style="font-size: 2em;" class="fas fa-school"></i></span>
+              </div>
+              <div class="service-content"><br>
+                <h2 class="s-title text-center">Senior School</h2>
+                <p style="text-align: center;font-size: 100%">2015-2017</p>
+                <p class="s-description text-center">
+                  Guru Gobind Singh Sec,Sector 34,Chandigarh
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="service-box">
+              <div class="service-ico">
+                <span class="ico-circle"><i style="font-size: 2em;" class="fas fa-graduation-cap"></i></span>
+              </div>
+              <div class="service-content"><br>
+                <h2 class="s-title text-center">College</h2>
+                <p style="text-align: center;font-size: 100%">2017-2021</p>
+                <p class="s-description text-center">
+                  Chitkara University,Punjab
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5 NodeJS -->
+    <div id="section5" class="p-3">
+      <h3 class="text-center riheading">Node JS</h3>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="./images/Projects/organic.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Organic Store</h5>
+            <p class="card-text">A E-Commerce website in Node JS in which User can buy Products and Seller can Sell
+              products. It will be overlooked by Admin or Root.</p>
+          </div>
+          <a href="https://github.com/Rishabh-1999/OrganicStore-NodeJS" class="btn btn-dark ml-md-3 mr-md-3"
+            role="button"><i class="fab fa-github"></i> Get on Github</a>
+          <a href="https://organicstore-ri.herokuapp.com/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
+            Live</a>
+          <div class="card-footer">
+            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+            <img src="images/svg/js.svg" class="logo" alt="js-logo">
+            <img src="images/svg/html.svg" class="logo" alt="html-logo">
+            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="/images/Projects/community.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Community Website</h5>
+            <p class="card-text">It is a Website developed under UCA class for our Web Project</p>
+          </div>
+          <a href="https://github.com/Rishabh-1999/Community-Website-Web-Project" class="btn btn-dark ml-md-3 mr-md-3"
+            role="button"><i class="fab fa-github"></i> Get on Github</a>
+          <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
+            Live</a>
+          <div class="card-footer">
+            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+            <img src="images/svg/js.svg" class="logo" alt="js-logo">
+            <img src="images/svg/html.svg" class="logo" alt="html-logo">
+            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="/images/Projects/social.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Social Media</h5>
+            <p class="card-text"></p>
+          </div>
+          <a href="https://github.com/Rishabh-1999/Social-Media-NodeJS" class="btn btn-dark ml-md-3 mr-md-3"
+            role="button"><i class="fab fa-github"></i> Get on Github</a>
+          <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
+            Live</a>
+          <div class="card-footer">
+            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+            <img src="images/svg/js.svg" class="logo" alt="js-logo">
+            <img src="images/svg/html.svg" class="logo" alt="html-logo">
+            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6 React -->
+    <div id="section6" class="p-3">
+      <h3 class="text-center riheading text-white"><img src="images/svg/react.svg" class="logo" alt="js-logo"> React
+      </h3>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="./images/Projects/mern-e-commerce.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">MERN E Commerce
+            </h5>
+            <p class="card-text"></p>
+          </div>
+          <a href="https://github.com/Rishabh-1999/MERN-E-Commerce" class="btn btn-dark ml-md-3 mr-md-3"
+            role="button"><i class="fab fa-github"></i> Get on Github</a>
+          <a href="https://mern-e-commerce.now.sh/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
+            Live</a>
+          <div class="card-footer">
+            <img src="images/svg/react.svg" class="logo" alt="js-logo">
+            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+            <img src="images/svg/js.svg" class="logo" alt="js-logo">
+            <img src="images/svg/html.svg" class="logo" alt="html-logo">
+            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="./images/Projects/Recipe.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">
+              Recipe Application
+            </h5>
+            <p class="card-text"></p>
+          </div>
+          <a href="https://github.com/Rishabh-1999/Recipe-Application-React" class="btn btn-dark ml-md-3 mr-md-3"
+            role="button"><i class="fab fa-github"></i> Get on Github</a>
+          <a href="https://recipe-ri.now.sh/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
+            Live</a>
+          <div class="card-footer">
+            <img src="images/svg/react.svg" class="logo" alt="js-logo">
+            <img src="images/svg/api.svg" class="logo" alt="api-logo">
+            <img src="images/svg/js.svg" class="logo" alt="js-logo">
+            <img src="images/svg/html.svg" class="logo" alt="html-logo">
+            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" style="height: 200px;" src="./images/svg/react.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">
+              Social Media
+            </h5>
+            <p class="card-text"></p>
+          </div>
+          <a href="#" class="btn btn-dark ml-md-3 mr-md-3 disabled" role="button"><i class="fab fa-github"></i> Get on
+            Github</a>
+          <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
+            Live</a>
+          <div class="card-footer">
+            <img src="images/svg/react.svg" class="logo" alt="js-logo">
+            <img src="images/svg/mongodb.svg" class="logo" alt="api-logo">
+            <img src="images/svg/js.svg" class="logo" alt="js-logo">
+            <img src="images/svg/html.svg" class="logo" alt="html-logo">
+            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7 Android -->
+    <div id="section7" class="p-3">
+      <h3 class="text-center riheading"><img src="images/svg/android.svg" class="logo" alt="android-logo">Android</h3>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" style="height: 200px;" src="/images/svg/android.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Chat-App-Firebase-Android</h5>
+            <p class="card-text"></p>
+          </div>
+          <a href="https://github.com/Rishabh-1999/Chat-App-Firebase-Android" class="btn btn-dark ml-md-3 mr-md-3"
+            role="button"><i class="fab fa-github"></i> Get on Github</a>
+          <div class="card-footer">
+            <img src="images/svg/android.svg" class="logo" alt="android-logo">
+            <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" style="height: 250px;" src="images/Projects/undarkened.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">UNDARKENED</h5>
+            <p class="card-text"></p>
+          </div>
+          <a href="https://github.com/NishitSingh2023/UNDARKENED" class="btn btn-dark ml-md-3 mr-md-3" role="button"><i
+              class="fab fa-github"></i> Get on Github</a>
+          <div class="card-footer">
+            <img src="images/svg/android.svg" class="logo" alt="android-logo">
+            <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" style="height: 400px;"
+            src="https://user-images.githubusercontent.com/38128234/61649194-9d12b480-acce-11e9-810c-b2466977adbe.png"
+            alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Catch-the-Ball-Game-Android
+            </h5>
+            <p class="card-text"></p>
+          </div>
+          <a href="https://github.com/Rishabh-1999/Catch-the-Ball-Game-Android" class="btn btn-dark ml-md-3 mr-md-3"
+            role="button"><i class="fab fa-github"></i> Get on Github</a>
+          <div class="card-footer">
+            <img src="images/svg/android.svg" class="logo" alt="android-logo">
+            <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4 All Project -->
+    <div class="section4 p-3 flex-column d-flex justify-content-center align-items-center" id="section4">
+      <h3 class="text-center riheading text-white">Other Projects</h3>
+      <div class="myprojectcontainer">
+        <div class="myprojectbox">
+          <div class="myprojectthumb">
+            <img
+              src="https://user-images.githubusercontent.com/38128234/56104019-669cff00-5f53-11e9-9d45-a51e1ab1fb8a.jpeg">
+          </div>
+          <div class="myprojectdetails">
+            <div class="myprojectcontent">
+              <i class="fab fa-android"></i>
+              <h3>MusicPlayer</h3>
+              <a href="https://github.com/Rishabh-1999/MusicPlayer_In_Android">Get On GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="myprojectbox">
+          <div class="myprojectthumb">
+            <img src="images/Projects/search-engines.png">
+          </div>
+          <div class="myprojectdetails">
+            <div class="myprojectcontent">
+              <i class="fas fa-code"></i>
+              <h3>Search-Engine</h3>
+              <a href="https://github.com/Rishabh-1999/Search-Engine">Get On GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="myprojectbox">
+          <div class="myprojectthumb">
+            <img
+              src="https://user-images.githubusercontent.com/38128234/57751823-967f2400-7704-11e9-95c3-5b433b599300.png">
+          </div>
+          <div class="myprojectdetails">
+            <div class="myprojectcontent">
+              <i class="fab fa-android"></i>
+              <h3>Note Pad</h3>
+              <a href="https://github.com/Rishabh-1999/NotePad_In_Android">Get On GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="myprojectbox">
+          <div class="myprojectthumb">
+            <img
+              src="https://user-images.githubusercontent.com/38128234/57752421-c0394a80-7706-11e9-8af1-ee821544d18c.JPG">
+          </div>
+          <div class="myprojectdetails">
+            <div class="myprojectcontent">
+              <i class="fab fa-raspberry-pi"></i>
+              <h3 style="font-size: 25px;">Face Recognition Using<br>Raspberrypi</h3>
+              <a href="https://github.com/Rishabh-1999/Face-Recognition-Using-Raspberry-pi">Get On GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   </div>
-</div>
 </body>
+
 </html>

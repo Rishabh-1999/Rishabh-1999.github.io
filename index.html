@@ -18,6 +18,7 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="./script/index-js.js"></script>
+
 </head>
 
 <body onload="perloadfunction()">
@@ -161,30 +162,58 @@
           <div class="row">
             <div class="col-5">
               <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action" id="list-nodejs-list" data-toggle="tab"
-                  href="#list-nodejs" role="tab" aria-controls="list-nodejs" aria-selected="false">Server-side
-                  Development
-                  with NodeJS, Express and MongoDB (Coursera)</a>
-                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab"
-                  href="#list-aws" role="tab" aria-controls="list-aws" aria-selected="false">AWS Fundamentals Going
-                  Cloud-Native (Coursera)</a>
+                <a class="list-group-item list-group-item-action active" id="list-nodejs-list" data-toggle="list"
+                  href="#list-nodejs" role="tab" aria-controls="home">
+                  Server-side Development with NodeJS, Express and MongoDB (Coursera)</a>
+                <a class="list-group-item list-group-item-action" id="list-aws-list" data-toggle="list" href="#list-aws"
+                  role="tab" aria-controls="profile">
+                  AWS Fundamentals Going Cloud-Native (Coursera)</a>
+                  <a class="list-group-item list-group-item-action" id="list-git-list" data-toggle="list" href="#list-git"
+                  role="tab" aria-controls="git">
+                  Introduction to Git and GitHub (Coursera)</a>
+                  <a class="list-group-item list-group-item-action" id="list-python1-list" data-toggle="list" href="#list-python1"
+                  role="tab" aria-controls="python1">
+                  Programming for Everybody (Getting Started with Python) (Coursera)</a>
+                  <a class="list-group-item list-group-item-action" id="list-python2-list" data-toggle="list" href="#list-python2"
+                  role="tab" aria-controls="python2">
+                  Python Data Structures (Coursera)</a>
+                  <a class="list-group-item list-group-item-action" id="list-python3-list" data-toggle="list" href="#list-python3"
+                  role="tab" aria-controls="python3">
+                  Using Python to Access Web Data (Coursera)</a>
               </div>
             </div>
             <div class="col-7">
               <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade" id="list-nodejs" role="tabpanel" aria-labelledby="list-nodejs-list">
-                  <div>
-                    <object type="application/pdf"
-                      data="https://drive.google.com/open?id=1D27cmO6xEfFD7pLFpSm9g2tDLMD7AUz9" width="600px"
-                      height="400px" style="overflow:auto;border:5px ridge blue">
-                    </object>
-                  </div>
+                <div class="tab-pane fade show active" id="list-nodejs" role="tabpanel"
+                  aria-labelledby="list-nodejs-list">
+                  <iframe
+                    src="https://drive.google.com/file/d/1D27cmO6xEfFD7pLFpSm9g2tDLMD7AUz9/preview?usp=embed_googleplus"
+                    height="400px" width="100%" allowfullscreen></iframe>
                 </div>
                 <div class="tab-pane fade" id="list-aws" role="tabpanel" aria-labelledby="list-aws-list">
-                  <object type="application/pdf"
-                    data="https://drive.google.com/open?id=1CjH7XpWU4E5IiS2HBURIAIwLe3MwO3X8" width="600px"
-                    height="400px" style="overflow:auto;border:5px ridge blue">
-                  </object>
+                  <iframe
+                    src="https://drive.google.com/file/d/1CjH7XpWU4E5IiS2HBURIAIwLe3MwO3X8/preview?usp=embed_googleplus"
+                    height="400px" width="100%" allowfullscreen></iframe>
+                </div>
+                <div class="tab-pane fade" id="list-git" role="tabpanel" aria-labelledby="list-git-list">
+                  <iframe
+                    src="https://drive.google.com/file/d/1nbN0QKmEkp0-ajR7HrnuNK5jfJS_MfCR/preview?usp=embed_googleplus"
+                    height="400px" width="100%" allowfullscreen></iframe>
+                </div>
+                <div class="tab-pane fade" id="list-python1" role="tabpanel" aria-labelledby="list-python1-list">
+                  <iframe
+                    src="https://drive.google.com/file/d/1rS34utrZ1-LXFEeL9soq6urLqM_pg3R5/preview?usp=embed_googleplus"
+                    height="400px" width="100%" allowfullscreen></iframe>
+                </div>
+                <div class="tab-pane fade" id="list-python2" role="tabpanel" aria-labelledby="list-python2-list">
+                  <iframe
+                    src="https://drive.google.com/file/d/1HPZ42EIU1vmvwgl45i6Jc_edBabXd1-g/preview?usp=embed_googleplus"
+                    height="400px" width="100%" allowfullscreen></iframe>
+                </div>
+                <div class="tab-pane fade" id="list-python3" role="tabpanel" aria-labelledby="list-python3-list">
+                  <iframe
+                    src="https://drive.google.com/file/d/1gbKJRefg1mEe3cB4bqBPb0jdlaeWSW1-/preview?usp=embed_googleplus"
+                    height="400px" width="100%" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -193,317 +222,317 @@
       </div>
     </div>
 
-    <!-- Section 5 NodeJS -->
-    <div id="section5" class="p-3">
-      <h3 class="text-center riheading">Node JS</h3>
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="./images/Projects/organic.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Organic Store</h5>
-            <p class="card-text">A E-Commerce website in Node JS in which User can buy Products and Seller can Sell
-              products. It will be overlooked by Admin or Root.</p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/OrganicStore-NodeJS" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <a href="https://organicstore-ri.herokuapp.com/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
-            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
-          </div>
+  <!-- Section 5 NodeJS -->
+  <div id="section5" class="p-3">
+    <h3 class="text-center riheading">Node JS</h3>
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="./images/Projects/organic.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Organic Store</h5>
+          <p class="card-text">A E-Commerce website in Node JS in which User can buy Products and Seller can Sell
+            products. It will be overlooked by Admin or Root.</p>
         </div>
-
-        <div class="card">
-          <img class="card-img-top" src="/images/Projects/community.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Community Website</h5>
-            <p class="card-text">Website in which community can interact with each other.
-              It is a Website developed under UCA class for our Web Project.</p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/Community-Website-Web-Project" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <a href="https://community-ri.herokuapp.com/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
-            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img-top" src="/images/Projects/hospital.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Hospital Management</h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/Hospital-Managment" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <a href="https://hospital-management-ri.herokuapp.com/" class="btn btn-success ml-md-3 mr-md-3"
-            role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
-            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
-          </div>
+        <a href="https://github.com/Rishabh-1999/OrganicStore-NodeJS" class="btn btn-dark ml-md-3 mr-md-3"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <a href="https://organicstore-ri.herokuapp.com/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+          <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
         </div>
       </div>
 
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="./images/Projects/nodejs.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Matrimonial Website(Group Project)</h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/Matrimonial-Website" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
-            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
-          </div>
-          <div class="card-footer">
-            <h3>Collbators:</h3>
-            <a href="https://github.com/rajat-29"><i class="fas fa-user"> @ Rajat Gupta</i></a><br>
-            <a href="https://github.com/Rishav78"><i class="fas fa-user"> @ Rishav</i></a><br>
-            <a href="https://github.com/Ridvmodi"><i class="fas fa-user"> @ Ridhav Modi</i></a>
-          </div>
+      <div class="card">
+        <img class="card-img-top" src="/images/Projects/community.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Community Website</h5>
+          <p class="card-text">Website in which community can interact with each other.
+            It is a Website developed under UCA class for our Web Project.</p>
         </div>
-
-        <div class="card">
-          <img class="card-img-top" src="/images/Projects/social.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Social Media</h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/Social-Media-NodeJS" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
-            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
-          </div>
+        <a href="https://github.com/Rishabh-1999/Community-Website-Web-Project" class="btn btn-dark ml-md-3 mr-md-3"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <a href="https://community-ri.herokuapp.com/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+          <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
         </div>
+      </div>
 
-        <div class="card">
-          <img class="card-img-top" src="/images/Projects/social.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Pharamcy Stock Management System</h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/rajat-29/Pharmacy_Management_System" class="btn btn-dark ml-md-3 mr-md-3 disabled"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
-            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
-          </div>
+      <div class="card">
+        <img class="card-img-top" src="/images/Projects/hospital.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Hospital Management</h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/Rishabh-1999/Hospital-Managment" class="btn btn-dark ml-md-3 mr-md-3"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <a href="https://hospital-management-ri.herokuapp.com/" class="btn btn-success ml-md-3 mr-md-3"
+          role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+          <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
         </div>
       </div>
     </div>
 
-    <!-- Section 6 React -->
-    <div id="section6" class="p-3">
-      <h3 class="text-center riheading text-white"><img src="images/svg/react.svg" class="logo" alt="js-logo"> React
-      </h3>
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" src="./images/Projects/mern-e-commerce.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">MERN E Commerce
-            </h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/MERN-E-Commerce" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <a href="https://mern-e-commerce.now.sh/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/react.svg" class="logo" alt="js-logo">
-            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="./images/Projects/nodejs.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Matrimonial Website(Group Project)</h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/Rishabh-1999/Matrimonial-Website" class="btn btn-dark ml-md-3 mr-md-3"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+          <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
+        </div>
+        <div class="card-footer">
+          <h3>Collbators:</h3>
+          <a href="https://github.com/rajat-29"><i class="fas fa-user"> @ Rajat Gupta</i></a><br>
+          <a href="https://github.com/Rishav78"><i class="fas fa-user"> @ Rishav</i></a><br>
+          <a href="https://github.com/Ridvmodi"><i class="fas fa-user"> @ Ridhav Modi</i></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" src="/images/Projects/social.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Social Media</h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/Rishabh-1999/Social-Media-NodeJS" class="btn btn-dark ml-md-3 mr-md-3"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+          <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" src="/images/Projects/social.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Pharamcy Stock Management System</h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/rajat-29/Pharmacy_Management_System" class="btn btn-dark ml-md-3 mr-md-3 disabled"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+          <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 6 React -->
+  <div id="section6" class="p-3">
+    <h3 class="text-center riheading text-white"><img src="images/svg/react.svg" class="logo" alt="js-logo"> React
+    </h3>
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="./images/Projects/mern-e-commerce.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">MERN E Commerce
+          </h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/Rishabh-1999/MERN-E-Commerce" class="btn btn-dark ml-md-3 mr-md-3" role="button"><i
+            class="fab fa-github"></i> Get on Github</a>
+        <a href="https://mern-e-commerce.now.sh/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/react.svg" class="logo" alt="js-logo">
+          <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" src="./images/Projects/Recipe.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">
+            Recipe Application
+          </h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/Rishabh-1999/Recipe-Application-React" class="btn btn-dark ml-md-3 mr-md-3"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <a href="https://recipe-ri.now.sh/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/react.svg" class="logo" alt="js-logo">
+          <img src="images/svg/api.svg" class="logo" alt="api-logo">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" style="height: 200px;" src="./images/svg/react.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">
+            Social Media
+          </h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="#" class="btn btn-dark ml-md-3 mr-md-3 disabled" role="button"><i class="fab fa-github"></i> Get on
+          Github</a>
+        <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
+          Live</a>
+        <div class="card-footer">
+          <img src="images/svg/react.svg" class="logo" alt="js-logo">
+          <img src="images/svg/mongodb.svg" class="logo" alt="api-logo">
+          <img src="images/svg/js.svg" class="logo" alt="js-logo">
+          <img src="images/svg/html.svg" class="logo" alt="html-logo">
+          <img src="images/svg/css.svg" class="logo" alt="css-logo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 7 Android -->
+  <div id="section7" class="p-3">
+    <h3 class="text-center riheading"><img src="images/svg/android.svg" class="logo" alt="android-logo">Android</h3>
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" style="height: 200px;" src="/images/svg/android.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Chat-App-Firebase-Android</h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/Rishabh-1999/Chat-App-Firebase-Android" class="btn btn-dark ml-md-3 mr-md-3"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <div class="card-footer">
+          <img src="images/svg/android.svg" class="logo" alt="android-logo">
+          <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" style="height: 250px;" src="images/Projects/undarkened.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">UNDARKENED</h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/NishitSingh2023/UNDARKENED" class="btn btn-dark ml-md-3 mr-md-3" role="button"><i
+            class="fab fa-github"></i> Get on Github</a>
+        <div class="card-footer">
+          <img src="images/svg/android.svg" class="logo" alt="android-logo">
+          <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img-top" style="height: 400px;"
+          src="https://user-images.githubusercontent.com/38128234/61649194-9d12b480-acce-11e9-810c-b2466977adbe.png"
+          alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Catch-the-Ball-Game-Android
+          </h5>
+          <p class="card-text"></p>
+        </div>
+        <a href="https://github.com/Rishabh-1999/Catch-the-Ball-Game-Android" class="btn btn-dark ml-md-3 mr-md-3"
+          role="button"><i class="fab fa-github"></i> Get on Github</a>
+        <div class="card-footer">
+          <img src="images/svg/android.svg" class="logo" alt="android-logo">
+          <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4 All Project -->
+  <div class="section4 p-3 flex-column d-flex justify-content-center align-items-center" id="section4">
+    <h3 class="text-center riheading text-white">Other Projects</h3>
+    <div class="myprojectcontainer">
+      <div class="myprojectbox">
+        <div class="myprojectthumb">
+          <img
+            src="https://user-images.githubusercontent.com/38128234/56104019-669cff00-5f53-11e9-9d45-a51e1ab1fb8a.jpeg">
+        </div>
+        <div class="myprojectdetails">
+          <div class="myprojectcontent">
+            <i class="fab fa-android"></i>
+            <h3>MusicPlayer</h3>
+            <a href="https://github.com/Rishabh-1999/MusicPlayer_In_Android">Get On GitHub</a>
           </div>
         </div>
+      </div>
 
-        <div class="card">
-          <img class="card-img-top" src="./images/Projects/Recipe.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">
-              Recipe Application
-            </h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/Recipe-Application-React" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <a href="https://recipe-ri.now.sh/" class="btn btn-success ml-md-3 mr-md-3" role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/react.svg" class="logo" alt="js-logo">
-            <img src="images/svg/api.svg" class="logo" alt="api-logo">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+      <div class="myprojectbox">
+        <div class="myprojectthumb">
+          <img src="images/Projects/search-engines.png">
+        </div>
+        <div class="myprojectdetails">
+          <div class="myprojectcontent">
+            <i class="fas fa-code"></i>
+            <h3>Search-Engine</h3>
+            <a href="https://github.com/Rishabh-1999/Search-Engine">Get On GitHub</a>
           </div>
         </div>
+      </div>
 
-        <div class="card">
-          <img class="card-img-top" style="height: 200px;" src="./images/svg/react.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">
-              Social Media
-            </h5>
-            <p class="card-text"></p>
+      <div class="myprojectbox">
+        <div class="myprojectthumb">
+          <img
+            src="https://user-images.githubusercontent.com/38128234/57751823-967f2400-7704-11e9-95c3-5b433b599300.png">
+        </div>
+        <div class="myprojectdetails">
+          <div class="myprojectcontent">
+            <i class="fab fa-android"></i>
+            <h3>Note Pad</h3>
+            <a href="https://github.com/Rishabh-1999/NotePad_In_Android">Get On GitHub</a>
           </div>
-          <a href="#" class="btn btn-dark ml-md-3 mr-md-3 disabled" role="button"><i class="fab fa-github"></i> Get on
-            Github</a>
-          <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
-            Live</a>
-          <div class="card-footer">
-            <img src="images/svg/react.svg" class="logo" alt="js-logo">
-            <img src="images/svg/mongodb.svg" class="logo" alt="api-logo">
-            <img src="images/svg/js.svg" class="logo" alt="js-logo">
-            <img src="images/svg/html.svg" class="logo" alt="html-logo">
-            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+        </div>
+      </div>
+
+      <div class="myprojectbox">
+        <div class="myprojectthumb">
+          <img
+            src="https://user-images.githubusercontent.com/38128234/57752421-c0394a80-7706-11e9-8af1-ee821544d18c.JPG">
+        </div>
+        <div class="myprojectdetails">
+          <div class="myprojectcontent">
+            <i class="fab fa-raspberry-pi"></i>
+            <h3 style="font-size: 25px;">Face Recognition Using<br>Raspberrypi</h3>
+            <a href="https://github.com/Rishabh-1999/Face-Recognition-Using-Raspberry-pi">Get On GitHub</a>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Section 7 Android -->
-    <div id="section7" class="p-3">
-      <h3 class="text-center riheading"><img src="images/svg/android.svg" class="logo" alt="android-logo">Android</h3>
-      <div class="card-deck">
-        <div class="card">
-          <img class="card-img-top" style="height: 200px;" src="/images/svg/android.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Chat-App-Firebase-Android</h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/Chat-App-Firebase-Android" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <div class="card-footer">
-            <img src="images/svg/android.svg" class="logo" alt="android-logo">
-            <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img-top" style="height: 250px;" src="images/Projects/undarkened.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">UNDARKENED</h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/NishitSingh2023/UNDARKENED" class="btn btn-dark ml-md-3 mr-md-3" role="button"><i
-              class="fab fa-github"></i> Get on Github</a>
-          <div class="card-footer">
-            <img src="images/svg/android.svg" class="logo" alt="android-logo">
-            <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img-top" style="height: 400px;"
-            src="https://user-images.githubusercontent.com/38128234/61649194-9d12b480-acce-11e9-810c-b2466977adbe.png"
-            alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Catch-the-Ball-Game-Android
-            </h5>
-            <p class="card-text"></p>
-          </div>
-          <a href="https://github.com/Rishabh-1999/Catch-the-Ball-Game-Android" class="btn btn-dark ml-md-3 mr-md-3"
-            role="button"><i class="fab fa-github"></i> Get on Github</a>
-          <div class="card-footer">
-            <img src="images/svg/android.svg" class="logo" alt="android-logo">
-            <img src="images/svg/firebase.svg" class="logo" alt="firebase-logo">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 4 All Project -->
-    <div class="section4 p-3 flex-column d-flex justify-content-center align-items-center" id="section4">
-      <h3 class="text-center riheading text-white">Other Projects</h3>
-      <div class="myprojectcontainer">
-        <div class="myprojectbox">
-          <div class="myprojectthumb">
-            <img
-              src="https://user-images.githubusercontent.com/38128234/56104019-669cff00-5f53-11e9-9d45-a51e1ab1fb8a.jpeg">
-          </div>
-          <div class="myprojectdetails">
-            <div class="myprojectcontent">
-              <i class="fab fa-android"></i>
-              <h3>MusicPlayer</h3>
-              <a href="https://github.com/Rishabh-1999/MusicPlayer_In_Android">Get On GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="myprojectbox">
-          <div class="myprojectthumb">
-            <img src="images/Projects/search-engines.png">
-          </div>
-          <div class="myprojectdetails">
-            <div class="myprojectcontent">
-              <i class="fas fa-code"></i>
-              <h3>Search-Engine</h3>
-              <a href="https://github.com/Rishabh-1999/Search-Engine">Get On GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="myprojectbox">
-          <div class="myprojectthumb">
-            <img
-              src="https://user-images.githubusercontent.com/38128234/57751823-967f2400-7704-11e9-95c3-5b433b599300.png">
-          </div>
-          <div class="myprojectdetails">
-            <div class="myprojectcontent">
-              <i class="fab fa-android"></i>
-              <h3>Note Pad</h3>
-              <a href="https://github.com/Rishabh-1999/NotePad_In_Android">Get On GitHub</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="myprojectbox">
-          <div class="myprojectthumb">
-            <img
-              src="https://user-images.githubusercontent.com/38128234/57752421-c0394a80-7706-11e9-8af1-ee821544d18c.JPG">
-          </div>
-          <div class="myprojectdetails">
-            <div class="myprojectcontent">
-              <i class="fab fa-raspberry-pi"></i>
-              <h3 style="font-size: 25px;">Face Recognition Using<br>Raspberrypi</h3>
-              <a href="https://github.com/Rishabh-1999/Face-Recognition-Using-Raspberry-pi">Get On GitHub</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 
   </div>
   </div>

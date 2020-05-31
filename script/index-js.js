@@ -1,7 +1,6 @@
 function perloadfunction() {
     var load = document.getElementById('loading');
     loading.style.display = 'none';
-
 }
 
 $(document).ready(() => {

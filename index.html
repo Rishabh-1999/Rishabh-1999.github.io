@@ -8,9 +8,12 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/myproject-style.css">
 
-  <!--Libaray-->
+  <!-- Libaray -->
+  <!-- CSS -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet" href="./css/static-css/bootstarp.css">
+
+  <!-- Script -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -21,7 +24,7 @@
 
   <div id="loading"></div>
 
-  <nav id="navbarri" class="navbar navbar-light bg-white fixed-top rounded-sm navbar-collapse navbar-expand-lg">
+  <nav id="navbarri" class="navbar navbar-light bg-white fixed-top rounded-lg navbar-collapse navbar-expand-lg">
     <a class="navbar-brand" href="#">Rishabh<span style="color:#333;"> Anand</span></a>
     <div id="navbarnavri" class="collapse navbar-collapse">
       <ul class="navbar-nav nav-pills">
@@ -56,7 +59,6 @@
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
-
 
   <div class="content" data-spy="scroll" data-target="#navbarri">
     <div class="section section1" id="section1">
@@ -144,6 +146,53 @@
       </div>
     </div>
 
+    <div class="p-5" id="section4">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="title-box text-center aboutme-container font-weight-bold">
+              <h1 class="riheading">
+                Certificate
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div class="row p-5">
+          <div class="row">
+            <div class="col-5">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action" id="list-nodejs-list" data-toggle="tab"
+                  href="#list-nodejs" role="tab" aria-controls="list-nodejs" aria-selected="false">Server-side
+                  Development
+                  with NodeJS, Express and MongoDB (Coursera)</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="tab"
+                  href="#list-aws" role="tab" aria-controls="list-aws" aria-selected="false">AWS Fundamentals Going
+                  Cloud-Native (Coursera)</a>
+              </div>
+            </div>
+            <div class="col-7">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade" id="list-nodejs" role="tabpanel" aria-labelledby="list-nodejs-list">
+                  <div>
+                    <object type="application/pdf"
+                      data="https://drive.google.com/open?id=1D27cmO6xEfFD7pLFpSm9g2tDLMD7AUz9" width="600px"
+                      height="400px" style="overflow:auto;border:5px ridge blue">
+                    </object>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="list-aws" role="tabpanel" aria-labelledby="list-aws-list">
+                  <object type="application/pdf"
+                    data="https://drive.google.com/open?id=1CjH7XpWU4E5IiS2HBURIAIwLe3MwO3X8" width="600px"
+                    height="400px" style="overflow:auto;border:5px ridge blue">
+                  </object>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Section 5 NodeJS -->
     <div id="section5" class="p-3">
       <h3 class="text-center riheading">Node JS</h3>
@@ -209,7 +258,7 @@
         </div>
       </div>
 
-      <div class="card-deck pt-5" style="width:75%">
+      <div class="card-deck">
         <div class="card">
           <img class="card-img-top" src="./images/Projects/nodejs.png" alt="Card image cap">
           <div class="card-body">
@@ -238,10 +287,29 @@
         <div class="card">
           <img class="card-img-top" src="/images/Projects/social.jpg" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Social Media(In Pre-Initialization)</h5>
+            <h5 class="card-title">Social Media</h5>
             <p class="card-text"></p>
           </div>
-          <a href="https://github.com/Rishabh-1999/Social-Media-NodeJS" class="btn btn-dark ml-md-3 mr-md-3 disabled"
+          <a href="https://github.com/Rishabh-1999/Social-Media-NodeJS" class="btn btn-dark ml-md-3 mr-md-3"
+            role="button"><i class="fab fa-github"></i> Get on Github</a>
+          <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
+            Live</a>
+          <div class="card-footer">
+            <img src="images/svg/mongodb.svg" class="logo" alt="js-mongodb">
+            <img src="images/svg/nodejs.svg" class="logo" alt="js-logo">
+            <img src="images/svg/js.svg" class="logo" alt="js-logo">
+            <img src="images/svg/html.svg" class="logo" alt="html-logo">
+            <img src="images/svg/css.svg" class="logo" alt="css-logo">
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="/images/Projects/social.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Pharamcy Stock Management System</h5>
+            <p class="card-text"></p>
+          </div>
+          <a href="https://github.com/rajat-29/Pharmacy_Management_System" class="btn btn-dark ml-md-3 mr-md-3 disabled"
             role="button"><i class="fab fa-github"></i> Get on Github</a>
           <a href="#" class="btn btn-success ml-md-3 mr-md-3 disabled" role="button">Try
             Live</a>

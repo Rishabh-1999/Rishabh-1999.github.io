@@ -1,0 +1,13 @@
+@import "../variables.scss";
+
+#certificatepage {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  .certificatepage__main {
+    margin-top: 50px;
+
+    .active {
+      background-color: #5e5e5e;
+    }
+  }
+}

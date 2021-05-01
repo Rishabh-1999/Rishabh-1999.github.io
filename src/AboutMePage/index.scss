@@ -1,0 +1,31 @@
+@import "../variables.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
+#aboutmepage {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  .aboutmepage__main {
+    .aboutmepage__main__left {
+      text-align: center;
+      img {
+        height: 400px;
+        border-radius: 15%;
+      }
+    }
+    .aboutmepage__main__right {
+      p {
+        font-size: 23px;
+        line-height: 1.8rem;
+        word-spacing: 8px;
+        font-family: "Architects Daughter", cursive;
+        span:hover {
+          color: $base-text-color2;
+          font-size: 110%;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

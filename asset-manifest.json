@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.7e771517.chunk.css",
-    "main.js": "/static/js/main.1acacc73.chunk.js",
-    "main.js.map": "/static/js/main.1acacc73.chunk.js.map",
+    "main.css": "/static/css/main.417e9c93.chunk.css",
+    "main.js": "/static/js/main.9c9aa41b.chunk.js",
+    "main.js.map": "/static/js/main.9c9aa41b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b5835711.js",
     "runtime-main.js.map": "/static/js/runtime-main.b5835711.js.map",
-    "static/js/2.0031a49a.chunk.js": "/static/js/2.0031a49a.chunk.js",
-    "static/js/2.0031a49a.chunk.js.map": "/static/js/2.0031a49a.chunk.js.map",
+    "static/js/2.c5a4846d.chunk.js": "/static/js/2.c5a4846d.chunk.js",
+    "static/js/2.c5a4846d.chunk.js.map": "/static/js/2.c5a4846d.chunk.js.map",
     "static/js/3.6be2205d.chunk.js": "/static/js/3.6be2205d.chunk.js",
     "static/js/3.6be2205d.chunk.js.map": "/static/js/3.6be2205d.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.7e771517.chunk.css.map": "/static/css/main.7e771517.chunk.css.map",
-    "static/js/2.0031a49a.chunk.js.LICENSE.txt": "/static/js/2.0031a49a.chunk.js.LICENSE.txt",
+    "static/css/main.417e9c93.chunk.css.map": "/static/css/main.417e9c93.chunk.css.map",
+    "static/js/2.c5a4846d.chunk.js.LICENSE.txt": "/static/js/2.c5a4846d.chunk.js.LICENSE.txt",
     "static/media/MyCollegePhoto.082508c6.png": "/static/media/MyCollegePhoto.082508c6.png",
     "static/media/MyPhoto.ee88f25f.png": "/static/media/MyPhoto.ee88f25f.png",
-    "static/media/RI.466180a7.svg": "/static/media/RI.466180a7.svg",
+    "static/media/RI.6ab825d9.svg": "/static/media/RI.6ab825d9.svg",
     "static/media/college.min.0cd9b819.svg": "/static/media/college.min.0cd9b819.svg",
     "static/media/downwards.min.2e52a0e4.svg": "/static/media/downwards.min.2e52a0e4.svg",
     "static/media/facebook.min.b09e534f.svg": "/static/media/facebook.min.b09e534f.svg",
@@ -22,13 +22,13 @@
     "static/media/linkedin.min.76c1e18c.svg": "/static/media/linkedin.min.76c1e18c.svg",
     "static/media/reddit.min.1d727b52.svg": "/static/media/reddit.min.1d727b52.svg",
     "static/media/school.min.478a69d5.svg": "/static/media/school.min.478a69d5.svg",
-    "static/media/senior-school.min.aea2c13d.svg": "/static/media/senior-school.min.aea2c13d.svg",
+    "static/media/senior-school.min.3fd1ba51.svg": "/static/media/senior-school.min.3fd1ba51.svg",
     "static/media/toggle.min.f8ebb597.svg": "/static/media/toggle.min.f8ebb597.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b5835711.js",
-    "static/js/2.0031a49a.chunk.js",
-    "static/css/main.7e771517.chunk.css",
-    "static/js/main.1acacc73.chunk.js"
+    "static/js/2.c5a4846d.chunk.js",
+    "static/css/main.417e9c93.chunk.css",
+    "static/js/main.9c9aa41b.chunk.js"
   ]
 }

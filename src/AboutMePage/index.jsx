@@ -8,29 +8,34 @@ import MyCollegePhoto from "../Assets/Images/MyCollegePhoto.png";
 
 function AboutMePage() {
   return (
-    <section id="aboutmepage" className="m-1 p-1 pt-4">
-      <div className="aboutmepage__header container d-flex justify-content-center">
-        <div className="d-flex flex-column justify-content-center">
-          <h4 className="text-center text-secondary-color ">
-            Who I am Really?
-          </h4>
-          <h1>
-            <u>About Me</u>
-          </h1>
-        </div>
+    <section id="aboutmepage" className="m-2 p-2 pt-4">
+      <div className="aboutmepage__header container d-flex flex-column justify-content-center">
+        <h4 className="text-center text-secondary-color m-0">
+          Who I am Really?
+        </h4>
+        <h1 className="text-center">
+          <u>About Me</u>
+        </h1>
       </div>
-      <div className="aboutmepage__main mt-4">
+      <div className="aboutmepage__main mt-2">
         <div className="container">
           <div className="row">
-            <div className="aboutmepage__main__left col-12 col-md-5">
+            <div className="aboutmepage__main__left d-flex align-items-center col-12 col-md-5 flex-column">
               <img
                 className="img-fluid"
                 src={MyCollegePhoto}
                 alt="My College"
               />
+              <button
+                download
+                href="https://drive.google.com/u/0/uc?id=1jf__Ma9524uKlmjyoDLTKW53K1NnMDIo&export=download"
+                className="custom-btn mt-4"
+              >
+                Download CV
+              </button>
             </div>
             <div className="aboutmepage__main__right col-12 col-md-7 d-flex justify-content-center align-items-center">
-              <p className="mt-4 pt-4">
+              <p className="mt-2 p-2">
                 Well, I'm <span>Rishabh Anand</span>. Currently working as
                 a&nbsp;
                 <span>

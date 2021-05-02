@@ -1,0 +1,70 @@
+@import "../variables.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
+#tech_i_use {
+  .tech_i_use__main {
+    .tech_i_use__main__card__holder {
+      background-color: $base-bg-color1;
+      border-radius: 20px;
+
+      .tech_i_use__main__card__holder__heading {
+        text-decoration: underline;
+        border-bottom: 6px solid $base-bg-color2;
+      }
+      .tech_i_use__main__card__holder__main {
+        .tech_i_use__main__card__title {
+          align-self: center;
+          h3 {
+            text-align: center;
+            font-family: "Architects Daughter", cursive;
+          }
+          display: none;
+          opacity: 0;
+          transition: opacity 5s ease-out;
+        }
+        transition: opacity 5s ease-out;
+
+        .tech_i_use__main__card {
+          height: 109px;
+
+          .tech_i_use__main__card__title {
+            align-self: center;
+            h2 {
+              text-align: center;
+              font-family: "Architects Daughter", cursive;
+            }
+            display: none;
+            opacity: 0;
+          }
+
+          .tech_i_use__main__card__icon {
+            flex: 1 1 0%;
+            text-align: center;
+
+            img {
+              object-fit: cover;
+              height: 75px;
+            }
+          }
+        }
+
+        .tech_i_use__main__card:not(:last-child) {
+          border-bottom: 1px solid $base-bg-color2;
+        }
+
+        .tech_i_use__main__card:hover,
+        .tech_i_use__main__card:focus {
+          .tech_i_use__main__card__title {
+            display: block;
+            opacity: 1;
+          }
+
+          .tech_i_use__main__card__icon {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

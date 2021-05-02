@@ -29,41 +29,38 @@ const CardComponent = React.memo(({ title, year, location, image }) => (
 
 function EducationPage() {
   return (
-    <section
-      id="educationpage"
-      className="d-flex flex-column justify-content-center align-items-content"
-    >
-      <div className="educationpage__header container d-flex justify-content-center">
-        <div className="d-flex flex-column justify-content-center">
-          <h4 className="text-center text-secondary-color ">
-            Education History
-          </h4>
-          <h1>
-            <u>EDUCATION</u>
-          </h1>
-        </div>
+    <section id="educationpage" className="m-2 p-2 pt-4">
+      <div className="educationpage__header container flex-column justify-content-center">
+        <h4 className="text-center text-secondary-color m-0">
+          Education History
+        </h4>
+        <h1 className="text-center">
+          <u>EDUCATION</u>
+        </h1>
       </div>
-      <div className="educationpage__main container">
-        <div className="row flex-column flex-md-row">
-          <CardComponent
-            title="Senior Sec. 10th"
-            year="2014 -2015"
-            location="KV No.2 AFS, Srinagar, J&amp;K"
-            image={<SchoolSVG />}
-          />
-          <CardComponent
-            title="Higher Sec. - 12th"
-            year="2015 - 2017"
-            location="Guru Gobind Singh Sec, Sector 34, Chandigarh"
-            image={<SeniorSchoolSVG />}
-          />
+      <div className="educationpage__main mt-2">
+        <div className="container">
+          <div className="row flex-column flex-md-row">
+            <CardComponent
+              title="Senior Sec. 10th"
+              year="2014 -2015"
+              location="KV No.2 AFS, Srinagar, J&amp;K"
+              image={<SchoolSVG />}
+            />
+            <CardComponent
+              title="Higher Sec. - 12th"
+              year="2015 - 2017"
+              location="Guru Gobind Singh Sec, Sector 34, Chandigarh"
+              image={<SeniorSchoolSVG />}
+            />
 
-          <CardComponent
-            title="Graduation"
-            year="2017 - 2021*"
-            location="Chitkara University, Rajpura, Punjab"
-            image={<CollegeSVG />}
-          />
+            <CardComponent
+              title="Graduation"
+              year="2017 - 2021*"
+              location="Chitkara University, Rajpura, Punjab"
+              image={<CollegeSVG />}
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -1,20 +1,13 @@
 @import "../variables.scss";
 
 #educationpage {
-  padding-top: 25px;
-  padding-bottom: 25px;
-
-  .educationpage__main {
-    margin-top: 50px;
-  }
-
   .educationpage__main__card {
-    border-radius: 30px;
+    border-radius: 20px;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
-    background-color: $base-bg-color1;
+    background-color: $base-bg-color2;
     flex-grow: 1;
     flex-basis: 0;
     .educationpage__main__card__icon {

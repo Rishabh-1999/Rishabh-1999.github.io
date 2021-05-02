@@ -29,11 +29,24 @@ section:nth-of-type(2n) {
   background: $base-text-color2;
 }
 
-h3.section-name {
-  font-size: 14px;
-  font-family: "Open Sans";
-  color: $base-text-color2;
-  font-weight: bold;
+.custom-btn {
+  background-color: transparent;
   text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  color: $base-text-color2;
+  border: 2px solid $base-text-color2;
+  width: 150px;
+  height: 50px;
+  line-height: 46px;
   letter-spacing: 0.12em;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.custom-btn:hover {
+  background: $base-text-color2;
+  color: #000;
+  transition: 0.3s ease-out;
 }

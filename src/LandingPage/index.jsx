@@ -7,6 +7,8 @@ import "./index.scss";
 /* React Type Writer */
 import Typical from "react-typical";
 
+import { Link } from "react-scroll";
+
 /* Imgaes/SVG */
 import MyPhoto from "../Assets/Images/MyPhoto.png";
 import { ReactComponent as RISVG } from "../Assets/SVG/RI.svg";
@@ -48,21 +50,29 @@ function LandingPage() {
                   id="responsive-navbar-nav"
                 >
                   <div className="ml-auto align-items-center navbar-nav">
-                    <a className="nav-link" href="#landingpage">
+                    <Link className="nav-link" smooth={true} to="landingpage">
                       Home
-                    </a>
-                    <a className="nav-link" href="#aboutmepage">
+                    </Link>
+                    <Link className="nav-link" smooth={true} to="aboutmepage">
                       About Me
-                    </a>
-                    <a className="nav-link" href="#educationpage">
+                    </Link>
+                    <Link className="nav-link" smooth={true} to="educationpage">
                       Education
-                    </a>
-                    <a className="nav-link" href="#certificatepage">
+                    </Link>
+                    <Link className="nav-link" smooth={true} to="tech_i_use">
+                      Tech I Use
+                    </Link>
+                    <Link
+                      className="nav-link"
+                      smooth={true}
+                      to="certificatepage"
+                    >
                       Certificates
-                    </a>
+                    </Link>
                     <div className="nav-item show dropdown">
-                      <a
-                        href="#projects"
+                      <Link
+                        to="projects"
+                        smooth={true}
                         role="button"
                         aria-haspopup="true"
                         aria-expanded="false"
@@ -72,17 +82,25 @@ function LandingPage() {
                       >
                         Projects
                         <DownwardsSVG />
-                      </a>
+                      </Link>
                       <div
                         className="dropdown-menu"
                         aria-labelledby="basic-nav-dropdown"
                       >
-                        <a href="#" className="dropdown-item">
+                        <Link
+                          to="projects_in_react"
+                          smooth={true}
+                          className="dropdown-item"
+                        >
                           React
-                        </a>
-                        <a href="#" className="dropdown-item">
+                        </Link>
+                        <Link
+                          to="projects_in_nodejs"
+                          smooth={true}
+                          className="dropdown-item"
+                        >
                           Node JS
-                        </a>
+                        </Link>
                       </div>
                     </div>
                     <ul className="mb-0 landingpage__header__menu__social pl-15">
@@ -205,6 +223,15 @@ function LandingPage() {
               <p>
                 FullStack Developer( Intern ) at PreScience Decision Solutions
               </p>
+
+              <Link
+                to="aboutmepage"
+                className="text-secondary-color landingpage__main__right__bottom__text"
+                smooth={true}
+              >
+                Learn more
+                <DownwardsSVG />
+              </Link>
             </div>
           </div>
         </div>

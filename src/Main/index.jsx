@@ -7,6 +7,7 @@ import "./index.scss";
 import LandingPage from "../LandingPage";
 import AboutMePage from "../AboutMePage";
 import EducationPage from "../EducationPage";
+import TechIUsePage from "../TechIUsePage";
 import CertificatePage from "../CertificatePage";
 
 function Main() {
@@ -15,6 +16,7 @@ function Main() {
       <LandingPage />
       <AboutMePage />
       <EducationPage />
+      <TechIUsePage />
       <CertificatePage />
     </>
   );

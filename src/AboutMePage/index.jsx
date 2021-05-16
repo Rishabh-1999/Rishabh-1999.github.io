@@ -26,13 +26,25 @@ function AboutMePage() {
                 src={MyCollegePhoto}
                 alt="My College"
               />
-              <button
-                download
-                href="https://drive.google.com/u/0/uc?id=1jf__Ma9524uKlmjyoDLTKW53K1NnMDIo&export=download"
-                className="custom-btn mt-4"
-              >
-                Download CV
-              </button>
+              <div>
+                <a
+                  role="button"
+                  href="https://drive.google.com/u/0/uc?id=1jf__Ma9524uKlmjyoDLTKW53K1NnMDIo"
+                  className="custom-btn mt-4 mx-2"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View CV
+                </a>
+                <a
+                  role="button"
+                  download="RishabhAnand_CV"
+                  href="https://drive.google.com/u/0/uc?id=1jf__Ma9524uKlmjyoDLTKW53K1NnMDIo&export=download"
+                  className="custom-btn mt-4 mx-2"
+                >
+                  Download CV
+                </a>
+              </div>
             </div>
             <div className="aboutmepage__main__right col-12 col-md-7 d-flex justify-content-center align-items-center">
               <p className="mt-2 p-2">

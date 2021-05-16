@@ -19,6 +19,7 @@
         font-family: "Architects Daughter", cursive;
         span:hover {
           color: $base-text-color2;
+          transition: all 0.3s;
           font-size: 101%;
           font-weight: 700;
         }

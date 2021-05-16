@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@300;400;600;700;800&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+
 @import "./variables.scss";
 
 * {
@@ -11,6 +13,7 @@ body {
   font-family: "Open Sans", sans-serif !important;
   background-color: $base-bg-color1 !important;
   color: #dadada !important;
+  scroll-behavior: smooth;
 }
 
 a {

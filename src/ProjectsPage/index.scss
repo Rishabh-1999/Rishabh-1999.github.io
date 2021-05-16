@@ -1,0 +1,54 @@
+@import "../variables.scss";
+
+#projectspage {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  .projectspage__main {
+    margin-top: 50px;
+
+    .active {
+      background-color: #5e5e5e;
+      h4 {
+        font-size: 125%;
+      }
+    }
+
+    .projectspage__category > div {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .projectspage__card__container {
+      .projectspage__card {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 0;
+        min-width: 300px;
+        max-width: 35%;
+        min-height: 200px;
+        background-color: $base-bg-color1;
+        border-radius: 15px;
+
+        .projectspage__card__content {
+          img {
+            height: 30px;
+            width: 30px;
+          }
+        }
+
+        .badge {
+          background-color: $base-bg-color2;
+          border-radius: 12px;
+        }
+
+        &:hover,
+        :focus {
+          border: 1px solid $base-bg-color1;
+          transform: scale(1.03);
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}

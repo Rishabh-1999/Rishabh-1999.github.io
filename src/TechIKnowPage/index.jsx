@@ -7,11 +7,11 @@ import data from "./techiuse.js";
 
 function Card({ title, src }) {
   return (
-    <div className="tech_i_use__main__card row p-1 py-3">
-      <div className="tech_i_use__main__card__icon">
+    <div className="tech_i_know__main__card row p-1 py-3">
+      <div className="tech_i_know__main__card__icon">
         <img src={src} alt={title} />
       </div>
-      <div className="tech_i_use__main__card__title w-100">
+      <div className="tech_i_know__main__card__title w-100">
         <h2 className="text-secondary-color ">{title}</h2>
       </div>
     </div>
@@ -20,11 +20,11 @@ function Card({ title, src }) {
 
 function CardHolder({ heading, data }) {
   return (
-    <div className="tech_i_use__main__card__holder m-2 p-2">
-      <div className="tech_i_use__main__card__holder__heading text-center p-2">
+    <div className="tech_i_know__main__card__holder m-2 p-2">
+      <div className="tech_i_know__main__card__holder__heading text-center p-2">
         <h3>{heading}</h3>
       </div>
-      <div className="tech_i_use__main__card__holder__main p-1">
+      <div className="tech_i_know__main__card__holder__main p-1">
         {data.map((temp) => (
           <Card key={temp.title} {...temp} />
         ))}
@@ -35,16 +35,16 @@ function CardHolder({ heading, data }) {
 
 function TechIUsePage() {
   return (
-    <section id="tech_i_use" className="m-2 p-2 pt-4">
-      <div className="tech_i_use__headercontainer flex-column justify-content-center">
+    <section id="tech_i_know" className="m-2 p-2 pt-4">
+      <div className="tech_i_know__header container flex-column justify-content-center">
         <h4 className="text-center text-secondary-color m-0">
-          Knowledge I have
+          Knowledge I Gathered
         </h4>
         <h1 className="text-center">
-          <u>Tech I Use</u>
+          <u>Tech I Know</u>
         </h1>
       </div>
-      <div className="tech_i_use__main mt-2">
+      <div className="tech_i_know__main mt-2">
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-4">

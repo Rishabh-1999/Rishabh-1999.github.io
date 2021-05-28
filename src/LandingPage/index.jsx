@@ -9,6 +9,8 @@ import Typical from "react-typical";
 
 import { Link } from "react-scroll";
 
+import background__music from "../Assets/Audio/background__music.mp3";
+
 /* Imgaes/SVG */
 import MyPhoto from "../Assets/Images/MyPhoto.png";
 import { ReactComponent as RISVG } from "../Assets/SVG/RI.svg";
@@ -18,6 +20,7 @@ import { ReactComponent as LinkedinSVG } from "../Assets/SVG/linkedin.min.svg";
 import { ReactComponent as GithubSVG } from "../Assets/SVG/github.min.svg";
 import { ReactComponent as RedditSVG } from "../Assets/SVG/reddit.min.svg";
 import { ReactComponent as FacebookSVG } from "../Assets/SVG/facebook.min.svg";
+import ReactAudioPlayer from "react-audio-player";
 
 function LandingPage() {
   return (
@@ -59,8 +62,8 @@ function LandingPage() {
                     <Link className="nav-link" smooth={true} to="educationpage">
                       Education
                     </Link>
-                    <Link className="nav-link" smooth={true} to="tech_i_use">
-                      Tech I Use
+                    <Link className="nav-link" smooth={true} to="tech_i_know">
+                      Tech I Know
                     </Link>
                     <Link
                       className="nav-link"
@@ -108,18 +111,14 @@ function LandingPage() {
                         className="list-inline-item menu-border"
                         data-toggle="tooltip"
                         data-placement="top"
-                        title="Linkedin"
+                        title="Facebook"
                       >
                         <a
                           href="https://www.linkedin.com/in/rishabh-anand-b76711161/"
                           rel="noreferrer"
                           target="_blank"
                         >
-                          <LinkedinSVG
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Facebook"
-                          />
+                          <LinkedinSVG title="Linkedin" />
                         </a>
                       </li>
                       <li
@@ -133,7 +132,7 @@ function LandingPage() {
                           rel="noreferrer"
                           target="_blank"
                         >
-                          <GithubSVG />
+                          <GithubSVG title="GitHub" />
                         </a>
                       </li>
                       <li
@@ -147,7 +146,7 @@ function LandingPage() {
                           rel="noreferrer"
                           target="_blank"
                         >
-                          <RedditSVG />
+                          <RedditSVG title="Reddit" />
                         </a>
                       </li>
                       <li
@@ -161,11 +160,7 @@ function LandingPage() {
                           rel="noreferrer"
                           target="_blank"
                         >
-                          <FacebookSVG
-                            data-toggle="tooltip"
-                            data-placement="top"
-                            title="Facebook"
-                          />
+                          <FacebookSVG title="Facebook" />
                         </a>
                       </li>
                     </ul>
@@ -216,7 +211,7 @@ function LandingPage() {
             </div>
 
             <div className="landingpage__main__right d-none d-md-block col-xl-4 col-lg-4 col-md-4 col-sm-8 col-8">
-              <h3 className="text-left text-secondary-color ">INTRODUCTION</h3>
+              <h3 className="text-left text-secondary-color">INTRODUCTION</h3>
               <h3>
                 Full Stack Developer <br />@ PreScience
               </h3>
@@ -235,6 +230,7 @@ function LandingPage() {
             </div>
           </div>
         </div>
+        <ReactAudioPlayer src={background__music} autoPlay volume={0.3} muted />
       </div>
     </section>
   );

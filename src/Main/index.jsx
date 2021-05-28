@@ -5,21 +5,47 @@ import "./index.scss";
 
 /* Pages */
 import LandingPage from "../LandingPage";
-import AboutMePage from "../AboutMePage";
-import EducationPage from "../EducationPage";
-import ProjectPages from "../ProjectsPage";
-import TechIUsePage from "../TechIUsePage";
-import CertificatePage from "../CertificatePage";
+
+/* Lazy Pages */
+const AboutMePage = React.lazy(() => {
+  return import("../AboutMePage");
+});
+const EducationPage = React.lazy(() => {
+  return import("../EducationPage");
+});
+const ProjectPages = React.lazy(() => {
+  return import("../ProjectsPage");
+});
+const TechIKnowPage = React.lazy(() => {
+  return import("../TechIKnowPage");
+});
+const CertificatePage = React.lazy(() => {
+  return import("../CertificatePage");
+});
+
+function LazyPageLoad(props) {
+  return <React.Suspense fallback={<></>}>{props.children}</React.Suspense>;
+}
 
 function Main() {
   return (
     <>
       <LandingPage />
-      <AboutMePage />
-      <EducationPage />
-      <ProjectPages />
-      <TechIUsePage />
-      <CertificatePage />
+      <LazyPageLoad>
+        <AboutMePage />
+      </LazyPageLoad>
+      <LazyPageLoad>
+        <EducationPage />
+      </LazyPageLoad>
+      <LazyPageLoad>
+        <ProjectPages />
+      </LazyPageLoad>
+      <LazyPageLoad>
+        <TechIKnowPage />
+      </LazyPageLoad>
+      <LazyPageLoad>
+        <CertificatePage />
+      </LazyPageLoad>
     </>
   );
 }

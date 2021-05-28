@@ -12,13 +12,19 @@
     flex-basis: 0;
     .educationpage__main__card__icon {
       svg {
-        height: 90px;
-        width: 90px;
+        height: 100px;
+        width: 100px;
         fill: $base-text-color1;
       }
+    }
 
-      svg:hover {
+    &:hover {
+      transform: scale(1.05);
+      svg {
         fill: $base-text-color2;
+      }
+      h3 {
+        color: $base-text-color2 !important;
       }
     }
   }

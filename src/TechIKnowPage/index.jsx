@@ -3,16 +3,32 @@ import React from "react";
 /* Styles */
 import "./index.scss";
 
-import data from "./techiuse.js";
+import { data, mapper } from "./techiuse.js";
 
-function Card({ title, src }) {
+/* Images/SVG */
+import starfilledSVG from "../Assets/SVG/star_filled.svg";
+import staremptySVG from "../Assets/SVG/star_empty.svg";
+
+function Card({ title, src, rating }) {
   return (
     <div className="tech_i_know__main__card row p-1 py-3">
-      <div className="tech_i_know__main__card__icon">
+      <div className="tech_i_know__main__card__icon p-1">
         <img src={src} alt={title} />
       </div>
-      <div className="tech_i_know__main__card__title w-100">
-        <h2 className="text-secondary-color ">{title}</h2>
+      <div className="tech_i_know__main__card__hovered w-100 p-2">
+        <h5 className="text-secondary-color">{title}</h5>
+        <h2 className="text-secondary-color">
+          {rating - 1 <= 4 && mapper[rating - 1]}
+        </h2>
+        <span className="float-right">
+          {new Array(4)
+            .fill(false)
+            .fill(true, 0, rating)
+            .map((filled) => {
+              if (filled) return <img src={starfilledSVG} alt="star filled" />;
+              else return <img src={staremptySVG} alt="star empty" />;
+            })}
+        </span>
       </div>
     </div>
   );

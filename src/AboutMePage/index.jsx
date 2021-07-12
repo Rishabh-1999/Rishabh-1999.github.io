@@ -6,31 +6,29 @@ import "./index.scss";
 /* Images/SVG */
 import MyCollegePhoto from "../Assets/Images/MyCollegePhoto.png";
 
-function AboutMePage() {
+function about_me_page() {
   return (
-    <section id="aboutmepage" className="m-2 p-2 pt-4">
-      <div className="aboutmepage__header container d-flex flex-column justify-content-center">
-        <h4 className="text-center text-secondary-color m-0">
-          Who I am Really?
-        </h4>
-        <h1 className="text-center">
+    <section id="about_me_page" className="m-2 p-2 pt-4">
+      <div className="about_me_page__header text-center">
+        <h4 className="text-secondary-color m-0">Who I am Really?</h4>
+        <h1>
           <u>About Me</u>
         </h1>
       </div>
-      <div className="aboutmepage__main mt-2">
+      <div className="about_me_page__main mt-3 mt-xl-5">
         <div className="container">
           <div className="row">
-            <div className="aboutmepage__main__left d-flex align-items-center col-12 col-md-5 flex-column">
+            <div className="about_me_page__main__left d-flex align-items-center col-12 col-md-5 flex-column">
               <img
                 className="img-fluid"
                 src={MyCollegePhoto}
                 alt="My College"
               />
-              <div>
+              <div className="mt-4">
                 <a
                   role="button"
                   href="https://drive.google.com/u/0/uc?id=1jf__Ma9524uKlmjyoDLTKW53K1NnMDIo"
-                  className="custom-btn mt-4 mx-2"
+                  className="custom-btn m-2"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -40,13 +38,13 @@ function AboutMePage() {
                   role="button"
                   download="RishabhAnand_CV"
                   href="https://drive.google.com/u/0/uc?id=1jf__Ma9524uKlmjyoDLTKW53K1NnMDIo&export=download"
-                  className="custom-btn mt-4 mx-2"
+                  className="custom-btn m-2"
                 >
                   Download CV
                 </a>
               </div>
             </div>
-            <div className="aboutmepage__main__right col-12 col-md-7 d-flex justify-content-center align-items-center">
+            <div className="about_me_page__main__right col-12 col-md-7 d-flex justify-content-center align-items-center">
               <p className="mt-2 p-2">
                 Well, I'm <span>Rishabh Anand</span>. Currently working as
                 a&nbsp;
@@ -60,12 +58,12 @@ function AboutMePage() {
                 &nbsp;.On the tech side, I like to do&nbsp;
                 <span>
                   Front End development and learn new things related to React
-                  and Web Development
+                  JS, Node JS and other technology related to Web development
                 </span>
-                . My strengths is that I like to take up&nbsp;
+                . My strengths is that I like to take up &nbsp;
                 <span>
-                  challenges that are unique and mostly it should be my first
-                  time
+                  challenges and complete it even though how much hardship I
+                  face
                 </span>
                 . My short term goal is that I want to be in a &nbsp;
                 <span>
@@ -86,4 +84,4 @@ function AboutMePage() {
   );
 }
 
-export default React.memo(AboutMePage);
+export default about_me_page;

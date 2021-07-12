@@ -1,9 +1,9 @@
-@import "../variables.scss";
+@import "../SCSS/variables.scss";
 
 #tech_i_know {
   .tech_i_know__main {
     .tech_i_know__main__card__holder {
-      background-color: $base-bg-color2;
+      background-color: $light-blue-tuna;
       border-radius: 20px;
 
       .tech_i_know__main__card__holder__heading {
@@ -48,7 +48,7 @@
         }
 
         .tech_i_know__main__card:not(:last-child) {
-          border-bottom: 1px solid $base-bg-color2;
+          border-bottom: 1px solid $light-blue-tuna;
         }
 
         .tech_i_know__main__card:hover,

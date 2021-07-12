@@ -1,4 +1,4 @@
-@import "../variables.scss";
+@import "../SCSS/variables.scss";
 
 #projectspage {
   padding-top: 25px;
@@ -27,7 +27,7 @@
         min-width: 300px;
         max-width: 35%;
         min-height: 200px;
-        background-color: $base-bg-color1;
+        background-color: $blue-tuna;
         border-radius: 15px;
 
         .projectspage__card__content {
@@ -38,13 +38,13 @@
         }
 
         .badge {
-          background-color: $base-bg-color2;
+          background-color: $light-blue-tuna;
           border-radius: 12px;
         }
 
         &:hover,
         :focus {
-          border: 1px solid $base-bg-color1;
+          border: 1px solid $blue-tuna;
           transform: scale(1.03);
           transition: all 0.3s;
         }

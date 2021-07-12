@@ -1,13 +1,41 @@
-@import "../variables.scss";
+@import "../SCSS/variables.scss";
 
-#certificatepage {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  .certificatepage__main {
-    margin-top: 50px;
+#certificate_page {
+  .certificate_page__main {
+    .certificate_list_container {
+      overflow-y: auto;
+      height: 550px;
 
-    .active {
-      background-color: #5e5e5e;
+      &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        border-radius: 25px;
+      }
+
+      .active {
+        background-color: #5e5e5e;
+        border-bottom: 5px solid $orange-anzac;
+      }
+
+      .nav-link h5 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .certificate_list_container:hover,
+    .certificate_list_container:focus {
+      &::-webkit-scrollbar {
+        width: 10px;
+        background: unset;
+      }
     }
   }
 }

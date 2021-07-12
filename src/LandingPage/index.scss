@@ -1,16 +1,15 @@
-@import "../variables.scss";
+@import "../SCSS/variables.scss";
 
-#landingpage {
-  .pt-50 {
+#landing_page {
+  .p-t-50 {
     padding-top: 50px;
   }
 
-  .landingpage__header__menu {
-    // Anch Tage
+  .landing_page__header__menu {
     a {
       font-size: 16px;
       position: relative;
-      color: #dadada !important;
+      color: $grey-alto;
     }
 
     a:hover::after {
@@ -25,7 +24,7 @@
       left: 0;
       width: 100%;
       height: 3px;
-      background: $base-text-color2;
+      background: $orange-anzac;
       transform: scaleX(0);
       transition: transform 0.5s;
       transform-origin: right;
@@ -38,28 +37,21 @@
     }
 
     .navbar-nav > .nav-link {
-      margin-right: 15px;
+      margin-right: 16px;
       cursor: pointer;
     }
 
-    // Drop Down
-    .navbar-nav .dropdown {
-      margin-right: 15px;
-      text-align: center;
-    }
-
+    /* DropDown */
     .dropdown-menu {
       background-color: rgba(67, 67, 70, 0.3);
     }
 
     .dropdown-menu a {
-      background-color: transparent !important;
-      color: $base-text-color1 !important;
-      cursor: pointer;
+      margin: 4px 0;
     }
 
     .dropdown-menu a:hover {
-      color: $base-text-color2 !important;
+      color: $orange-anzac !important;
     }
 
     a.dropdown-toggle:after {
@@ -71,16 +63,9 @@
         background-color: #333;
         padding: 8px 0 20px 0;
       }
-      .newsletter-area .social-links a {
-        font-size: 16px;
-      }
     }
 
     // Social
-    ul li a:hover,
-    ul li a:focus {
-      text-decoration: none;
-    }
 
     ul li:last-child {
       margin-right: 15px !important;
@@ -92,42 +77,63 @@
       width: 16px;
     }
 
-    .landingpage__header__menu__social {
+    .landing_page__header__menu__social {
       border-left: 2px solid #737377;
+
       li {
-        margin-right: 10px !important;
+        margin-right: 16px !important;
       }
+
       li:first-child {
-        margin-left: 10px;
+        margin-left: 15px;
       }
+
       a svg {
         height: 23px;
         width: 23px;
-        margin-right: 10px;
         margin-bottom: 5px;
-        fill: $base-text-color1;
+        fill: $grey-nobel;
       }
-      li:last-child {
-        margin-right: 0px;
+
+      a:hover svg {
+        fill: $orange-anzac;
       }
     }
   }
 
-  .landingpage__main {
-    .pt-130 {
+  .landing_page__main {
+    .p-t-130 {
       padding-top: 130px;
     }
 
-    .landingpage__main__left {
+    .landing_page__main__left {
       .horizontal-dash {
         margin-top: 31px;
         margin-bottom: 14px;
+        width: 100px;
       }
     }
 
-    .landingpage__main__right {
-      .landingpage__main__right__bottom__text {
+    .landing_page__main__right {
+      .landing_page__main__right__bottom__text {
         font-size: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .row {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .landing_page__main__left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      & > div {
+        text-align: center;
       }
     }
   }

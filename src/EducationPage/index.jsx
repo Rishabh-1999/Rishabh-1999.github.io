@@ -9,9 +9,11 @@ import { ReactComponent as SeniorSchoolSVG } from "../Assets/SVG/senior-school.m
 import { ReactComponent as CollegeSVG } from "../Assets/SVG/college.min.svg";
 
 const CardComponent = React.memo(({ title, year, location, image }) => (
-  <div className="educationpage__main__card p-1 m-3">
-    <div className="educationpage__main__card__icon m-4 p-4">{image}</div>
-    <div className="educationpage__main__card__content text-center">
+  <div className="education_details_page__main__card p-1 m-3">
+    <div className="education_details_page__main__card__icon text-center m-4 p-4">
+      {image}
+    </div>
+    <div className="education_details_page__main__card__content text-center">
       <h3 className="m-0">
         <strong>
           <u>{title}</u>
@@ -27,22 +29,20 @@ const CardComponent = React.memo(({ title, year, location, image }) => (
   </div>
 ));
 
-function EducationPage() {
+function education_details_page() {
   return (
-    <section id="educationpage" className="m-2 p-2 pt-4">
-      <div className="educationpage__header container flex-column justify-content-center">
-        <h4 className="text-center text-secondary-color m-0">
-          Education History
-        </h4>
-        <h1 className="text-center">
+    <section id="education_details_page" className="m-2 p-2 pt-4">
+      <div className="education_details_page__header text-center">
+        <h4 className="text-secondary-color m-0">Education History</h4>
+        <h1>
           <u>EDUCATION</u>
         </h1>
       </div>
-      <div className="educationpage__main mt-2">
+      <div className="education_details_page__main mt-4 mt-xl-5">
         <div className="container">
           <div className="row flex-column flex-md-row">
             <CardComponent
-              title="Senior Sec. 10th"
+              title="Senior Sec. - 10th"
               year="2014 -2015"
               location="KV No.2 AFS, Srinagar, J&amp;K"
               image={<SchoolSVG />}
@@ -50,7 +50,7 @@ function EducationPage() {
             <CardComponent
               title="Higher Sec. - 12th"
               year="2015 - 2017"
-              location="Guru Gobind Singh Sec, Sector 34, Chandigarh"
+              location="SGGS Senior Sec. School, Sector 34, Chandigarh"
               image={<SeniorSchoolSVG />}
             />
 
@@ -67,4 +67,4 @@ function EducationPage() {
   );
 }
 
-export default React.memo(EducationPage);
+export default React.memo(education_details_page);

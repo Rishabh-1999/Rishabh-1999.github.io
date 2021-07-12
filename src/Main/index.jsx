@@ -29,7 +29,7 @@ function LazyPageLoad(props) {
 
 function Main() {
   return (
-    <>
+    <main>
       <LandingPage />
       <LazyPageLoad>
         <AboutMePage />
@@ -46,7 +46,7 @@ function Main() {
       <LazyPageLoad>
         <CertificatePage />
       </LazyPageLoad>
-    </>
+    </main>
   );
 }
 

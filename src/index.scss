@@ -2,51 +2,23 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 
-@import "./variables.scss";
+@import "./SCSS/variables.scss";
 
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Open Sans", sans-serif !important;
-  background-color: $base-bg-color1 !important;
-  color: #dadada !important;
+  background-color: $blue-tuna !important;
+  color: $grey-alto;
   scroll-behavior: smooth;
 }
 
-a {
-  color: $base-text-color1;
-  font-size: 22px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-a:hover {
-  color: $base-text-color2;
-  text-decoration: none;
-}
-
-a:focus,
-a:hover,
-.portfolio-cat a:hover,
-.footer -menu li a:hover {
-  color: $base-text-color2;
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Open Sans", sans-serif;
-  color: #dadada;
-  font-weight: 700;
-}
-
+// Typography
 h1 a,
 h2 a,
 h3 a,
@@ -58,140 +30,71 @@ h6 a {
 
 h1 {
   font-size: 50px;
-  font-weight: 800;
   line-height: 60px;
+  font-weight: 800;
 }
 
 h2 {
   font-size: 35px;
   line-height: 45px;
-  color: #dadada;
+  color: $grey-alto;
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 700;
 }
 
 h4 {
   font-size: 20px;
   line-height: 30px;
+  font-weight: 700;
 }
 
 h5 {
   font-size: 18px;
+  font-weight: 700;
 }
 
 h6 {
   font-size: 16px;
-}
-
-li {
-  list-style: none;
+  font-weight: 700;
 }
 
 p {
   font-size: 16px;
   font-weight: normal;
   line-height: 26px;
-  color: #dadada;
+  color: $grey-alto;
   margin-bottom: 20px;
   font-family: "Nunito", sans-serif;
 }
 
-/* 
-
-.bgp {
-  background: #2e2e35;
+// Anchor Tag
+a {
+  color: $grey-nobel;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.bgs {
-  background: #34343b;
-} */
+a:hover {
+  color: $orange-anzac;
+  text-decoration: none;
+}
 
-/* .vc {
-  height: 27px;
-  width: 3px;
-  background: #dadada;
-  display: inline-block;
-  margin-left: 14px;
-  margin-right: 14px;
-  margin-bottom: -7px;
-} */
+a:focus,
+a:hover,
+.portfolio-cat a:hover,
+.footer -menu li a:hover {
+  color: $orange-anzac;
+  text-decoration: none;
+}
 
-/* .ct-btn {
-  text-transform: uppercase;
-  font-family: "Nunito", sans-serif;
-  font-size: 14px;
-  color: #e4aa48;
-  border: 2px solid #e4aa48;
-  width: 150px;
-  height: 50px;
-  line-height: 46px;
-  letter-spacing: 0.12em;
-  text-align: center;
-  display: inline-block;
-  cursor: pointer;
-} */
-/* 
-.ct-btn:hover {
-  background: #e4aa48;
-  color: #000;
-  transition: 0.3s ease-out;
-} */
+li {
+  list-style: none;
+}
 
-/* .mr-btn {
-  font-size: 14px;
-  line-height: 24px;
-  color: #e4aa48;
-  display: inline-block;
-  cursor: pointer;
-} */
-
-/* .section-title h2 {
-  margin-bottom: 11px;
-  font-size: 35px;
-  line-height: 45px;
-  color: #dadada;
-  font-weight: 700;
-} */
-/* 
-.section-title p {
-  margin-bottom: 13px;
-} */
-
-/* .btn-animation {
-  position: relative;
-} */
-/* 
-.btn-animation::after {
-  position: absolute;
-  content: "";
-  top: 110%;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #e4aa48;
-  transform: scaleX(0);
-  transition: transform 0.5s;
-  transform-origin: right;
-} */
-
-/* .btn-animation:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-} */
-
-/* .section-ptb {
-  padding-top: 120px;
-  padding-bottom: 120px;
-} */
-/* .section-ptb-2 {
-  padding-top: 120px;
-  padding-bottom: 104px;
-} */
-/* .section-pt {
-  padding-top: 120px;
-} */
-/* .section-pb {
-  padding-bottom: 120px;
-} */
-/* pseudo classes */
 *::-moz-selection {
   background: #fff;
   text-shadow: none;
@@ -217,6 +120,20 @@ p {
   color: #949494;
   font-size: 26px;
   text-align: center;
+}
+
+*::-moz-placeholder {
+  color: #b5b5b5;
+  font-size: 16px;
+  opacity: 1;
+  text-align: left;
+}
+
+*::-ms-input-placeholder {
+  color: #b5b5b5;
+  font-size: 16px;
+  opacity: 1;
+  text-align: left;
 }
 
 *::placeholder {

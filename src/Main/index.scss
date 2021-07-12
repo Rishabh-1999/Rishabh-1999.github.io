@@ -1,32 +1,24 @@
-@import "../variables.scss";
+@import "../SCSS/variables.scss";
 
-section {
-  min-height: 100vh;
+// Theme
+// Starting
+
+.text-secondary-color {
+  color: $orange-anzac;
 }
 
-section:nth-of-type(n) {
-  background-color: $base-bg-color1 !important;
-}
-
-section:nth-of-type(2n) {
-  background-color: $base-bg-color2 !important;
-}
-
-.img {
+img {
   max-width: 100%;
   -webkit-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   height: auto;
 }
 
-.text-secondary-color {
-  color: $base-text-color2;
-}
-
 .horizontal-dash {
-  width: 40px;
-  height: 2px;
-  background: $base-text-color2;
+  width: 100%;
+  height: 3px;
+  background: $orange-anzac;
 }
 
 .custom-btn {
@@ -34,8 +26,8 @@ section:nth-of-type(2n) {
   text-transform: uppercase;
   font-family: "Nunito", sans-serif;
   font-size: 14px;
-  color: $base-text-color2;
-  border: 2px solid $base-text-color2;
+  color: $orange-anzac;
+  border: 2px solid $orange-anzac;
   width: 150px;
   height: 50px;
   line-height: 46px;
@@ -46,7 +38,32 @@ section:nth-of-type(2n) {
 }
 
 .custom-btn:hover {
-  background: $base-text-color2;
+  background: $orange-anzac;
   color: #000;
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
   transition: 0.3s ease-out;
+}
+
+// Ending
+
+section {
+  min-height: 100vh;
+}
+
+@media (max-width: 991px) {
+  section {
+    min-height: unset;
+    max-height: -webkit-max-content;
+    max-height: -moz-max-content;
+    max-height: max-content;
+  }
+}
+
+section:nth-of-type(n) {
+  background-color: $blue-tuna;
+}
+
+section:nth-of-type(2n) {
+  background-color: $light-blue-tuna;
 }

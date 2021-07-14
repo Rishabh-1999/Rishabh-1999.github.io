@@ -95,7 +95,7 @@ const ProjectsArray = [
 ];
 
 function ProjectsViewer({ active }) {
-  const selected_projects_arary =
+  const selected_projects_array =
     active === "All"
       ? ProjectsArray.slice(0, 6)
       : ProjectsArray.filter((temp) => {
@@ -106,17 +106,17 @@ function ProjectsViewer({ active }) {
         });
 
   return (
-    <div className="d-flex flex-wrap justify-content-center projectspage__card__container">
-      {selected_projects_arary.map((temp) => {
+    <div className="d-flex flex-wrap justify-content-center projects_page__card__container">
+      {selected_projects_array.map((temp) => {
         return (
           <div
             key={temp.name}
-            className="projectspage__card m-2 p-3 d-flex flex-column shadow-lg"
+            className="projects_page__card m-2 p-3 d-flex flex-column shadow-lg"
           >
             <h4>
               <u>{temp.name}</u>
             </h4>
-            <div className="projectspage__card__content">
+            <div className="projects_page__card__content">
               <div className="m-2 mb-3 d-flex justify-content-around">
                 {temp.githubLink && (
                   <span>
@@ -150,18 +150,16 @@ function ProjectsPage() {
   const [active, setActive] = React.useState("All");
 
   return (
-    <section id="projectspage" className="m-2 p-2 pt-4">
-      <div className="projectspage__header container d-flex flex-column justify-content-center">
-        <h4 className="text-center text-secondary-color m-0">
-          Knowledge Factor
-        </h4>
-        <h1 className="text-center">
+    <section id="projects_page" className="m-2 p-2 pt-4">
+      <div className="projects_page__header text-center">
+        <h4 className="text-secondary-color m-0">Knowledge Factor</h4>
+        <h1>
           <u>Projects</u>
         </h1>
       </div>
-      <div className="projectspage__main mt-2">
+      <div className="projects_page__main mt-4 mt-xl-5">
         <div className="container">
-          <div className="projectspage__category d-none d-md-flex justify-content-center mb-2 border-bottom pb-2">
+          <div className="projects_page__category d-none d-md-flex justify-content-center mb-2 border-bottom pb-2">
             {CategoryArray.map((category, i) => {
               return (
                 <div

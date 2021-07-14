@@ -2,6 +2,10 @@
 
 #certificate_page {
   .certificate_page__main {
+    .row > div:nth-child(1) {
+      border-right: 1px solid $grey-alto;
+    }
+
     .certificate_list_container {
       overflow-y: auto;
       height: 550px;
@@ -17,7 +21,7 @@
       }
 
       .active {
-        background-color: #5e5e5e;
+        background-color: $grey-scorpion;
         border-bottom: 5px solid $orange-anzac;
       }
 
@@ -30,11 +34,38 @@
       }
     }
 
+    @media (max-width: $md) {
+      .certificate_list_container {
+        height: unset;
+      }
+
+      #certificate-tab select {
+        text-overflow: ellipsis;
+        width: calc(100% - 2 * 8px);
+      }
+
+      .row > div:nth-child(1) {
+        border-right: unset;
+      }
+    }
+
     .certificate_list_container:hover,
     .certificate_list_container:focus {
       &::-webkit-scrollbar {
         width: 10px;
         background: unset;
+      }
+    }
+
+    #certificate-tabContent {
+      iframe {
+        height: 525px;
+      }
+
+      @media (max-width: $md) {
+        iframe {
+          height: 325px;
+        }
       }
     }
   }

@@ -1,26 +1,26 @@
 @import "../SCSS/variables.scss";
 
-#projectspage {
+#projects_page {
   padding-top: 25px;
   padding-bottom: 25px;
-  .projectspage__main {
+  .projects_page__main {
     margin-top: 50px;
 
     .active {
-      background-color: #5e5e5e;
+      background-color: $grey-scorpion;
       h4 {
         font-size: 125%;
       }
     }
 
-    .projectspage__category > div {
+    .projects_page__category > div {
       &:hover {
         transform: scale(1.1);
       }
     }
 
-    .projectspage__card__container {
-      .projectspage__card {
+    .projects_page__card__container {
+      .projects_page__card {
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 0;
@@ -30,7 +30,7 @@
         background-color: $blue-tuna;
         border-radius: 15px;
 
-        .projectspage__card__content {
+        .projects_page__card__content {
           img {
             height: 30px;
             width: 30px;

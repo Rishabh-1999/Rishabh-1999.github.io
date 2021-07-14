@@ -3,6 +3,9 @@ import React from "react";
 /* Styles */
 import "./index.scss";
 
+/* Utils */
+import { md_width, getWindowDimensions } from "../Utils/windowSize";
+
 const CertificateArray = [
   {
     name: "   Server-side Development with NodeJS, Express and MongoDB(Coursera)",
@@ -42,9 +45,53 @@ const CertificateArray = [
 ];
 
 function CertificatePage() {
+  const [certificates, set_certificates] = React.useState(CertificateArray);
+  const [stack_selected, set_stack_selected] = React.useState("all");
   const [activeIndex, set_activeIndex] = React.useState(0);
+  const [width, set_width] = React.useState(getWindowDimensions());
+
+  // eslint-disable-next-line no-unused-vars
+  const [stacks, set_stacks] = React.useState(() => {
+    const certificates = new Set();
+
+    CertificateArray.forEach((certificate_temp) => {
+      certificate_temp?.stack.forEach((temp) => certificates.add(temp));
+    });
+
+    return Array.from(certificates);
+  }, []);
+
+  React.useEffect(() => {
+    let temp_array = [];
+
+    if (stack_selected !== "all")
+      CertificateArray.forEach((temp) => {
+        if (temp.stack && temp.stack.includes(stack_selected)) {
+          temp_array.push(temp);
+        }
+      });
+    else temp_array = CertificateArray;
+
+    set_certificates(temp_array);
+  }, [stack_selected]);
+
+  const setWindowSize = () => {
+    const width = getWindowDimensions();
+    set_width(width);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", setWindowSize);
+    return () => {
+      window.removeEventListener("resize", setWindowSize);
+    };
+  }, []);
 
   const selected_data = CertificateArray[activeIndex];
+
+  const handleSelect = (e) => {
+    set_stack_selected(e.target.value);
+  };
 
   return (
     <section id="certificate_page" className="m-2 p-2 pt-4">
@@ -54,27 +101,52 @@ function CertificatePage() {
           <u>Certificate</u>
         </h1>
       </div>
-      <div className="certificate_page__main container mt-4 mt-xl-5">
+      <div className="certificate_page__main mt-4 mt-xl-5">
         <div className="container">
+          {stacks && Array.isArray(stacks) && (
+            <select className="ml-md-5" onChange={handleSelect}>
+              <option value={"all"}>Show All Certificate</option>
+              {stacks.map((temp) => {
+                return (
+                  <option key={temp} value={temp}>
+                    {temp}
+                  </option>
+                );
+              })}
+            </select>
+          )}
           <div className="row">
             <div className="col-md-4 col-12">
-              <div
-                className="nav nav-pills certificate_list_container"
-                id="certificate-tab"
-              >
-                {CertificateArray.map((temp, index) => {
-                  return (
-                    <div
-                      key={temp.name}
-                      className={`nav-link mb-1 ${
-                        index === activeIndex ? "active" : ""
-                      }`}
-                      onClick={() => set_activeIndex(index)}
-                    >
-                      <h5> {temp.name}</h5>
-                    </div>
-                  );
-                })}
+              <div className="certificate_list_container" id="certificate-tab">
+                {md_width > width ? (
+                  <>
+                    <select onChange={(e) => set_activeIndex(e.target.value)}>
+                      {certificates.map((temp, index) => {
+                        return (
+                          <option key={temp.name} value={index}>
+                            {temp.name}
+                          </option>
+                        );
+                      })}
+                    </select>
+                  </>
+                ) : (
+                  <>
+                    {certificates.map((temp, index) => {
+                      return (
+                        <div
+                          key={temp.name}
+                          className={`nav-link mb-1 ${
+                            index === activeIndex ? "active" : ""
+                          }`}
+                          onClick={() => set_activeIndex(index)}
+                        >
+                          <h5> {temp.name}</h5>
+                        </div>
+                      );
+                    })}
+                  </>
+                )}
               </div>
             </div>
             <div className="col-md-8 col-12">
@@ -83,7 +155,6 @@ function CertificatePage() {
                   <iframe
                     title={selected_data.name}
                     src={selected_data.url}
-                    height="525px"
                     width="100%"
                     allowFullScreen=""
                     loading="lazy"

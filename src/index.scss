@@ -95,18 +95,29 @@ li {
   list-style: none;
 }
 
+select {
+  padding: 8px 16px;
+  margin: 12px;
+  background: $grey-scorpion;
+  outline: 0;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 700;
+  color: $white;
+}
+
 *::-moz-selection {
-  background: #fff;
+  background: $white;
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: #fff;
+  background: $white;
   text-shadow: none;
 }
 
 ::selection {
-  background: #fff;
+  background: $white;
   text-shadow: none;
 }
 

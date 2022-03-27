@@ -4,23 +4,23 @@ import React from "react";
 import "./index.scss";
 
 /* Pages */
-import LandingPage from "../LandingPage";
+import LandingPage from "../Pages/LandingPage";
 
 /* Lazy Pages */
 const AboutMePage = React.lazy(() => {
-  return import("../AboutMePage");
+  return import("../Pages/AboutMePage");
 });
 const EducationPage = React.lazy(() => {
-  return import("../EducationPage");
+  return import("../Pages/EducationPage");
 });
 const ProjectPages = React.lazy(() => {
-  return import("../ProjectsPage");
+  return import("../Pages/ProjectsPage");
 });
 const TechIKnowPage = React.lazy(() => {
-  return import("../TechIKnowPage");
+  return import("../Pages/TechIKnowPage");
 });
 const CertificatePage = React.lazy(() => {
-  return import("../CertificatePage");
+  return import("../Pages/CertificatePage");
 });
 
 function LazyPageLoad(props) {
@@ -38,10 +38,10 @@ function Main() {
         <EducationPage />
       </LazyPageLoad>
       <LazyPageLoad>
-        <ProjectPages />
+        <TechIKnowPage />
       </LazyPageLoad>
       <LazyPageLoad>
-        <TechIKnowPage />
+        <ProjectPages />
       </LazyPageLoad>
       <LazyPageLoad>
         <CertificatePage />

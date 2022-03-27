@@ -1,0 +1,29 @@
+@import "../../SCSS/variables.scss";
+
+#education_details_page {
+  .education_details_page__main__card {
+    background-color: $light-blue-tuna;
+
+    svg {
+      height: 120px;
+      width: 120px;
+      fill: $grey-nobel;
+    }
+
+    &:hover {
+      border: 5px solid $orange-anzac;
+      -webkit-transform: scale(1.015);
+      -ms-transform: scale(1.015);
+      transform: scale(1.015);
+
+      svg {
+        fill: $orange-anzac;
+      }
+
+      h3,
+      p {
+        color: $orange-anzac !important;
+      }
+    }
+  }
+}

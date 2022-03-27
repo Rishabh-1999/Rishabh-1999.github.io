@@ -1,14 +1,13 @@
-@import "../SCSS/variables.scss";
+@import "../../SCSS/variables.scss";
 
 #certificate_page {
   .certificate_page__main {
-    .row > div:nth-child(1) {
-      border-right: 1px solid $grey-alto;
-    }
-
     .certificate_list_container {
       overflow-y: auto;
       height: 550px;
+
+      max-width: 100%;
+      width: 100%;
 
       &::-webkit-scrollbar {
         width: 0px;
@@ -31,6 +30,23 @@
         -webkit-line-clamp: 3;
         display: -webkit-box;
         -webkit-box-orient: vertical;
+      }
+
+      @media (min-width: $md) {
+        max-width: 40%;
+        width: 40%;
+      }
+    }
+
+    .tab-content {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    @media (min-width: $md) {
+      .content {
+        max-width: 60%;
+        width: 60%;
       }
     }
 
@@ -60,10 +76,8 @@
     #certificate-tabContent {
       iframe {
         height: 525px;
-      }
 
-      @media (max-width: $md) {
-        iframe {
+        @media (max-width: $md) {
           height: 325px;
         }
       }

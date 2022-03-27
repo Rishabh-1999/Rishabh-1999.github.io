@@ -1,12 +1,5 @@
 @import "../SCSS/variables.scss";
 
-// Theme
-// Starting
-
-.text-secondary-color {
-  color: $orange-anzac;
-}
-
 img {
   max-width: 100%;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -35,23 +28,22 @@ img {
   text-align: center;
   display: inline-block;
   cursor: pointer;
-}
 
-.custom-btn:hover {
-  background: $orange-anzac;
-  color: #000;
-  -webkit-transition: 0.3s ease-out;
-  -o-transition: 0.3s ease-out;
-  transition: 0.3s ease-out;
+  &:hover {
+    background: $orange-anzac;
+    color: #000;
+    -webkit-transition: 0.3s ease-out;
+    -o-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+  }
 }
-
-// Ending
 
 section {
   min-height: 100vh;
+  margin: 0 !important;
 }
 
-@media (max-width: 991px) {
+@media (max-width: $lg) {
   section {
     min-height: unset;
     max-height: -webkit-max-content;

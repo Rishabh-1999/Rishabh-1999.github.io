@@ -4,7 +4,7 @@ import React from "react";
 import "./index.scss";
 
 /* Utils */
-import { md_width, getWindowDimensions } from "../Utils/windowSize";
+import { md_width, getWindowDimensions } from "../../utils/windowSize";
 
 const CertificateArray = [
   {
@@ -94,17 +94,17 @@ function CertificatePage() {
   };
 
   return (
-    <section id="certificate_page" className="m-2 p-2 pt-4">
-      <div className="certificate_page text-center">
-        <h4 className="text-secondary-color m-0">Certificate Earned</h4>
+    <section id="certificate_page" className="px-4 pt-4">
+      <div className="text-center">
+        <h4 className="text-secondary-color m-b0">Certificate Earned</h4>
         <h1>
           <u>Certificate</u>
         </h1>
       </div>
-      <div className="certificate_page__main mt-4 mt-xl-5">
-        <div className="container">
+      <div className="certificate_page__main mx-2 md:mx-auto px-2 md:px-4 md:pr-8 pt-4 md:pt-10">
+        <div className="container mx-auto px-4">
           {stacks && Array.isArray(stacks) && (
-            <select className="ml-md-5" onChange={handleSelect}>
+            <select className="md:ml-5" onChange={handleSelect}>
               <option value={"all"}>Show All Certificate</option>
               {stacks.map((temp) => {
                 return (
@@ -115,51 +115,48 @@ function CertificatePage() {
               })}
             </select>
           )}
-          <div className="row">
-            <div className="col-md-4 col-12">
-              <div className="certificate_list_container" id="certificate-tab">
-                {md_width > width ? (
-                  <>
-                    <select onChange={(e) => set_activeIndex(e.target.value)}>
-                      {certificates.map((temp, index) => {
-                        return (
-                          <option key={temp.name} value={index}>
-                            {temp.name}
-                          </option>
-                        );
-                      })}
-                    </select>
-                  </>
-                ) : (
-                  <>
+          <div className="flex">
+            <div className="certificate_list_container" id="certificate-tab">
+              {md_width > width ? (
+                <>
+                  <select onChange={(e) => set_activeIndex(e.target.value)}>
                     {certificates.map((temp, index) => {
                       return (
-                        <div
-                          key={temp.name}
-                          className={`nav-link mb-1 ${
-                            index === activeIndex ? "active" : ""
-                          }`}
-                          onClick={() => set_activeIndex(index)}
-                        >
-                          <h5> {temp.name}</h5>
-                        </div>
+                        <option key={temp.name} value={index}>
+                          {temp.name}
+                        </option>
                       );
                     })}
-                  </>
-                )}
-              </div>
+                  </select>
+                </>
+              ) : (
+                <>
+                  {certificates.map((temp, index) => {
+                    return (
+                      <div
+                        key={temp.name}
+                        className={`nav-link mb-1 ${
+                          index === activeIndex ? "active" : ""
+                        }`}
+                        onClick={() => set_activeIndex(index)}
+                      >
+                        <h5> {temp.name}</h5>
+                      </div>
+                    );
+                  })}
+                </>
+              )}
             </div>
-            <div className="col-md-8 col-12">
-              <div className="tab-content" id="certificate-tabContent">
-                <div className="tab-pane fade show active">
-                  <iframe
-                    title={selected_data.name}
-                    src={selected_data.url}
-                    width="100%"
-                    allowFullScreen=""
-                    loading="lazy"
-                  ></iframe>
-                </div>
+
+            <div className="tab-content" id="certificate-tabContent">
+              <div className="tab-pane fade show active">
+                <iframe
+                  title={selected_data.name}
+                  src={selected_data.url}
+                  width="100%"
+                  allowFullScreen=""
+                  loading="lazy"
+                ></iframe>
               </div>
             </div>
           </div>

@@ -1,0 +1,53 @@
+@import "../../SCSS/variables.scss";
+
+#tech_i_know {
+  .card__holder {
+    background-color: $blue-tuna;
+    border-radius: 20px;
+
+    .card__holder__heading {
+      border-bottom: 2px solid rgb(202, 202, 202);
+    }
+
+    .card__holder__main {
+      .card {
+        .content {
+          -webkit-transition: opacity 200ms ease-out;
+          -o-transition: opacity 200ms ease-out;
+          transition: opacity 200ms ease-out;
+          opacity: 0;
+        }
+
+        img {
+          padding-left: 5px;
+          height: 70px;
+        }
+
+        .ratings {
+          opacity: 0;
+          -webkit-transition: opacity 200ms ease-out;
+          -o-transition: opacity 200ms ease-out;
+          transition: opacity 200ms ease-out;
+
+          img {
+            padding-left: 5px;
+            height: 20px;
+          }
+        }
+
+        &:hover {
+          .content {
+            opacity: 1;
+          }
+          .ratings {
+            opacity: 1;
+          }
+        }
+      }
+
+      .card:not(:last-child) {
+        border-bottom: 1px solid $light-blue-tuna;
+      }
+    }
+  }
+}

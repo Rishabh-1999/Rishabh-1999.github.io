@@ -4,8 +4,8 @@ import React from "react";
 import "./index.scss";
 
 /* Images/SVG */
-import gitHubSVG from "../Assets/SVG/github.min.svg";
-import liveSVG from "../Assets/SVG/live.min.svg";
+import gitHubSVG from "../../Assets/SVG/github.min.svg";
+import liveSVG from "../../Assets/SVG/live.min.svg";
 
 const CategoryArray = ["All", "React JS", "Node JS", "Mongo DB"];
 
@@ -106,18 +106,18 @@ function ProjectsViewer({ active }) {
         });
 
   return (
-    <div className="d-flex flex-wrap justify-content-center projects_page__card__container">
+    <div className="flex flex-wrap justify-center projects_page__card__container">
       {selected_projects_array.map((temp) => {
         return (
           <div
             key={temp.name}
-            className="projects_page__card m-2 p-3 d-flex flex-column shadow-lg"
+            className="projects_page__card m-2 p-3 flex flex-col drop-shadow-lg"
           >
             <h4>
               <u>{temp.name}</u>
             </h4>
             <div className="projects_page__card__content">
-              <div className="m-2 mb-3 d-flex justify-content-around">
+              <div className="m-2 mb-3 flex justify-around">
                 {temp.githubLink && (
                   <span>
                     <img src={gitHubSVG} alt="github" className="mr-2" />
@@ -132,9 +132,9 @@ function ProjectsViewer({ active }) {
                 )}
               </div>
             </div>
-            <div className="mt-auto">
+            <div className="flex flex-wrap">
               {temp.category.map((temp__category) => (
-                <div key={temp__category} className="badge m-1">
+                <div key={temp__category} className="badge my-2 mx-1 py-1 px-2">
                   <p className="mb-0">{temp__category}</p>
                 </div>
               ))}
@@ -150,7 +150,7 @@ function ProjectsPage() {
   const [active, setActive] = React.useState("All");
 
   return (
-    <section id="projects_page" className="m-2 p-2 pt-4">
+    <section id="projects_page" className="m-2 p-2 pt-6">
       <div className="projects_page__header text-center">
         <h4 className="text-secondary-color m-0">Knowledge Factor</h4>
         <h1>
@@ -158,8 +158,8 @@ function ProjectsPage() {
         </h1>
       </div>
       <div className="projects_page__main mt-4 mt-xl-5">
-        <div className="container">
-          <div className="projects_page__category d-none d-md-flex justify-content-center mb-2 border-bottom pb-2">
+        <div className="container mx-auto px-4">
+          <div className="projects_page__category hidden md:flex justify-center mb-2 border-white border-style-solid border-b pb-2">
             {CategoryArray.map((category, i) => {
               return (
                 <div

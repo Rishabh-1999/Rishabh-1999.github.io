@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 
 /* Styles */
-import "./index.scss";
+import "./SCSS/index.scss";
 
 /* Components */
 import Main from "./Main";

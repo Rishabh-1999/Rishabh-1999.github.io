@@ -1,21 +1,22 @@
-import React_logo from "../Assets/Images/techiuse/react.png";
-import Redux_logo from "../Assets/Images/techiuse/redux.jpeg";
-import React_Router_logo from "../Assets/Images/techiuse/react_router.png";
-import NPM_logo from "../Assets/Images/techiuse/npm.png";
-import HTML_logo from "../Assets/Images/techiuse/html.png";
-import CSS_logo from "../Assets/Images/techiuse/css.png";
-import SASS_logo from "../Assets/Images/techiuse/sass.png";
-import JS_logo from "../Assets/Images/techiuse/javascript.png";
-import Bootstrap_logo from "../Assets/Images/techiuse/bootstrap.png";
-import MaterialUI_logo from "../Assets/Images/techiuse/materialui.png";
-import NodeJS_logo from "../Assets/Images/techiuse/nodejs.png";
-import Express_logo from "../Assets/Images/techiuse/express.png";
-import SpringBoot_logo from "../Assets/Images/techiuse/spring-boot.png";
-import Nginx_logo from "../Assets/Images/techiuse/nginx.png";
-import Mongodb_logo from "../Assets/Images/techiuse/mongodb.png";
-import MySQL_logo from "../Assets/Images/techiuse/mysql.png";
-import Git_logo from "../Assets/Images/techiuse/git.png";
-import EC2_logo from "../Assets/Images/techiuse/ec2.png";
+import React_logo from "../../Assets/Images/techiuse/react.png";
+import Redux_logo from "../../Assets/Images/techiuse/redux.jpeg";
+import React_Router_logo from "../../Assets/Images/techiuse/react_router.png";
+import NPM_logo from "../../Assets/Images/techiuse/npm.png";
+import HTML_logo from "../../Assets/Images/techiuse/html.png";
+import CSS_logo from "../../Assets/Images/techiuse/css.png";
+import SASS_logo from "../../Assets/Images/techiuse/sass.png";
+import JS_logo from "../../Assets/Images/techiuse/javascript.png";
+import Bootstrap_logo from "../../Assets/Images/techiuse/bootstrap.png";
+import TailWindCSS_logo from "../../Assets/Images/techiuse/tailwindcss.png";
+import MaterialUI_logo from "../../Assets/Images/techiuse/materialui.png";
+import NodeJS_logo from "../../Assets/Images/techiuse/nodejs.png";
+import Express_logo from "../../Assets/Images/techiuse/express.png";
+import SpringBoot_logo from "../../Assets/Images/techiuse/spring-boot.png";
+import Nginx_logo from "../../Assets/Images/techiuse/nginx.png";
+import Mongodb_logo from "../../Assets/Images/techiuse/mongodb.png";
+import MySQL_logo from "../../Assets/Images/techiuse/mysql.png";
+import Git_logo from "../../Assets/Images/techiuse/git.png";
+import EC2_logo from "../../Assets/Images/techiuse/ec2.png";
 
 const mapper = ["Basic", "Intermediate", "Advance", "Expert"];
 
@@ -72,6 +73,11 @@ const data = {
     {
       title: "Bootstrap",
       src: Bootstrap_logo,
+      rating: 3,
+    },
+    {
+      title: "TailWindCSS",
+      src: TailWindCSS_logo,
       rating: 3,
     },
   ],

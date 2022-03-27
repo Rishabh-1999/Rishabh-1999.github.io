@@ -4,7 +4,7 @@ import React from "react";
 import "./index.scss";
 
 /* Utils */
-import { md_width, getWindowDimensions } from "../../utils/windowSize";
+import { md_width, getWindowDimensions } from "../../utils/windowSize.js";
 
 const CertificateArray = [
   {

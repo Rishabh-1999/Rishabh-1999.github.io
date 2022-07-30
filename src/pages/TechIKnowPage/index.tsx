@@ -3,6 +3,9 @@ import React from "react";
 /* Styles */
 import "./index.scss";
 
+/* Global Components */
+import Heading from "components/Heading";
+
 /* Images/SVG */
 import StarFilledSVG from "assets/svg/star_filled.svg";
 import StarEmptySVG from "assets/svg/star_empty.svg";
@@ -10,41 +13,52 @@ import StarEmptySVG from "assets/svg/star_empty.svg";
 /* Data */
 import TechIUse, { TechIUseType } from "data/techIUse";
 
-interface CardHolderType {
-    heading: string;
-    data: TechIUseType[];
-}
-
-function Card({ title, src, rating }: TechIUseType) {
+function TechCard({ title, image, rating, imageHeight }: TechIUseType) {
     return (
-        <div className="card flex flex-col p-1 my-2">
-            <h5 className="content pb-1 mb-0 text-orange-anzac text-lg font-bold">
+        <div className="my-1 p-1 card">
+            <h5 className="content mb-1 text-orange-anzac text-2xl font-bold">
                 {title}
             </h5>
-            <div className="flex justify-center pt-1">
-                <img src={src} alt={title} />
+            <div className="flex justify-center">
+                <img
+                    src={image}
+                    alt={title}
+                    className={"h-20"}
+                    {...(imageHeight && { style: { height: imageHeight } })}
+                />
             </div>
-            <span className="p-1 ratings flex justify-end">
-                {new Array(4).fill(true, 0, rating).map((filled) => {
-                    if (filled)
-                        return <img src={StarFilledSVG} alt="star filled" />;
-                    else return <img src={StarEmptySVG} alt="star empty" />;
-                })}
+            <span className="my-1 ratings flex justify-end">
+                {new Array(5)
+                    .fill(false)
+                    .fill(true, 0, rating)
+                    .map((filled) =>
+                        filled ? (
+                            <img src={StarFilledSVG} alt="Star filled" />
+                        ) : (
+                            <img src={StarEmptySVG} alt="Star empty" />
+                        )
+                    )}
             </span>
         </div>
     );
 }
 
-function CardHolder({ heading, data }: CardHolderType) {
+interface CategoryContainerType {
+    title: string;
+    data: TechIUseType[];
+}
+
+function CategoryContainer({ title, data }: CategoryContainerType) {
     return (
-        <div className="card__holder m-2 p-2">
-            <div className="card__holder__heading text-center p-2">
-                <h3 className="font-bold underline">{heading}</h3>
+        <div className="md:my-1 my-4 mx-4 p-1 rounded-2xl category_container">
+            <div className="py-2 text-center heading font-bold underline text-3xl">
+                {title}
             </div>
-            <div className="card__holder__main p-1">
-                {data.map((temp) => (
-                    <Card key={temp.title} {...temp} />
-                ))}
+            <div className="p-1">
+                {Array.isArray(data) &&
+                    data.map((stack) => (
+                        <TechCard key={stack.title} {...stack} />
+                    ))}
             </div>
         </div>
     );
@@ -53,47 +67,45 @@ function CardHolder({ heading, data }: CardHolderType) {
 function TechIUsePage() {
     return (
         <section id="tech_i_know" className="px-4 pt-4">
-            <div className="text-center">
-                <h4 className="text-center text-orange-anzac m-0">
-                    Knowledge I Gathered
-                </h4>
-                <h1 className="font-extrabold">
-                    <u>Tech I Know</u>
-                </h1>
-            </div>
-            <div className="mx-2 md:mx-auto px-2 md:px-4 md:pr-8 pt-4 md:pt-10">
+            <Heading title={"Tech I Know"} subtitle={"Knowledge I Learned"} />
+
+            <div className="section_content lg:mt-6 mx-2 mb-4 md:mx-auto px-2 md:px-6 sm:px-4 pt-4">
                 <div className="container mx-auto px-4 flex flex-wrap flex-col md:flex-row">
                     <div className="flex-1">
-                        <CardHolder
-                            heading={"Front End (React)"}
-                            data={TechIUse.react}
+                        <CategoryContainer
+                            title={"Front End"}
+                            data={TechIUse.frontEnd}
+                        />
+                        <CategoryContainer
+                            title={"Front End Design"}
+                            data={TechIUse.frontEndDesign}
                         />
                     </div>
                     <div className="flex-1">
-                        <CardHolder
-                            heading={"Front End"}
-                            data={TechIUse.frontend}
-                        />
-                        <CardHolder
-                            heading={"Back End"}
+                        <CategoryContainer
+                            title={"Back End"}
                             data={TechIUse.backend}
                         />
+                        <CategoryContainer
+                            title={"Programming Language"}
+                            data={TechIUse.programmingLanguage}
+                        />
                     </div>
                     <div className="flex-1">
-                        <CardHolder
-                            heading={"Database"}
+                        <CategoryContainer
+                            title={"Database"}
                             data={TechIUse.databases}
                         />
-                        <CardHolder
-                            heading={"Dev Ops"}
+                        <CategoryContainer
+                            title={"Dev Ops"}
                             data={TechIUse.devops}
                         />
-                        <CardHolder
-                            heading={"Cloud Services"}
+                        <CategoryContainer
+                            title={"Cloud Services"}
                             data={TechIUse.cloud_services}
                         />
-                        <CardHolder
-                            heading={"Version Control"}
+                        <CategoryContainer
+                            title={"Version Control"}
                             data={TechIUse.versionControl}
                         />
                     </div>

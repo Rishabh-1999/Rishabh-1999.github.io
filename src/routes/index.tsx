@@ -21,9 +21,9 @@ const EducationPage = React.lazy(() => {
 // const ProjectPages = React.lazy(() => {
 //     return import("pages/ProjectsPage");
 // });
-// const TechIKnowPage = React.lazy(() => {
-//     return import("pages/TechIKnowPage");
-// });
+const TechIKnowPage = React.lazy(() => {
+    return import("pages/TechIKnowPage");
+});
 const CertificatePage = React.lazy(() => {
     return import("pages/CertificatePage");
 });
@@ -42,10 +42,10 @@ function Main() {
             <LazyPageLoad>
                 <EducationPage />
             </LazyPageLoad>
-            {/* <LazyPageLoad>
+            <LazyPageLoad>
                 <TechIKnowPage />
             </LazyPageLoad>
-            <LazyPageLoad>
+            {/* <LazyPageLoad>
                 <ProjectPages />
             </LazyPageLoad> */}
             <LazyPageLoad>

@@ -16,7 +16,7 @@ import { md_width, getWindowDimension } from "utils/windowSize";
 import CertificateArray, { CertificateType } from "data/certificates";
 
 function CertificatePage() {
-    const [filterSelected, setFilter] = React.useState<string>("all");
+    const [filterSelected, setFilterSelected] = React.useState<string>("all");
     const filteredCertificates = React.useMemo<CertificateType[]>(() => {
         if (filterSelected === "all") {
             return CertificateArray;
@@ -32,8 +32,8 @@ function CertificatePage() {
     const [activeCertificateIndex, setActiveCertificateIndex] =
         React.useState<number>(0);
     const selectedCertificate = React.useMemo<CertificateType>(() => {
-        return CertificateArray[activeCertificateIndex];
-    }, [activeCertificateIndex]);
+        return filteredCertificates[activeCertificateIndex];
+    }, [activeCertificateIndex, filteredCertificates]);
 
     const allStacks = React.useMemo<string[]>((): string[] => {
         const certificates = new Set<string>();
@@ -61,10 +61,9 @@ function CertificatePage() {
         };
     }, []);
 
-    const handleSelect = (e: {
-        target: { value: React.SetStateAction<string> };
-    }): void => {
-        setFilter(e.target.value);
+    const handleSelect = (stack: string): void => {
+        setFilterSelected(stack);
+        setActiveCertificateIndex(0);
     };
 
     return (
@@ -74,18 +73,71 @@ function CertificatePage() {
                 <div className="container">
                     <>
                         {Array.isArray(allStacks) && (
-                            <select onChange={handleSelect}>
-                                <option value={"all"}>
-                                    Show all Certificates
-                                </option>
-                                {allStacks.map((stack: string) => {
-                                    return (
-                                        <option key={stack} value={stack}>
-                                            {stack}
-                                        </option>
-                                    );
-                                })}
-                            </select>
+                            <>
+                                {width > md_width ? (
+                                    <div className="flex flex-wrap mb-2">
+                                        <button
+                                            className={classnames(
+                                                "stack_select font-bold",
+                                                {
+                                                    active:
+                                                        filterSelected ===
+                                                        "all",
+                                                }
+                                            )}
+                                            onClick={() => handleSelect("all")}
+                                        >
+                                            Show all Certificates :
+                                        </button>
+                                        {allStacks.map((stack: string) => {
+                                            return (
+                                                <button
+                                                    key={stack}
+                                                    className={classnames(
+                                                        "stack_select",
+                                                        {
+                                                            active:
+                                                                filterSelected ===
+                                                                stack,
+                                                        }
+                                                    )}
+                                                    onClick={() =>
+                                                        handleSelect(stack)
+                                                    }
+                                                >
+                                                    {stack}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                ) : (
+                                    <>
+                                        {Array.isArray(allStacks) && (
+                                            <select
+                                                onChange={(e) =>
+                                                    handleSelect(e.target.value)
+                                                }
+                                            >
+                                                <option value={"all"}>
+                                                    Show all Certificates
+                                                </option>
+                                                {allStacks.map(
+                                                    (stack: string) => {
+                                                        return (
+                                                            <option
+                                                                key={stack}
+                                                                value={stack}
+                                                            >
+                                                                {stack}
+                                                            </option>
+                                                        );
+                                                    }
+                                                )}
+                                            </select>
+                                        )}{" "}
+                                    </>
+                                )}
+                            </>
                         )}
                     </>
 

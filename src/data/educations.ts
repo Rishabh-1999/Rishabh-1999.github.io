@@ -15,7 +15,7 @@ const EducationsArray: EducationType[] = [
     {
         title: "Senior Sec. - 10th",
         year: "2014 - 2015",
-        location: "KV No.2 AFS, Srinagar, J&amp;K",
+        location: "KV No.2 AFS, Srinagar, J&K",
         image: SchoolSVG,
     },
     {

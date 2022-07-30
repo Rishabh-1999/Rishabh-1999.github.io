@@ -1,67 +1,67 @@
-@import "../../SCSS/variables.scss";
+@import "scss/variables.scss";
 
 #projects_page {
-  padding-top: 25px;
-  padding-bottom: 25px;
-  .projects_page__main {
-    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    .projects_page__main {
+        margin-top: 50px;
 
-    .active {
-      background-color: $grey-scorpion;
-      h4 {
-        font-size: 125%;
-      }
-    }
-
-    .projects_page__category > div {
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-
-    .projects_page__card__container {
-      .projects_page__card {
-        flex-grow: 1;
-        flex-shrink: 1;
-        flex-basis: 0;
-        min-width: 300px;
-        max-width: 35%;
-        min-height: 200px;
-        background-color: $blue-tuna;
-        border-radius: 15px;
-
-        .projects_page__card__content {
-          img {
-            height: 30px;
-            width: 30px;
-          }
+        .active {
+            background-color: $grey-scorpion;
+            h4 {
+                font-size: 125%;
+            }
         }
 
-        .badge {
-          background-color: $light-blue-tuna;
-          border-radius: 12px;
+        .projects_page__category > div {
+            &:hover {
+                transform: scale(1.1);
+            }
         }
 
-        &:hover,
-        :focus {
-          border: 1px solid $blue-tuna;
-          transform: scale(1.03);
-          transition: all 0.3s;
+        .projects_page__card__container {
+            .projects_page__card {
+                flex-grow: 1;
+                flex-shrink: 1;
+                flex-basis: 0;
+                min-width: 300px;
+                max-width: 35%;
+                min-height: 200px;
+                background-color: $blue-tuna;
+                border-radius: 15px;
+
+                .projects_page__card__content {
+                    img {
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+
+                .badge {
+                    background-color: $light-blue-tuna;
+                    border-radius: 12px;
+                }
+
+                &:hover,
+                :focus {
+                    border: 1px solid $blue-tuna;
+                    transform: scale(1.03);
+                    transition: all 0.3s;
+                }
+            }
         }
-      }
     }
-  }
-  .badge {
-    display: inline-block;
-    padding: 0.25 em 0.4 em;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25 rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
+    .badge {
+        display: inline-block;
+        padding: 0.25 em 0.4 em;
+        font-size: 75%;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.25 rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+            border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
 }

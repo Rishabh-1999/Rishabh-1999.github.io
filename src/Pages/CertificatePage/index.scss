@@ -1,86 +1,51 @@
-@import "../../SCSS/variables.scss";
+@import "scss/variables.scss";
+
+$iframe-height: 475px;
 
 #certificate_page {
-  .certificate_page__main {
-    .certificate_list_container {
-      overflow-y: auto;
-      height: 550px;
+    .section_content {
+        width: 100%;
 
-      max-width: 100%;
-      width: 100%;
+        .certificate_list {
+            max-height: $iframe-height;
 
-      &::-webkit-scrollbar {
-        width: 0px;
-        background: transparent;
-      }
+            .active {
+                background-color: $grey-scorpion;
+                border-bottom: 5px solid $orange-anzac;
+            }
 
-      &::-webkit-scrollbar-thumb {
-        background-color: darkgrey;
-        border-radius: 25px;
-      }
+            .nav-link:hover {
+                background-color: $grey-scorpion;
+            }
 
-      .active {
-        background-color: $grey-scorpion;
-        border-bottom: 5px solid $orange-anzac;
-      }
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
 
-      .nav-link h5 {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -webkit-line-clamp: 3;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-      }
+            &::-webkit-scrollbar-thumb {
+                background-color: darkgray;
+                border-radius: 25px;
+            }
 
-      @media (min-width: $md) {
-        max-width: 40%;
-        width: 40%;
-      }
-    }
-
-    .tab-content {
-      max-width: 100%;
-      width: 100%;
-    }
-
-    @media (min-width: $md) {
-      .content {
-        max-width: 60%;
-        width: 60%;
-      }
-    }
-
-    @media (max-width: $md) {
-      .certificate_list_container {
-        height: unset;
-      }
-
-      #certificate-tab select {
-        text-overflow: ellipsis;
-        width: calc(100% - 2 * 8px);
-      }
-
-      .row > div:nth-child(1) {
-        border-right: unset;
-      }
-    }
-
-    .certificate_list_container:hover,
-    .certificate_list_container:focus {
-      &::-webkit-scrollbar {
-        width: 10px;
-        background: unset;
-      }
-    }
-
-    #certificate-tabContent {
-      iframe {
-        height: 525px;
-
-        @media (max-width: $md) {
-          height: 325px;
+            @media (min-width: $md) {
+                max-width: 35%;
+                width: 35%;
+            }
         }
-      }
+
+        .certificate-iframe {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .certificate-iframe {
+            iframe {
+                height: $iframe-height;
+
+                @media (max-width: $md) {
+                    height: 325px;
+                }
+            }
+        }
     }
-  }
 }

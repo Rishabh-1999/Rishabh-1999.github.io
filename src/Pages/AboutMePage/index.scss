@@ -1,59 +1,22 @@
-@import "../../SCSS/variables.scss";
+@import "scss/variables.scss";
 
 #about_me_page {
-  .about_me_page__main {
-    .left {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-      flex: 0 0 100%;
-      max-width: 100%;
-
-      img {
-        height: 370px;
-      }
-
-      @media (min-width: $md) {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 45%;
-        flex: 0 0 45%;
-        max-width: 45%;
-      }
-    }
-
-    .right {
-      -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-      flex: 0 0 100%;
-      max-width: 100%;
-
-      p {
-        font-size: 23px;
-        line-height: 1.8rem;
-        word-spacing: 8px;
-        font-family: "Architects Daughter", cursive;
-
-        span:hover {
-          color: $orange-anzac;
-          -webkit-transition: all 0.5s;
-          -o-transition: all 0.5s;
-          transition: all 0.5s;
-          -webkit-transition-delay: 0.1s;
-          -o-transition-delay: 0.1s;
-          transition-delay: 0.1s;
-          -webkit-transform: scale(1.01);
-          -ms-transform: scale(1.01);
-          transform: scale(1.01);
-          font-weight: 700;
-          display: inline-block;
+    .section_content {
+        .left {
+            flex: 0.5;
+            img {
+                height: 400px;
+            }
         }
-      }
 
-      @media (min-width: $md) {
-        -webkit-box-flex: 0;
-        -ms-flex: 0 0 55%;
-        flex: 0 0 55%;
-        max-width: 55%;
-      }
+        .right {
+            flex: 1;
+            font-size: 1.4rem;
+            font-family: "Architects Daughter", cursive;
+
+            span:hover {
+                color: $orange-anzac;
+            }
+        }
     }
-  }
 }

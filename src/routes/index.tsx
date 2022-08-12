@@ -9,7 +9,7 @@ import LandingPage from "pages/LandingPage";
 /* Types */
 import { PageLayoutType } from "./routes.types";
 import "types/globals.d.ts";
-import "types/react-typical.d.ts";
+import "types/@camwiegert-typical.d.ts";
 
 /* Lazy Pages */
 const AboutMePage = React.lazy(() => {
@@ -18,11 +18,14 @@ const AboutMePage = React.lazy(() => {
 const EducationPage = React.lazy(() => {
     return import("pages/EducationPage");
 });
-// const ProjectPages = React.lazy(() => {
-//     return import("pages/ProjectsPage");
-// });
-const TechIKnowPage = React.lazy(() => {
-    return import("pages/TechIKnowPage");
+const WorkExperiences = React.lazy(() => {
+    return import("pages/WorkExperiences");
+});
+const SkillsPage = React.lazy(() => {
+    return import("pages/SkillsPage");
+});
+const ProjectsPage = React.lazy(() => {
+    return import("pages/ProjectsPage");
 });
 const CertificatePage = React.lazy(() => {
     return import("pages/CertificatePage");
@@ -40,16 +43,19 @@ function Main() {
                 <AboutMePage />
             </LazyPageLoad>
             <LazyPageLoad>
-                <EducationPage />
+                <WorkExperiences />
             </LazyPageLoad>
             <LazyPageLoad>
-                <TechIKnowPage />
+                <ProjectsPage />
             </LazyPageLoad>
-            {/* <LazyPageLoad>
-                <ProjectPages />
-            </LazyPageLoad> */}
             <LazyPageLoad>
                 <CertificatePage />
+            </LazyPageLoad>
+            <LazyPageLoad>
+                <SkillsPage />
+            </LazyPageLoad>
+            <LazyPageLoad>
+                <EducationPage />
             </LazyPageLoad>
         </main>
     );

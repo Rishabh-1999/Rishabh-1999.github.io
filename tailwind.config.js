@@ -7,6 +7,12 @@ module.exports = {
                 "orange-anzac": "#e4aa48",
                 "grey-alto": "#dadada",
             },
+            backgroundColor: {
+                "grey-scorpion": "#5e5e5e",
+            },
+            colors: {
+                "grey-scorpion": "#5e5e5e",
+            },
         },
     },
     plugins: [],

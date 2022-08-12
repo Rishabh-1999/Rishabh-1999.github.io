@@ -7,8 +7,8 @@ import ReactAudioPlayer from "react-audio-player";
 /* Styles */
 import "./index.scss";
 
-/* React Type Writer */
-import Typical from "react-typical";
+/* Global Components */
+import Typical from "components/Typical";
 
 /* Images/SVG */
 import MyPhoto from "assets/images/MyPhoto.png";

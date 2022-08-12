@@ -11,9 +11,9 @@ import StarFilledSVG from "assets/svg/star_filled.svg";
 import StarEmptySVG from "assets/svg/star_empty.svg";
 
 /* Data */
-import TechIUse, { TechIUseType } from "data/techIUse";
+import Skills, { SkillDataType } from "data/skills";
 
-function TechCard({ title, image, rating, imageHeight }: TechIUseType) {
+function SkillCard({ title, image, rating, imageHeight }: SkillDataType) {
     return (
         <div className="my-1 p-1 card">
             <h5 className="content mb-1 text-orange-anzac text-2xl font-bold">
@@ -23,7 +23,7 @@ function TechCard({ title, image, rating, imageHeight }: TechIUseType) {
                 <img
                     src={image}
                     alt={title}
-                    className={"h-20"}
+                    className="skill-logo"
                     {...(imageHeight && { style: { height: imageHeight } })}
                 />
             </div>
@@ -45,68 +45,68 @@ function TechCard({ title, image, rating, imageHeight }: TechIUseType) {
 
 interface CategoryContainerType {
     title: string;
-    data: TechIUseType[];
+    data: SkillDataType[];
 }
 
 function CategoryContainer({ title, data }: CategoryContainerType) {
     return (
         <div className="md:my-1 my-4 mx-4 p-1 rounded-2xl category_container">
-            <div className="py-2 text-center heading font-bold underline text-3xl">
+            <div className="pt-3 pb-2 text-center heading font-bold underline text-2xl">
                 {title}
             </div>
             <div className="p-1">
                 {Array.isArray(data) &&
-                    data.map((stack) => (
-                        <TechCard key={stack.title} {...stack} />
+                    data.map((stack, index) => (
+                        <SkillCard key={stack.title + "-" + index} {...stack} />
                     ))}
             </div>
         </div>
     );
 }
 
-function TechIUsePage() {
+function SkillsPage() {
     return (
-        <section id="tech_i_know" className="px-4 pt-4">
-            <Heading title={"Tech I Know"} subtitle={"Knowledge I Learned"} />
+        <section id="skill_i_know" className="px-4 pt-4">
+            <Heading title={"Skills"} subtitle={"Skills I’m quite good at"} />
 
             <div className="section_content lg:mt-6 mx-2 mb-4 md:mx-auto px-2 md:px-6 sm:px-4 pt-4">
                 <div className="container mx-auto px-4 flex flex-wrap flex-col md:flex-row">
                     <div className="flex-1">
                         <CategoryContainer
                             title={"Front End"}
-                            data={TechIUse.frontEnd}
+                            data={Skills.frontEnd}
                         />
                         <CategoryContainer
                             title={"Front End Design"}
-                            data={TechIUse.frontEndDesign}
+                            data={Skills.frontEndDesign}
                         />
                     </div>
                     <div className="flex-1">
                         <CategoryContainer
                             title={"Back End"}
-                            data={TechIUse.backend}
+                            data={Skills.backend}
                         />
                         <CategoryContainer
                             title={"Programming Language"}
-                            data={TechIUse.programmingLanguage}
+                            data={Skills.programmingLanguage}
                         />
                     </div>
                     <div className="flex-1">
                         <CategoryContainer
                             title={"Database"}
-                            data={TechIUse.databases}
+                            data={Skills.databases}
                         />
                         <CategoryContainer
                             title={"Dev Ops"}
-                            data={TechIUse.devops}
+                            data={Skills.devops}
                         />
                         <CategoryContainer
                             title={"Cloud Services"}
-                            data={TechIUse.cloud_services}
+                            data={Skills.cloud_services}
                         />
                         <CategoryContainer
                             title={"Version Control"}
-                            data={TechIUse.versionControl}
+                            data={Skills.versionControl}
                         />
                     </div>
                 </div>
@@ -115,4 +115,4 @@ function TechIUsePage() {
     );
 }
 
-export default React.memo(TechIUsePage);
+export default React.memo(SkillsPage);

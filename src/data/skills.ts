@@ -23,7 +23,7 @@ import MongodbPNG from "../assets/images/techIUse/mongodb.png";
 import GitPNG from "../assets/images/techIUse/git.png";
 import EC2PNG from "../assets/images/techIUse/ec2.png";
 
-export interface TechIUseType {
+export interface SkillDataType {
     title: string;
     image: string;
     rating: number;
@@ -31,7 +31,7 @@ export interface TechIUseType {
 }
 
 const TechIUse: {
-    [keys: string]: TechIUseType[];
+    [keys: string]: SkillDataType[];
 } = {
     frontEnd: [
         {
@@ -43,12 +43,13 @@ const TechIUse: {
             title: "Redux",
             image: ReduxPNG,
             rating: 5,
-            imageHeight: 112,
+            imageHeight: 76,
         },
         {
             title: "React Router",
             image: ReactRouterPNG,
             rating: 4,
+            imageHeight: 60,
         },
         {
             title: "SASS / CSS",
@@ -61,6 +62,7 @@ const TechIUse: {
             title: "Figma",
             image: FigmaPNG,
             rating: 4,
+            imageHeight: 70,
         },
         {
             title: "Material UI",
@@ -71,11 +73,13 @@ const TechIUse: {
             title: "Bootstrap CSS",
             image: BootstrapPNG,
             rating: 5,
+            imageHeight: 70,
         },
         {
             title: "Tailwind CSS",
             image: TailWindPNG,
             rating: 5,
+            imageHeight: 50,
         },
     ],
     backend: [
@@ -83,25 +87,25 @@ const TechIUse: {
             title: "Node JS",
             image: NodeJS_PNG,
             rating: 5,
-            imageHeight: 60,
+            imageHeight: 40,
         },
         {
             title: "Express JS",
             image: ExpressPNG,
             rating: 5,
-            imageHeight: 60,
+            imageHeight: 50,
         },
         {
             title: "Spring Boot",
             image: SpringBootPNG,
             rating: 4,
-            imageHeight: 60,
+            imageHeight: 50,
         },
         {
             title: "Flask",
             image: FlaskPNG,
             rating: 4,
-            imageHeight: 60,
+            imageHeight: 50,
         },
     ],
     programmingLanguage: [
@@ -141,6 +145,7 @@ const TechIUse: {
             title: "NGINX",
             image: NginxPNG,
             rating: 3,
+            imageHeight: 60,
         },
     ],
     databases: [
@@ -172,7 +177,7 @@ const TechIUse: {
             title: "Git",
             image: GitPNG,
             rating: 5,
-            imageHeight: 60,
+            imageHeight: 50,
         },
     ],
 };

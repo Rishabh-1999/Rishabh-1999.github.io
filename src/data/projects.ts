@@ -1,13 +1,18 @@
-export interface ProjectsType {
+export interface ProjectsDataType {
     name: string;
     githubLink: string;
     LiveLink: string;
     category: string[];
 }
 
-export const CategoryArray = ["All", "React JS", "Node JS", "Mongo DB"];
+export const CategoryArray: string[] = [
+    "All",
+    "React JS",
+    "Node JS",
+    "Mongo DB",
+];
 
-const ProjectsArray = [
+const ProjectsArray: ProjectsDataType[] = [
     {
         name: "Portfolio Website",
         githubLink: "https://github.com/Rishabh-1999/Rishabh-1999.github.io",

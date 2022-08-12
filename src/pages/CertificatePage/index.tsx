@@ -69,7 +69,7 @@ function CertificatePage() {
     return (
         <section id="certificate_page" className="px-4 pt-4">
             <Heading title={"Certificates"} subtitle={"Certificates Earned"} />
-            <div className="section_content mx-2 md:mx-auto px-2 md:px-6 sm:px-4 pt-4">
+            <div className="section_content m-2 md:mx-auto px-2 md:px-6 sm:px-4 pt-4">
                 <div className="container">
                     <>
                         {Array.isArray(allStacks) && (

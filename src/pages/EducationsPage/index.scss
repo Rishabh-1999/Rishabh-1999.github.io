@@ -1,6 +1,6 @@
 @import "scss/variables.scss";
 
-#education_details_page {
+#education-details_page {
     .education_detail_card {
         background-color: $light-blue-tuna;
         border-width: 5px;
@@ -8,8 +8,8 @@
         border-color: $light-blue-tuna;
 
         .front-image {
-            height: 120px;
-            width: 120px;
+            height: 110px;
+            width: 110px;
             fill: $grey-nobel;
         }
 

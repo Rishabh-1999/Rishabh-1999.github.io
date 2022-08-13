@@ -25,11 +25,11 @@ const EducationCard = React.memo(
                     <LaunchLink className="w-8 h-8 hover:w-9 hover:h-9 launch-link" />
                 </a>
             )}
-            <div className="text-center mx-2 my-1 p-3">
+            <div className="m-2 p-2 text-center">
                 {<Image className="front-image" />}
             </div>
             <div className="text-center">
-                <h3 className="font-bold underline mb-0">{title}</h3>
+                <h3 className="font-bold underline">{title}</h3>
                 <p>
                     <br />
                     {year}
@@ -41,22 +41,24 @@ const EducationCard = React.memo(
     )
 );
 
-function EducationDetailsPage() {
+function EducationDetailsPage(): React.ReactElement {
     return (
-        <section id="education_details_page" className="px-4 pt-4">
+        <section id="education-details_page">
             <Heading title={"EDUCATION"} subtitle={"Education History"} />
 
-            <div className="section_content lg:mt-6 mx-2 mb-4 md:mx-auto px-2 md:px-6 sm:px-4 pt-4">
+            <div className="md:mt-12 mt-4 md:mx-auto mx-2 pt-4 md:px-6 px-2 section_content">
                 <div className="container grid gap-2 lg:grid-cols-3 md:grid-cols-2 grid-flow-row">
                     {Array.isArray(EducationsArray) &&
-                        EducationsArray.map((educationDetails) => {
-                            return (
-                                <EducationCard
-                                    key={educationDetails.title}
-                                    {...educationDetails}
-                                />
-                            );
-                        })}
+                        EducationsArray.map(
+                            (educationDetails: EducationType) => {
+                                return (
+                                    <EducationCard
+                                        key={educationDetails.title}
+                                        {...educationDetails}
+                                    />
+                                );
+                            }
+                        )}
                 </div>
             </div>
         </section>

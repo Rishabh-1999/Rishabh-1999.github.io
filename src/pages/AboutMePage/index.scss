@@ -1,19 +1,8 @@
 @import "scss/variables.scss";
 
-#about_me_page {
+#about-me_page {
     .section_content {
-        .left {
-            flex: 0.5;
-            img {
-                height: 400px;
-            }
-        }
-
         .right {
-            flex: 1;
-            font-size: 1.4rem;
-            font-family: "Architects Daughter", cursive;
-
             span:hover {
                 color: $orange-anzac;
             }

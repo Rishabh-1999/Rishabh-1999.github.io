@@ -1,10 +1,10 @@
-const xs_width = 0;
-const sm_width = 480;
-const md_width = 768;
-const lg_width = 1024;
+export const widths: { [key: string]: number } = {
+    xsWidth: 0,
+    smWidth: 480,
+    mdWidth: 768,
+    lgWidth: 1024,
+};
 
-function getWindowDimension(): number {
+export function getWindowDimension(): number {
     return window.innerWidth;
 }
-
-export { xs_width, sm_width, md_width, lg_width, getWindowDimension };

@@ -48,13 +48,13 @@ const TechIUse: {
         {
             title: "React Router",
             image: ReactRouterPNG,
-            rating: 4,
+            rating: 5,
             imageHeight: 60,
         },
         {
             title: "SASS / CSS",
             image: SassPNG,
-            rating: 5,
+            rating: 4,
         },
     ],
     frontEndDesign: [
@@ -78,7 +78,7 @@ const TechIUse: {
         {
             title: "Tailwind CSS",
             image: TailWindPNG,
-            rating: 5,
+            rating: 4,
             imageHeight: 50,
         },
     ],

@@ -6,57 +6,72 @@ import "./index.scss";
 /* Pages */
 import LandingPage from "pages/LandingPage";
 
-/* Types */
-import { PageLayoutType } from "./routes.types";
+/* Global Types */
 import "types/globals.d.ts";
 import "types/@camwiegert-typical.d.ts";
+
+/* Types */
+import { PageLayoutType } from "./routes.type";
+
+/* Utils */
+import { QueryClientProvider, reactQueryClient } from "utils";
+
+import { ReactQueryDevtools } from "react-query/devtools";
 
 /* Lazy Pages */
 const AboutMePage = React.lazy(() => {
     return import("pages/AboutMePage");
 });
-const EducationPage = React.lazy(() => {
-    return import("pages/EducationPage");
-});
-const WorkExperiences = React.lazy(() => {
+const WorkExperiencesPage = React.lazy(() => {
     return import("pages/WorkExperiences");
-});
-const SkillsPage = React.lazy(() => {
-    return import("pages/SkillsPage");
 });
 const ProjectsPage = React.lazy(() => {
     return import("pages/ProjectsPage");
 });
-const CertificatePage = React.lazy(() => {
-    return import("pages/CertificatePage");
+const CertificatesPage = React.lazy(() => {
+    return import("pages/CertificatesPage");
+});
+const SkillsPage = React.lazy(() => {
+    return import("pages/SkillsPage");
+});
+const EducationsPage = React.lazy(() => {
+    return import("pages/EducationsPage");
 });
 
-function LazyPageLoad(props: PageLayoutType) {
+function LazyPageLoad(props: PageLayoutType): React.ReactElement {
     return <React.Suspense fallback={<></>}>{props.children}</React.Suspense>;
 }
 
-function Main() {
+const ReactQueryDevToolsComponent = (): React.ReactElement => {
+    if (process.env.NODE_ENV === "development") return <ReactQueryDevtools />;
+    else return <></>;
+};
+
+function Main(): React.ReactElement {
     return (
         <main>
-            <LandingPage />
-            <LazyPageLoad>
-                <AboutMePage />
-            </LazyPageLoad>
-            <LazyPageLoad>
-                <WorkExperiences />
-            </LazyPageLoad>
-            <LazyPageLoad>
-                <ProjectsPage />
-            </LazyPageLoad>
-            <LazyPageLoad>
-                <CertificatePage />
-            </LazyPageLoad>
-            <LazyPageLoad>
-                <SkillsPage />
-            </LazyPageLoad>
-            <LazyPageLoad>
-                <EducationPage />
-            </LazyPageLoad>
+            <QueryClientProvider client={reactQueryClient}>
+                <LandingPage />
+                <LazyPageLoad>
+                    <AboutMePage />
+                </LazyPageLoad>
+                <LazyPageLoad>
+                    <WorkExperiencesPage />
+                </LazyPageLoad>
+                <LazyPageLoad>
+                    <ProjectsPage />
+                </LazyPageLoad>
+                <LazyPageLoad>
+                    <CertificatesPage />
+                </LazyPageLoad>
+                <LazyPageLoad>
+                    <SkillsPage />
+                </LazyPageLoad>
+                <LazyPageLoad>
+                    <EducationsPage />
+                </LazyPageLoad>
+                <ReactQueryDevToolsComponent />
+            </QueryClientProvider>
         </main>
     );
 }

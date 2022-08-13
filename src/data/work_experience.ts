@@ -1,11 +1,11 @@
 /* Assets */
 import PreScienceLogo from "assets/images/prescience.png";
 
-export interface WorkExperienceDataType {
+export interface WorkExperiencesDataType {
     position: string;
     companyName: string;
     companyLink: string;
-    logo?: any;
+    logo: any;
     from: string;
     to?: string;
     currently?: boolean;
@@ -13,13 +13,13 @@ export interface WorkExperienceDataType {
     skills?: string[];
 }
 
-const JobsArray: WorkExperienceDataType[] = [
+const WorkExperiences: WorkExperiencesDataType[] = [
     {
-        position: "Software Engineer - 1 ( Full-Stack )",
+        position: "Software Engineer - 1 (Full-Stack)",
         companyName: "PreScience Decision Solutions",
-        companyLink: "https://www.prescienceds.com/",
+        companyLink: "https://www.prescienceds.com",
         logo: PreScienceLogo,
-        from: "June - 2021",
+        from: "June 2021",
         currently: true,
         descriptions: [
             [
@@ -56,7 +56,7 @@ const JobsArray: WorkExperienceDataType[] = [
         companyName: "PreScience Decision Solutions",
         companyLink: "https://www.prescienceds.com/",
         logo: PreScienceLogo,
-        from: "June - 2021",
+        from: "June 2021",
         to: "July 2022",
         descriptions: [
             [
@@ -78,4 +78,4 @@ const JobsArray: WorkExperienceDataType[] = [
     },
 ];
 
-export default JobsArray;
+export default WorkExperiences;

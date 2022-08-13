@@ -10,35 +10,22 @@ import "./index.scss";
 import Heading from "components/Heading";
 
 /* Utils */
-import { md_width, getWindowDimension } from "utils/windowSize";
+import { widths, getWindowDimension } from "utils";
 
 /* Data */
-import CertificateArray, { CertificateType } from "data/certificates";
+import CertificatesArray, { CertificateType } from "data/certificates";
 
 function CertificatePage() {
-    const [filterSelected, setFilterSelected] = React.useState<string>("all");
-    const filteredCertificates = React.useMemo<CertificateType[]>(() => {
-        if (filterSelected === "all") {
-            return CertificateArray;
-        } else {
-            return CertificateArray.filter(
-                (certificate) =>
-                    certificate.stack &&
-                    certificate.stack.includes(filterSelected)
-            );
-        }
-    }, [filterSelected]);
+    const [width, setWidth] = React.useState<number>(getWindowDimension());
 
+    const [filterByStack, setFilterByStack] = React.useState<string>("all");
     const [activeCertificateIndex, setActiveCertificateIndex] =
         React.useState<number>(0);
-    const selectedCertificate = React.useMemo<CertificateType>(() => {
-        return filteredCertificates[activeCertificateIndex];
-    }, [activeCertificateIndex, filteredCertificates]);
 
     const allStacks = React.useMemo<string[]>((): string[] => {
         const certificates = new Set<string>();
 
-        CertificateArray.forEach((certificate: CertificateType): void => {
+        CertificatesArray.forEach((certificate: CertificateType): void => {
             certificate?.stack.forEach((stack: string) =>
                 certificates.add(stack)
             );
@@ -47,7 +34,21 @@ function CertificatePage() {
         return Array.from(certificates);
     }, []);
 
-    const [width, setWidth] = React.useState<number>(getWindowDimension());
+    const filteredCertificates = React.useMemo<CertificateType[]>(() => {
+        if (filterByStack === "all") {
+            return CertificatesArray;
+        } else {
+            return CertificatesArray.filter(
+                (certificate) =>
+                    certificate.stack &&
+                    certificate.stack.includes(filterByStack)
+            );
+        }
+    }, [filterByStack]);
+
+    const selectedCertificate = React.useMemo<CertificateType>(() => {
+        return filteredCertificates[activeCertificateIndex];
+    }, [activeCertificateIndex, filteredCertificates]);
 
     const setWindowSize = (): void => {
         const width: number = getWindowDimension();
@@ -62,59 +63,57 @@ function CertificatePage() {
     }, []);
 
     const handleSelect = (stack: string): void => {
-        setFilterSelected(stack);
+        setFilterByStack(stack);
         setActiveCertificateIndex(0);
     };
 
     return (
-        <section id="certificate_page" className="px-4 pt-4">
+        <section id="certificate_page">
             <Heading title={"Certificates"} subtitle={"Certificates Earned"} />
-            <div className="section_content m-2 md:mx-auto px-2 md:px-6 sm:px-4 pt-4">
+
+            <div className="mt-4 md:mx-6 sm:mx-4 px-2 pt-4 section_content">
                 <div className="container">
                     <>
                         {Array.isArray(allStacks) && (
                             <>
-                                {width > md_width ? (
-                                    <div className="flex flex-wrap mb-2">
+                                {width > widths.mdWidth ? (
+                                    <div className="mb-2 flex flex-wrap">
                                         <button
                                             className={classnames(
                                                 "stack_select font-bold",
                                                 {
                                                     active:
-                                                        filterSelected ===
-                                                        "all",
+                                                        filterByStack === "all",
                                                 }
                                             )}
                                             onClick={() => handleSelect("all")}
                                         >
                                             Show all Certificates :
                                         </button>
-                                        {allStacks.map((stack: string) => {
-                                            return (
-                                                <button
-                                                    key={stack}
-                                                    className={classnames(
-                                                        "stack_select",
-                                                        {
-                                                            active:
-                                                                filterSelected ===
-                                                                stack,
-                                                        }
-                                                    )}
-                                                    onClick={() =>
-                                                        handleSelect(stack)
+                                        {allStacks.map((stack: string) => (
+                                            <button
+                                                key={stack}
+                                                className={classnames(
+                                                    "stack_select",
+                                                    {
+                                                        active:
+                                                            filterByStack ===
+                                                            stack,
                                                     }
-                                                >
-                                                    {stack}
-                                                </button>
-                                            );
-                                        })}
+                                                )}
+                                                onClick={() =>
+                                                    handleSelect(stack)
+                                                }
+                                            >
+                                                {stack}
+                                            </button>
+                                        ))}
                                     </div>
                                 ) : (
                                     <>
                                         {Array.isArray(allStacks) && (
                                             <select
-                                                onChange={(e) =>
+                                                onChange={(e): void =>
                                                     handleSelect(e.target.value)
                                                 }
                                             >
@@ -134,7 +133,7 @@ function CertificatePage() {
                                                     }
                                                 )}
                                             </select>
-                                        )}{" "}
+                                        )}
                                     </>
                                 )}
                             </>
@@ -142,12 +141,12 @@ function CertificatePage() {
                     </>
 
                     <div className="flex md:flex-row flex-col">
-                        <div className="certificate_list flex-0 overflow-y-auto md:mr-6">
-                            {md_width > width ? (
+                        <div className="md:mr-4 flex-0 overflow-y-auto certificate_list">
+                            {widths.mdWidth > width ? (
                                 <>
                                     <select
                                         className="w-11/12 text-ellipsis"
-                                        onChange={(e) =>
+                                        onChange={(e): void =>
                                             setActiveCertificateIndex(
                                                 parseInt(e.target.value)
                                             )
@@ -158,18 +157,14 @@ function CertificatePage() {
                                                 (
                                                     certificate: CertificateType,
                                                     index: number
-                                                ) => {
-                                                    return (
-                                                        <option
-                                                            key={
-                                                                certificate.name
-                                                            }
-                                                            value={index}
-                                                        >
-                                                            {certificate.name}
-                                                        </option>
-                                                    );
-                                                }
+                                                ) => (
+                                                    <option
+                                                        key={certificate.name}
+                                                        value={index}
+                                                    >
+                                                        {certificate.name}
+                                                    </option>
+                                                )
                                             )}
                                     </select>
                                 </>
@@ -191,7 +186,7 @@ function CertificatePage() {
                                                     <div
                                                         key={certificate.name}
                                                         className={classnames(
-                                                            "my-2 p-1.5 cursor-pointer hover:rounded-md nav-link text-lg font-bold",
+                                                            "my-2 p-1.5 cursor-pointer hover:rounded-md hover:bg-grey-scorpion text-lg font-bold",
                                                             {
                                                                 "active rounded-t-md":
                                                                     index ===
@@ -209,8 +204,8 @@ function CertificatePage() {
                             )}
                         </div>
 
-                        <div className="certificate-iframe flex-1">
-                            <div className="tab-pane fade show active">
+                        <div className="flex-1 certificate-iframe">
+                            <div className="show active">
                                 <iframe
                                     title={selectedCertificate.name}
                                     src={selectedCertificate.url}

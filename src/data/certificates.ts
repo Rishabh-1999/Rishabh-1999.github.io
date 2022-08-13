@@ -4,7 +4,7 @@ export interface CertificateType {
     stack: string[];
 }
 
-const CertificateArray: CertificateType[] = [
+const CertificatesArray: CertificateType[] = [
     {
         name: "Server-side Development with NodeJS, Express and MongoDB (Coursera)",
         url: "https://drive.google.com/file/d/1D27cmO6xEfFD7pLFpSm9g2tDLMD7AUz9/preview",
@@ -57,4 +57,4 @@ const CertificateArray: CertificateType[] = [
     },
 ];
 
-export default CertificateArray;
+export default CertificatesArray;

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/* Styles */
+/* Global Styles */
 import "./index.css";
 import "./scss/index.scss";
 

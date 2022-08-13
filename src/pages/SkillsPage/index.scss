@@ -1,43 +1,15 @@
 @import "scss/variables.scss";
 
-#skill_i_know {
+#skills-page {
     .category_container {
-        background-color: $blue-tuna;
-
         .heading {
             border-bottom: 2px solid rgb(202, 202, 202);
         }
 
         .card {
-            .content {
-                -webkit-transition: opacity 200ms ease-out;
-                -o-transition: opacity 200ms ease-out;
-                transition: opacity 200ms ease-out;
-                opacity: 0;
-            }
-
-            .skill-logo {
-                height: 85px;
-            }
-
             .ratings {
-                opacity: 0;
-                -webkit-transition: opacity 200ms ease-out;
-                -o-transition: opacity 200ms ease-out;
-                transition: opacity 200ms ease-out;
-
                 img {
-                    padding-left: 5px;
                     height: 20px;
-                }
-            }
-
-            &:hover {
-                .content {
-                    opacity: 1;
-                }
-                .ratings {
-                    opacity: 1;
                 }
             }
 

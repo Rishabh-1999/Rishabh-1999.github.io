@@ -151,7 +151,7 @@ function LandingPage() {
             <div className="landing_page__main container mx-2 md:mx-4 lg:mx-6 xl:mx-auto px-2 md:px-4 xl:px-16 pt-12 md:pt-20">
                 <div className="flex flex-wrap justify-center md:justify-items-start">
                     <div className="left justify-center">
-                        <h1 className="font-extrabold">
+                        <h1 className="font-extrabold text-5xl leading-10">
                             Rishabh
                             <br />
                             Anand

@@ -1,8 +1,14 @@
+export interface RepoDetailsType {
+    ownerName: string;
+    repoName: string;
+    branch?: string;
+}
 export interface ProjectsDataType {
     name: string;
     githubLink: string;
-    LiveLink: string;
+    liveLink?: string;
     category: string[];
+    repoDetails: RepoDetailsType;
 }
 
 export const CategoryArray: string[] = [
@@ -16,13 +22,15 @@ const ProjectsArray: ProjectsDataType[] = [
     {
         name: "Portfolio Website",
         githubLink: "https://github.com/Rishabh-1999/Rishabh-1999.github.io",
-        LiveLink: "",
         category: ["React JS", "JAVASCRIPT", "HTML", "Bootstrap", "SCSS"],
+        repoDetails: {
+            ownerName: "Rishabh-1999",
+            repoName: "Rishabh-1999.github.io",
+        },
     },
     {
         name: "E-Commerce",
         githubLink: "https://github.com/Rishabh-1999/MERN-E-Commerce",
-        LiveLink: "",
         category: [
             "React JS",
             "JAVASCRIPT",
@@ -31,18 +39,24 @@ const ProjectsArray: ProjectsDataType[] = [
             "HTML",
             "CSS",
         ],
+        repoDetails: {
+            ownerName: "Rishabh-1999",
+            repoName: "MERN-E-Commerce",
+        },
     },
     {
         name: "COVID19-Tracker",
         githubLink: "https://github.com/Rishabh-1999/COVID19-Tracker-React",
-        LiveLink: "",
         category: ["React JS", "JAVASCRIPT", "HTML", "Bootstrap", "CSS"],
+        repoDetails: {
+            ownerName: "Rishabh-1999",
+            repoName: "COVID19-Tracker-React",
+        },
     },
     {
         name: "Community Website",
         githubLink:
             "https://github.com/Rishabh-1999/Community-Website-Web-Project",
-        LiveLink: "",
         category: [
             "Node JS",
             "Express JS",
@@ -52,11 +66,14 @@ const ProjectsArray: ProjectsDataType[] = [
             "Bootstrap",
             "CSS",
         ],
+        repoDetails: {
+            ownerName: "Rishabh-1999",
+            repoName: "Community-Website-Web-Project",
+        },
     },
     {
         name: "Hospital Management",
         githubLink: "https://github.com/Rishabh-1999/Hospital-Management",
-        LiveLink: "",
         category: [
             "Node JS",
             "Express JS",
@@ -66,11 +83,14 @@ const ProjectsArray: ProjectsDataType[] = [
             "Bootstrap",
             "CSS",
         ],
+        repoDetails: {
+            ownerName: "Rishabh-1999",
+            repoName: "Hospital-Management",
+        },
     },
     {
         name: "Social-Media",
         githubLink: "https://github.com/Rishabh-1999/Social-Media-NodeJS",
-        LiveLink: "",
         category: [
             "Node JS",
             "Express JS",
@@ -80,11 +100,14 @@ const ProjectsArray: ProjectsDataType[] = [
             "Bootstrap",
             "CSS",
         ],
+        repoDetails: {
+            ownerName: "Rishabh-1999",
+            repoName: "Social-Media-NodeJS",
+        },
     },
     {
         name: "Matrimonial Website",
         githubLink: "https://github.com/Rishabh-1999/Matrimonial-Website",
-        LiveLink: "",
         category: [
             "Node JS",
             "Recommendation System",
@@ -95,6 +118,10 @@ const ProjectsArray: ProjectsDataType[] = [
             "Bootstrap",
             "CSS",
         ],
+        repoDetails: {
+            ownerName: "Rishabh-1999",
+            repoName: "Matrimonial-Website",
+        },
     },
 ];
 

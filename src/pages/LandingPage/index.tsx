@@ -45,68 +45,15 @@ function LandingPage() {
                 </button>
 
                 <div className="menu hidden md:flex flex-grow justify-end">
-                    <Link smooth={true} to="landing_page">
-                        Home
-                    </Link>
-                    <Link
-                        smooth={true}
-                        to="about_me_page"
-                        href="#about_me_page"
-                    >
-                        About Me
-                    </Link>
-                    <Link
-                        smooth={true}
-                        to="education_details_page"
-                        href="#education_details_page"
-                    >
-                        Education
-                    </Link>
-                    <Link smooth={true} to="tech_i_know" href="#tech_i_know">
-                        Tech I Know
-                    </Link>
-                    <Link
-                        smooth={true}
-                        to="certificatepage"
-                        href="#certificatepage"
-                    >
-                        Certificates
-                    </Link>
+                    <a href="#landing_page">Home</a>
+                    <a href="#about-me_page">About Me</a>
 
-                    {/* <div className="dropdown show mr-4">
-                <a
-                  href="#projects"
-                  smooth={true}
-                  role="button"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                  data-toggle="dropdown"
-                  id="basic-nav-dropdown"
-                  className="dropdown-toggle"
-                >
-                  Projects
-                  <DownwardsSVG />
-                </a>
-                <div
-                  className="dropdown-menu"
-                  aria-labelledby="basic-nav-dropdown"
-                >
-                  <Link
-                    to="projects_in_react"
-                    smooth={true}
-                    className="dropdown-item"
-                  >
-                    React
-                  </Link>
-                  <Link
-                    to="projects_in_nodejs"
-                    smooth={true}
-                    className="dropdown-item"
-                  >
-                    Node JS
-                  </Link>
-                </div>
-              </div> */}
+                    <a href="#work-experience_page">Work Experience</a>
+                    <a href="#projects_page">Projects</a>
+                    <a href="#certificate_page">Certificates</a>
+                    <a href="#skills_page">Skills</a>
+                    <a href="#education-details_page">Education</a>
+
                     <ul className="social hidden lg:flex items-center">
                         <li>
                             <a

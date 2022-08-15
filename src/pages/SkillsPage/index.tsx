@@ -88,7 +88,7 @@ const SkillCategoryContainer = React.memo(
 
 function SkillsPage(): React.ReactElement {
     return (
-        <section id="skills-page">
+        <section id="skills_page">
             <Heading title={"Skills"} subtitle={"Skills I'm quite good at"} />
 
             <div className="mt-4 mx-2 md:px-6 sm:px-4 px-2 pt-2 section_content">

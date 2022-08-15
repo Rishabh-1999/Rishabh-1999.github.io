@@ -11,6 +11,11 @@ const CertificatesArray: CertificateType[] = [
         stack: ["Frontend", "Backend", "Database"],
     },
     {
+        name: "Next.js & React - The Complete Guide (Udemy)",
+        url: "https://drive.google.com/file/d/1bWChl2mw1118ZF3jiDaEnl1JWdfAamqq/preview",
+        stack: ["Frontend", "Backend", "Programming Language"],
+    },
+    {
         name: "Understanding TypeScript - 2022 Edition (Udemy)",
         url: "https://drive.google.com/file/d/1BQNZ1wqpFywQyFfBTX8SfBhBR1DrKSCW/preview",
         stack: ["Frontend", "Backend", "Programming Language"],

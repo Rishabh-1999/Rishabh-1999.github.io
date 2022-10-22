@@ -1,25 +1,21 @@
 import React from "react";
 
-/* Type */
-import { HeadingType } from "./index.type";
+type Props = {
+    heading: string;
+    subHeading?: string;
+};
 
-function Heading({ subtitle, title }: HeadingType) {
+function Heading({ heading, subHeading }: Props) {
     return (
-        <div className="text-center">
-            <h4
-                data-testid="subtitle"
-                className="text-xl font-bold  leading-10 text-orange-anzac"
-            >
-                {subtitle}
-            </h4>
-            <h1
-                data-testid="title"
-                className="text-5xl leading-10 font-bold underline"
-            >
-                {title}
-            </h1>
+        <div className="m-4 flex justify-center flex-col items-center">
+            <h1 className="text-4xl tracking-wider">{heading}</h1>
+            {subHeading && (
+                <h3 className="custom-sub-heading">
+                    <span>{subHeading}</span>
+                </h3>
+            )}
         </div>
     );
 }
 
-export default React.memo(Heading);
+export default Heading;

@@ -22,6 +22,7 @@ function LeftSection() {
             {Array.isArray(socialData) &&
                 socialData.map((social: SocialType) => (
                     <SocialIcon
+                        key={social.label}
                         url={social.url}
                         rel="noreferrer"
                         target="_blank"

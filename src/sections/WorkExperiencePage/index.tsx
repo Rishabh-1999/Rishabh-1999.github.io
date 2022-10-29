@@ -10,10 +10,38 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 /* Components */
 import Heading from "components/Heading";
+import { DialogBox } from "components/ModalBox";
 
 /* Data */
 import { experienceData, WorkExperiencesDataType } from "data/experience";
 import { imagesMapping } from "data/imagesMapping";
+
+interface WorkExperienceModalType extends WorkExperiencesDataType {
+    open: boolean;
+    toggleModal: () => void;
+    children: JSX.Element | JSX.Element[];
+}
+
+const WorkExperienceModal = ({
+    open,
+    toggleModal,
+    companyName,
+    children,
+}: WorkExperienceModalType) => {
+    return (
+        <DialogBox
+            open={open}
+            title={companyName}
+            showTitle={false}
+            submitText={"Ok, Cool"}
+            showCancelButton={false}
+            onSubmitClose={true}
+            handleClose={toggleModal}
+        >
+            {children}
+        </DialogBox>
+    );
+};
 
 const ExperienceCard = React.memo(
     ({
@@ -26,6 +54,12 @@ const ExperienceCard = React.memo(
         skills,
         descriptions,
     }: WorkExperiencesDataType) => {
+        const [expandModal, setExpandModal] = React.useState<boolean>(false);
+
+        const handleExpandModal = () => {
+            setExpandModal((oldValue) => !oldValue);
+        };
+
         const fromDate = new Date(from);
         const toDate = to ? new Date(to) : null;
 
@@ -41,6 +75,116 @@ const ExperienceCard = React.memo(
         if (diffInMonths)
             difference = difference + (diffInMonths % 12) + " Months";
 
+        const Output = (isModal = false) => {
+            return (
+                <>
+                    <motion.div
+                        initial={{
+                            y: -100,
+                            opacity: 0.5,
+                            scale: 0.5,
+                        }}
+                        whileInView={{ y: 0, opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.25 }}
+                        viewport={{
+                            once: true,
+                        }}
+                        className="m-2 flex justify-center rounded-full"
+                    >
+                        <img
+                            src={logo}
+                            alt="img"
+                            className="rounded-full w-[130px] h-[130px]"
+                        />
+                    </motion.div>
+                    <h3 className="text-[1.3rem]"> {position} </h3>
+                    <a
+                        href={companyLink}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-sm tracking-wider uppercase font-bold group flex delay-700"
+                    >
+                        {companyName}
+                        <span className="ml-2 hidden group-hover:block">
+                            <OpenInNewIcon
+                                sx={{
+                                    fontSize: "16px",
+                                }}
+                            />
+                        </span>
+                    </a>
+
+                    <div className="mt-2 mb-3 flex space-x-2 flex-wrap">
+                        {Array.isArray(skills) &&
+                            skills.map((skill) => {
+                                const imageComp: any = imagesMapping[skill];
+
+                                if (imageComp)
+                                    return (
+                                        <motion.img
+                                            initial={{
+                                                opacity: 0.5,
+                                                scale: 0,
+                                            }}
+                                            animate={{
+                                                opacity: 1,
+                                                scale: 1,
+                                            }}
+                                            transition={{
+                                                duration: 0.3,
+                                                delay: 0.25,
+                                            }}
+                                            className="h-[20px]"
+                                            src={imageComp}
+                                            alt={skill}
+                                        />
+                                    );
+                                else return <></>;
+                            })}
+                    </div>
+
+                    <h6 className="my-2 text-sm uppercase">
+                        {format(fromDate, "dd LLL y")} -&nbsp;
+                        {toDate ? (
+                            <>{format(toDate, "dd LLL y")}</>
+                        ) : (
+                            <span className="italic font-bold">PRESENT</span>
+                        )}
+                        &nbsp; &nbsp;({difference})
+                    </h6>
+
+                    <div className="text-[0.9rem]">
+                        {Array.isArray(descriptions) &&
+                            descriptions.map((desc, index) => {
+                                if (Array.isArray(desc)) {
+                                    return (
+                                        <div key={index}>
+                                            {desc.map((subDesc: string) => (
+                                                <p key={subDesc}>{subDesc}</p>
+                                            ))}
+                                        </div>
+                                    );
+                                } else
+                                    return (
+                                        <p key={desc} className="my-1">
+                                            {desc}
+                                        </p>
+                                    );
+                            })}
+                    </div>
+
+                    {!isModal && (
+                        <div
+                            onClick={handleExpandModal}
+                            className="absolute bottom-0 left-0 right-6 tracking-wider uppercase h-10 text-right text-sm font-bold pt-2 cursor-pointer bg-gradient-to-t from-[#2a2a2a] via-[#2a2a2ae8] to-[#2a2a2a8c]"
+                        >
+                            Read more ....
+                        </div>
+                    )}
+                </>
+            );
+        };
+
         return (
             <motion.div
                 initial={{
@@ -49,105 +193,23 @@ const ExperienceCard = React.memo(
                 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.75 }}
-                className="py-2 px-6 rounded-2xl text-white relative bg-[#2a2a2a] w-[500px] h-[75vh] flex-shrink-0 overflow-hidden shadow-zinc-800 snap-center"
+                className="py-2 px-6 rounded-2xl text-white relative bg-[#2a2a2a] w-[500px] h-[85vh] flex-shrink-0 overflow-hidden shadow-zinc-800 snap-center"
             >
-                <motion.div
-                    initial={{
-                        y: -100,
-                        opacity: 0.5,
-                        scale: 0.5,
-                    }}
-                    whileInView={{ y: 0, opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.25 }}
-                    viewport={{
-                        once: true,
-                    }}
-                    className="m-2 flex justify-center rounded-full"
-                >
-                    <img
-                        src={logo}
-                        alt="img"
-                        className="rounded-full w-[120px] h-[120px]"
-                    />
-                </motion.div>
-                <h3 className="text-2xl"> {position} </h3>
-                <a
-                    href={companyLink}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm tracking-wider uppercase font-bold group flex delay-700"
-                >
-                    {companyName}
-                    <span className="ml-2 hidden group-hover:block">
-                        <OpenInNewIcon
-                            sx={{
-                                fontSize: "16px",
-                            }}
-                        />
-                    </span>
-                </a>
-
-                <div className="mt-2 mb-3 flex space-x-2 flex-wrap">
-                    {Array.isArray(skills) &&
-                        skills.map((skill) => {
-                            const imageComp: any = imagesMapping[skill];
-
-                            if (imageComp)
-                                return (
-                                    <motion.img
-                                        initial={{
-                                            opacity: 0.5,
-                                            scale: 0,
-                                        }}
-                                        animate={{
-                                            opacity: 1,
-                                            scale: 1,
-                                        }}
-                                        transition={{
-                                            duration: 0.3,
-                                            delay: 0.25,
-                                        }}
-                                        className="h-[20px]"
-                                        src={imageComp}
-                                        alt={skill}
-                                    />
-                                );
-                            else return <></>;
-                        })}
-                </div>
-
-                <h6 className="my-2 text-sm uppercase">
-                    {format(fromDate, "dd LLL y")} -&nbsp;
-                    {toDate ? (
-                        <>{format(toDate, "dd LLL y")}</>
-                    ) : (
-                        <span className="italic font-bold">PRESENT</span>
-                    )}
-                    &nbsp; &nbsp;({difference})
-                </h6>
-
-                <div className="text-[0.95rem]">
-                    {Array.isArray(descriptions) &&
-                        descriptions.map((desc, index) => {
-                            if (Array.isArray(desc)) {
-                                return (
-                                    <div key={index}>
-                                        {desc.map((subDesc: string) => (
-                                            <p key={subDesc}>{subDesc}</p>
-                                        ))}
-                                    </div>
-                                );
-                            } else
-                                return (
-                                    <p key={desc} className="my-1">
-                                        {desc}
-                                    </p>
-                                );
-                        })}
-                </div>
-                <div className="absolute bottom-0 left-0 right-6 h-10 text-right font-bold pt-2 cursor-pointer bg-gradient-to-t from-[#2a2a2a] via-[#2a2a2ae8] to-[#2a2a2a8c]">
-                    Read more ....
-                </div>
+                {Output()}
+                {expandModal && (
+                    <WorkExperienceModal
+                        open={expandModal}
+                        toggleModal={handleExpandModal}
+                        companyName={companyName}
+                        companyLink={companyLink}
+                        logo={logo}
+                        position={position}
+                        from={from}
+                        to={to}
+                    >
+                        {Output(true)}
+                    </WorkExperienceModal>
+                )}
             </motion.div>
         );
     }

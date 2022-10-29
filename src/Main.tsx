@@ -12,14 +12,12 @@ import LandingPage from "sections/LandingPage";
 import AboutMePage from "sections/AboutMePage";
 import WorkExperiencePage from "sections/WorkExperiencePage";
 import SkillsPage from "sections/SkillsPage";
+import CertificatesPage from "sections/CertificatesPage";
 import ContactMePage from "sections/ContactMePage";
 
 function Routes() {
     return (
-        <main
-            flex-col
-            className="h-screen overflow-y-auto relative snap-y snap-mandatory scroll-smooth"
-        >
+        <main className="h-screen overflow-y-auto relative snap-y snap-mandatory scroll-smooth">
             <LeftSection />
 
             {/* Landing Page */}
@@ -33,6 +31,9 @@ function Routes() {
 
             {/* Skills Page */}
             <SkillsPage />
+
+            {/* Certificates Page */}
+            <CertificatesPage />
 
             {/* Contact Me Page */}
             <ContactMePage />

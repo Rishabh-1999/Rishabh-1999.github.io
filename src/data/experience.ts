@@ -13,7 +13,7 @@ export interface WorkExperiencesDataType {
 
 export const experienceData: WorkExperiencesDataType[] = [
     {
-        position: "Full-Stack Developer",
+        position: "Full Stack Developer",
         companyName: "PreScience Decision Solutions",
         companyLink: "https://www.prescienceds.com",
         logo: PreScienceLogo,
@@ -49,7 +49,7 @@ export const experienceData: WorkExperiencesDataType[] = [
         ],
     },
     {
-        position: "Full-stack Intern",
+        position: "Full Stack Intern",
         companyName: "PreScience Decision Solutions",
         companyLink: "https://www.prescienceds.com/",
         logo: PreScienceLogo,

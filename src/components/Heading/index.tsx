@@ -1,5 +1,8 @@
 import React from "react";
 
+/* Styles */
+import "./heading.styles.scss";
+
 type Props = {
     heading: string;
     subHeading?: string;
@@ -7,10 +10,10 @@ type Props = {
 
 function Heading({ heading, subHeading }: Props) {
     return (
-        <div className="m-4 flex justify-center flex-col items-center">
-            <h1 className="text-2xl tracking-[8px] uppercase">{heading}</h1>
+        <div className="ri-heading">
+            <h1>{heading}</h1>
             {subHeading && (
-                <h3 className="custom-sub-heading">
+                <h3 className="ri-heading-subHeading">
                     <span>{subHeading}</span>
                 </h3>
             )}
@@ -18,4 +21,4 @@ function Heading({ heading, subHeading }: Props) {
     );
 }
 
-export default Heading;
+export default React.memo(Heading);

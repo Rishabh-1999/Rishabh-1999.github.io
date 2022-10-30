@@ -62,18 +62,21 @@ function Header() {
                 >
                     Home
                 </a>
-                <a
-                    className="mx-3 px-1 animating-underline"
-                    href="#about-me_page"
-                >
+                <a className="mx-3 px-1 animating-underline" href="#about_me">
                     About Me
                 </a>
 
                 <a
                     className="mx-3 px-1 animating-underline"
-                    href="#work-experience_page"
+                    href="#work_experience"
                 >
                     Work Experience
+                </a>
+                <a
+                    className="mx-3 px-1 animating-underline"
+                    href="#skills_page"
+                >
+                    Skills
                 </a>
                 <a
                     className="mx-3 px-1 animating-underline"
@@ -87,12 +90,7 @@ function Header() {
                 >
                     Certificates
                 </a>
-                <a
-                    className="mx-3 px-1 animating-underline"
-                    href="#skills_page"
-                >
-                    Skills
-                </a>
+
                 <a
                     className="animating-underline"
                     href="#education-details_page"

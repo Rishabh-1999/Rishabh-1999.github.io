@@ -11,13 +11,14 @@ import LeftSection from "components/LeftSection";
 import LandingPage from "sections/LandingPage";
 import AboutMePage from "sections/AboutMePage";
 import WorkExperiencePage from "sections/WorkExperiencePage";
+import WorkCompanyProjects from "sections/WorkCompanyProjects";
 import SkillsPage from "sections/SkillsPage";
 import CertificatesPage from "sections/CertificatesPage";
 import ContactMePage from "sections/ContactMePage";
 
 function Routes() {
     return (
-        <main className="h-screen overflow-y-auto relative snap-y snap-mandatory scroll-smooth">
+        <main className="h-screen overflow-y-auto relative lg:snap-y snap-none snap-mandatory scroll-auto">
             <LeftSection />
 
             {/* Landing Page */}
@@ -28,6 +29,7 @@ function Routes() {
 
             {/* Work Experience Page */}
             <WorkExperiencePage />
+            <WorkCompanyProjects />
 
             {/* Skills Page */}
             <SkillsPage />

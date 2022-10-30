@@ -1,5 +1,6 @@
 import React from "react";
 
+/* Animation */
 import { motion } from "framer-motion";
 
 /* React Social Icons */
@@ -17,7 +18,10 @@ function LeftSection() {
             }}
             animate={{ x: 0, opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="fixed bottom-0 left-9 flex flex-col items-center"
+            viewport={{
+                once: true,
+            }}
+            className="fixed bottom-0 xl:left-9 lg:left-2 lg:flex hidden flex-col items-center"
         >
             {Array.isArray(socialData) &&
                 socialData.map((social: SocialType) => (
@@ -29,6 +33,7 @@ function LeftSection() {
                         bgColor="transparent"
                         fgColor={"#dadada"}
                         network={social.iconName ?? social.label}
+                        className="hover:scale-110 delay-100"
                         label={social.label}
                     />
                 ))}

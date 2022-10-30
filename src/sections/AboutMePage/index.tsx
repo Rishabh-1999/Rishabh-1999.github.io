@@ -5,7 +5,7 @@ import Heading from "components/Heading";
 
 function AboutMePage() {
     return (
-        <section id="about_me_page">
+        <section id="about_me">
             <Heading heading="About Me" subHeading="Who I am ?" />
         </section>
     );

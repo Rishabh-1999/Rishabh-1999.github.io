@@ -1,7 +1,7 @@
 import React from "react";
 
 /* Styles */
-import "./landingPage.scss";
+import "./landingPage.styles.scss";
 
 import { motion } from "framer-motion";
 

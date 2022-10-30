@@ -123,7 +123,7 @@ type DialogBoxType = {
     fullHeight?: boolean;
     maxWidth?: any;
     showTitle?: boolean;
-    title: string;
+    title?: string;
     showActions?: boolean;
     showCancelButton?: boolean;
     cancelText?: string;
@@ -191,7 +191,7 @@ const DialogBox = React.memo(
                     classes={{ ...classes_var, ...classesStyles }}
                     fullWidth={true}
                 >
-                    {showTitle && (
+                    {showTitle && title && (
                         <DialogTitle handleClose={handleClose} title={title} />
                     )}
 

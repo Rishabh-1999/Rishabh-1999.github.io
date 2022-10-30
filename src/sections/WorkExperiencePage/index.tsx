@@ -1,5 +1,7 @@
 import React from "react";
 
+import classnames from "classnames";
+
 import { format, differenceInYears, differenceInMonths } from "date-fns";
 
 /* Animation */
@@ -25,13 +27,11 @@ interface WorkExperienceModalType extends WorkExperiencesDataType {
 const WorkExperienceModal = ({
     open,
     toggleModal,
-    companyName,
     children,
 }: WorkExperienceModalType) => {
     return (
         <DialogBox
             open={open}
-            title={companyName}
             showTitle={false}
             submitText={"Ok, Cool"}
             showCancelButton={false}
@@ -89,12 +89,17 @@ const ExperienceCard = React.memo(
                         viewport={{
                             once: true,
                         }}
-                        className="m-2 flex justify-center rounded-full"
+                        className="scale-125 m-2 flex justify-center rounded-full hover:scale-105"
                     >
                         <img
                             src={logo}
                             alt="img"
-                            className="rounded-full w-[130px] h-[130px]"
+                            className={classnames(
+                                "rounded-full w-[130px] h-[130px]",
+                                {
+                                    "bg-gray-400": isModal,
+                                }
+                            )}
                         />
                     </motion.div>
                     <h3 className="text-[1.3rem]"> {position} </h3>
@@ -102,10 +107,10 @@ const ExperienceCard = React.memo(
                         href={companyLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-sm tracking-wider uppercase font-bold group flex delay-700"
+                        className="text-sm tracking-wider uppercase font-bold group flex"
                     >
                         {companyName}
-                        <span className="ml-2 hidden group-hover:block">
+                        <span className="ml-2 hidden group-hover:block duration-300">
                             <OpenInNewIcon
                                 sx={{
                                     fontSize: "16px",
@@ -193,7 +198,7 @@ const ExperienceCard = React.memo(
                 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.75 }}
-                className="py-2 px-6 rounded-2xl text-white relative bg-[#2a2a2a] w-[500px] h-[85vh] flex-shrink-0 overflow-hidden shadow-zinc-800 snap-center"
+                className="lg:m-0 md:mx-16 sm:mx-8 mx-4 mb-4 py-2 px-6 rounded-2xl text-white relative bg-[#2a2a2a] lg:w-[500px] h-[85vh] flex-shrink-0 overflow-hidden shadow-zinc-800 snap-center"
             >
                 {Output()}
                 {expandModal && (
@@ -223,7 +228,7 @@ function WorkExperiencePage() {
                 subHeading="Experience I gathered"
             />
 
-            <div className="snap-x snap-mandatory max-w-5xl pb-4 flex space-x-6 overflow-x-auto w-full scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor">
+            <div className="w-full max-w-5xl pb-4 flex lg:flex-row lg:space-x-4 flex-col overflow-x-auto snap-x snap-mandatory scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor">
                 {Array.isArray(experienceData) &&
                     experienceData.map((experience, index) => (
                         <ExperienceCard

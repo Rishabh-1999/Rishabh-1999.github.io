@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 @layer components {
-    @import "./components.scss";
+    @import "./_components";
 }

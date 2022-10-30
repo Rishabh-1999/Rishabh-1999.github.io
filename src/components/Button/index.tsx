@@ -4,7 +4,7 @@ import React from "react";
 import classnames from "classnames";
 
 /* Styles */
-import "./styles.scss";
+import "./button.styles.scss";
 
 /* Types */
 import { ButtonType } from "./button.type";

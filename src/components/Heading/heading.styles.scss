@@ -1,0 +1,44 @@
+@import "scss/_variables.scss";
+
+@tailwind components;
+
+@layer components {
+    .ri-heading {
+        @apply m-4;
+        @apply relative;
+        @apply flex;
+        @apply flex-col;
+        @apply justify-center;
+        @apply items-center;
+
+        h1 {
+            @apply font-headingFont;
+            @apply font-semibold;
+            @apply text-3xl;
+            @apply tracking-[4px];
+            @apply uppercase;
+        }
+
+        h3 {
+            @apply relative;
+
+            span {
+                @apply mx-7;
+                @apply px-1;
+                @apply relative;
+                @apply z-[5];
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                border-top: solid 2px $highlightColor;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                top: 50%;
+                z-index: 1;
+            }
+        }
+    }
+}

@@ -37,7 +37,7 @@ function SkillsPage() {
                 );
             } else return undefined;
         });
-    }, [skills]);
+    }, []);
 
     const totalSkillsComponent = SkillsComponents.length;
 

@@ -6,6 +6,7 @@ import "scss/theme.scss";
 
 /* Components */
 import LeftSection from "components/LeftSection";
+import TopUpButton from "components/TopUpButton";
 
 /* Sections */
 import LandingPage from "sections/LandingPage";
@@ -18,8 +19,9 @@ import ContactMePage from "sections/ContactMePage";
 
 function Routes() {
     return (
-        <main className="h-screen overflow-y-auto relative lg:snap-y snap-none snap-mandatory scroll-auto">
+        <main className="h-screen overflow-y-auto relative lg:snap-y snap-none snap-mandatory scroll-smooth">
             <LeftSection />
+            <TopUpButton />
 
             {/* Landing Page */}
             <LandingPage />

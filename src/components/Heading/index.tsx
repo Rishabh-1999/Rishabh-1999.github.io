@@ -10,7 +10,7 @@ type Props = {
 
 function Heading({ heading, subHeading }: Props) {
     return (
-        <div className="ri-heading">
+        <div className="flex-grow-0 ri-heading">
             <h1>{heading}</h1>
             {subHeading && (
                 <h3 className="ri-heading-subHeading">

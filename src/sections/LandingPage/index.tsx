@@ -24,7 +24,7 @@ const typewriterSteps = [
 
 function LandingPage() {
     return (
-        <section id="landing_page__main" className="snap-start">
+        <section id="landing_page" className="snap-start">
             <Header />
 
             <div className="max-w-6xl mx-auto xl:px-16 md:px-8 px-2 md:pt-20 pt-12">

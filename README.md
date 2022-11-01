@@ -17,13 +17,13 @@
 -   [ ] Work Company Projects
     -   [x] Base Structure
     -   [ ] Data
-    -   [ ] Animation
+    -   [x] Animation
 -   [x] Skills Page
     -   [x] Base Structure
     -   [x] Data
     -   [x] Animation
 -   [ ] Certificates Page
-    -   [x] Base Structure
+    -   [ ] Base Structure
     -   [x] Data
     -   [ ] Animation
 -   [ ] Education
@@ -43,7 +43,7 @@
 -   [x] Navbar
 -   [x] Modal/Dialog Box Component
 -   [x] Image Mapping
--   [ ]'To Up' button
+-   [x]'To Up' button
 -   [ ] Dark Mode / Light Mode
 -   [ ] Light Music
 -   [ ] Routing

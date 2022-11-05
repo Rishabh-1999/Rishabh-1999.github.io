@@ -75,9 +75,9 @@ function CertificatesPage() {
                             <div className="mb-2 flex flex-wrap">
                                 <button
                                     className={classnames(
-                                        "m-1 px-1 py-2 rounded-md hover:text-gray-600 hover:bg-slate-400 font-bold",
+                                        "p-1.5 rounded-md hover:text-gray-400 hover:bg-slate-200 font-bold",
                                         {
-                                            "rounded-b-sm border-b-1 bg-greyScorpion":
+                                            "m-1 rounded-lg bg-greyScorpion":
                                                 filterByStack === "all",
                                         }
                                     )}
@@ -85,13 +85,14 @@ function CertificatesPage() {
                                 >
                                     All Certificates :
                                 </button>
+
                                 {allStacks.map((stack: string) => (
                                     <button
                                         key={stack}
                                         className={classnames(
-                                            "m-1 px-1 py-2 rounded-md hover:text-gray-600 hover:bg-slate-400",
+                                            "p-1.5 rounded-md hover:text-gray-600 hover:bg-slate-400",
                                             {
-                                                "rounded-b-sm border-b-1 bg-greyScorpion":
+                                                "m-1 rounded-lg bg-greyScorpion":
                                                     filterByStack === stack,
                                             }
                                         )}

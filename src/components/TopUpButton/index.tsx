@@ -6,12 +6,13 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 function TopUpButton() {
     return (
         <a
+            id="to-up"
             href={"#landing_page"}
-            className="w-[45px] h-[45px] fixed bottom-8 right-12 bg-greyScorpion hover:scale-110 hover:text-zinc-900 z-50 rounded-full flex justify-center items-center"
+            className="w-[46px] h-[46px] fixed bottom-8 right-14 dark:bg-greyScorpion bg-grey-nobel hover:scale-105 duration-200 z-50 rounded-full flex justify-center items-center"
         >
             <KeyboardArrowUpIcon
                 sx={{
-                    fontSize: "40px",
+                    fontSize: "44px",
                 }}
             />
         </a>

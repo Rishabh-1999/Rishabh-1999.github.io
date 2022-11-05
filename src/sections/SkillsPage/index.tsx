@@ -14,6 +14,7 @@ function SkillsPage() {
     const SkillsComponents = React.useMemo(() => {
         return skills.map((skill: SkillsType) => {
             const imageComponent = imagesMapping[skill.name];
+
             if (imageComponent) {
                 return (
                     <div
@@ -27,7 +28,7 @@ function SkillsPage() {
                                 className="w-[60%] h-[60%] object-cover"
                             />
                         </div>
-                        <div className="hidden group-hover:flex text-center justify-end flex-col items-center">
+                        <div className="hidden text-center group-hover:flex justify-end flex-col items-center">
                             <span className="md:block hidden text-[0.95rem] font-bold text-zinc-200">
                                 {skill.name}
                             </span>

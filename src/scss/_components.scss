@@ -1,24 +1,42 @@
 @import "./_variables";
 
+#layout.dark {
+    --layout-primary-color-odd: #{$blue-tuna};
+    --layout-primaryColor-color: #{$grey-alto};
+    --layout-primary-color-even: #{$light-blue-tuna};
+    --layout-brand-color: #ebebec;
+    --layout-secondary-color: #{$orange-anzac};
+}
+
+#layout.light {
+    --layout-primary-color-odd: #{$alabaster};
+    --layout-primaryColor-color: #{$grey-scorpion};
+    --layout-primary-color-even: #{$mischka};
+    --layout-brand-color: #{$blue-tuna};
+    --layout-secondary-color: #{$orange-anzac};
+}
+
 section {
     @apply min-h-screen;
     @apply min-w-full;
     @apply snap-center;
     @apply overflow-x-hidden;
 
+    color: var(--layout-primaryColor-color);
+
     &:nth-of-type(n) {
-        background-color: $blue-tuna;
+        background-color: var(--layout-primary-color-odd);
 
         .ri-heading-subHeading > span {
-            background-color: $blue-tuna;
+            background-color: var(--layout-primary-color-odd);
         }
     }
 
     &:nth-of-type(2n) {
-        background-color: $light-blue-tuna;
+        background-color: var(--layout-primary-color-even);
 
         .ri-heading-subHeading > span {
-            background-color: $light-blue-tuna;
+            background-color: var(--layout-primary-color-even);
         }
     }
 

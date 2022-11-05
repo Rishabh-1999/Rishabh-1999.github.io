@@ -8,6 +8,11 @@ module.exports = {
                 secondaryColor: "#2e2e35",
                 highlightColor: "#e4aa48",
                 greyScorpion: "#5e5e5e",
+                "blue-tuna": "#2e2e35",
+                "grey-nobel": "#b8b7b7",
+                "grey-alto": "#dadada",
+                alabaster: "#fafafa",
+                mischka: "#d2d3db",
             },
             fontFamily: {
                 secondaryFont: ["Nunito"],

@@ -1,5 +1,6 @@
 import React from "react";
 
+/* Styling Utils */
 import classnames from "classnames";
 
 import { format, differenceInYears, differenceInMonths } from "date-fns";
@@ -56,26 +57,32 @@ const ExperienceCard = React.memo(
     }: WorkExperiencesDataType) => {
         const [expandModal, setExpandModal] = React.useState<boolean>(false);
 
-        const handleExpandModal = () => {
+        const toggleExpandModal = (): void => {
             setExpandModal((oldValue) => !oldValue);
         };
 
-        const fromDate = new Date(from);
-        const toDate = to ? new Date(to) : null;
-
-        let difference = "";
-
-        const diffEndDate = toDate ?? new Date();
-
-        const diffInYears: number = differenceInYears(diffEndDate, fromDate);
-        if (diffInYears) difference = diffInYears + " Years, ";
-
-        const diffInMonths: number = differenceInMonths(diffEndDate, fromDate);
-
-        if (diffInMonths)
-            difference = difference + (diffInMonths % 12) + " Months";
-
         const Output = (isModal = false) => {
+            const fromDate = new Date(from);
+            const toDate = to ? new Date(to) : null;
+
+            let difference = "";
+
+            const diffEndDate = toDate ?? new Date();
+
+            const diffInYears: number = differenceInYears(
+                diffEndDate,
+                fromDate
+            );
+            if (diffInYears) difference = diffInYears + " Years, ";
+
+            const diffInMonths: number = differenceInMonths(
+                diffEndDate,
+                fromDate
+            );
+
+            if (diffInMonths)
+                difference = difference + (diffInMonths % 12) + " Months";
+
             return (
                 <>
                     <motion.div
@@ -89,37 +96,38 @@ const ExperienceCard = React.memo(
                         viewport={{
                             once: true,
                         }}
-                        className="scale-125 m-2 flex justify-center rounded-full hover:scale-105"
+                        className="py-2 px-4 rounded-full flex justify-center group-hover:scale-110"
                     >
                         <img
                             src={logo}
                             alt="img"
-                            className={classnames(
-                                "rounded-full w-[130px] h-[130px]",
-                                {
-                                    "bg-gray-400": isModal,
-                                }
-                            )}
+                            className={classnames("rounded-full", {
+                                "p-2 bg-gray-500 shadow-xl w-[140px] h-[140px]":
+                                    isModal,
+                                "w-[130px] h-[130px]": !isModal,
+                            })}
                         />
                     </motion.div>
-                    <h3 className="text-[1.3rem]"> {position} </h3>
+                    <h3 className="mb-1 text-[1.3rem] group-hover:underline">
+                        {position}
+                    </h3>
                     <a
                         href={companyLink}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-sm tracking-wider uppercase font-bold group flex"
+                        className="text-sm tracking-wider uppercase font-bold flex"
                     >
                         {companyName}
                         <span className="ml-2 hidden group-hover:block duration-300">
                             <OpenInNewIcon
                                 sx={{
-                                    fontSize: "16px",
+                                    fontSize: "14px",
                                 }}
                             />
                         </span>
                     </a>
 
-                    <div className="mt-2 mb-3 flex space-x-2 flex-wrap">
+                    <div className="my-2 flex space-x-2 flex-wrap">
                         {Array.isArray(skills) &&
                             skills.map((skill) => {
                                 const imageComp: any = imagesMapping[skill];
@@ -148,7 +156,7 @@ const ExperienceCard = React.memo(
                             })}
                     </div>
 
-                    <h6 className="my-2 text-sm uppercase">
+                    <h6 className="my-1 text-sm uppercase">
                         {format(fromDate, "dd LLL y")} -&nbsp;
                         {toDate ? (
                             <>{format(toDate, "dd LLL y")}</>
@@ -180,8 +188,8 @@ const ExperienceCard = React.memo(
 
                     {!isModal && (
                         <div
-                            onClick={handleExpandModal}
-                            className="absolute bottom-0 left-0 right-6 tracking-wider uppercase h-10 text-right text-sm font-bold pt-2 cursor-pointer bg-gradient-to-t from-[#2a2a2a] via-[#2a2a2ae8] to-[#2a2a2a8c]"
+                            onClick={toggleExpandModal}
+                            className="absolute h-10 pr-6 bottom-0 left-0 right-0 pt-2 tracking-wider uppercase text-white text-right text-sm font-bold cursor-pointer bg-gradient-to-t from-[#2a2a2a] via-[#2a2a2ae8] to-[#2a2a2a8c]"
                         >
                             Read more ....
                         </div>
@@ -198,13 +206,13 @@ const ExperienceCard = React.memo(
                 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.75 }}
-                className="lg:m-0 md:mx-16 sm:mx-8 mx-4 mb-4 py-2 px-6 rounded-2xl text-white relative bg-[#2a2a2a] lg:w-[500px] h-[85vh] flex-shrink-0 overflow-hidden shadow-zinc-800 snap-center"
+                className="xl:w-[500px] lg:w-[450px] h-[80vh] py-2 px-6 relative rounded-2xl group shadow-zinc-800 dark:bg-[#2a2a2a] bg-[var(--layout-primary-color-even)] dark:text-white text-black flex-shrink-0 overflow-hidden"
             >
                 {Output()}
                 {expandModal && (
                     <WorkExperienceModal
                         open={expandModal}
-                        toggleModal={handleExpandModal}
+                        toggleModal={toggleExpandModal}
                         companyName={companyName}
                         companyLink={companyLink}
                         logo={logo}
@@ -222,13 +230,16 @@ const ExperienceCard = React.memo(
 
 function WorkExperiencePage() {
     return (
-        <section id="work_experience" className="flex flex-col items-center">
+        <section
+            id="work_experience"
+            className="flex flex-col items-center justify-center snap-start"
+        >
             <Heading
                 heading="Work Experience"
                 subHeading="Experience I gathered"
             />
 
-            <div className="w-full max-w-5xl pb-4 flex lg:flex-row lg:space-x-4 flex-col overflow-x-auto snap-x snap-mandatory scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor">
+            <div className="max-w-5xl mx-6 my-4 pb-4 flex lg:flex-row lg:space-x-6 md:space-x-4 md:space-y-0 space-y-4 flex-col justify-center overflow-x-auto snap-x snap-mandatory scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor">
                 {Array.isArray(experienceData) &&
                     experienceData.map((experience, index) => (
                         <ExperienceCard

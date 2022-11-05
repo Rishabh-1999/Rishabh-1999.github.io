@@ -14,8 +14,8 @@
 
 #root {
     font-family: $primaryFont;
-    background-color: $secondaryColor;
-    color: $primaryColor;
+    background-color: var(--layout-primary-color-even);
+    color: var(--layout-primaryColor-color);
 }
 
 .animating-underline {

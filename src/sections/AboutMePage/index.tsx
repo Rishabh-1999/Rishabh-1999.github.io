@@ -10,18 +10,18 @@ import HiEmoji from "assets/images/emoji.png";
 function AboutMePage() {
     return (
         <section
-            id="about_me"
+            id="about-me"
             className="flex flex-col justify-center items-center"
         >
             <Heading heading="About Me" subHeading="Who I am ?" />
 
-            <div className="max-w-6xl m-6 px-6 min-h-[450px] h-full flex-1 bg-white rounded-3xl flex items-center justify-between">
-                <div className="lg:max-w-[60%] flex-1 text-black font-medium text-xl text-justify right">
+            <div className="max-w-6xl m-6 px-6 min-h-[450px] h-full flex-1 dark:bg-white bg-[var(--layout-primary-color-odd)] rounded-3xl flex items-center justify-between">
+                <div className="lg:max-w-[60%] flex-1 text-black text-justify">
                     <h1 className="font-bold mb-3 text-[1.3rem]">
                         <img
                             src={HiEmoji}
                             alt="Hi"
-                            className="w-11 mb-2 -ml-1"
+                            className="w-11 hover:scale-105 hover:-skew-x-12 hover:skew-y-6 duration-500 mb-2 -ml-1"
                         />
                         Hi, I am Rishabh Anand, a full-stack developer from
                         India
@@ -35,11 +35,11 @@ function AboutMePage() {
                     </h2>
                 </div>
 
-                <div className="mx-2 flex flex-col">
+                <div className="mx-2 md:flex hidden">
                     <img
                         src={MemoJi}
                         alt="My College Pic"
-                        className="rounded-lg h-[325px]"
+                        className="rounded-lg h-[325px] hover:scale-105 duration-500"
                     />
                 </div>
             </div>

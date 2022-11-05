@@ -7,9 +7,11 @@ import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 import { WorkCompanyProjectsData } from "data/workCompanyProjects";
 
 function WorkCompanyProjects() {
-    const [activeProjects, setActiveProjects] = React.useState(0);
+    const [activeProjects, setActiveProjects] = React.useState<number>(0);
 
-    const handleOnMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
+    const handleOnMouseEnter = (
+        event: React.MouseEvent<HTMLDivElement>
+    ): void => {
         setActiveProjects(
             parseInt(
                 event.currentTarget.getAttribute("data-project-index") ?? "0"
@@ -17,13 +19,13 @@ function WorkCompanyProjects() {
         );
     };
 
-    const handleOnMouseLeave = () => {
+    const handleOnMouseLeave = (): void => {
         setActiveProjects(0);
     };
 
     return (
-        <section className="md:p-6 p-4 flex flex-col">
-            <div className="my-4 md:ml-20 flex max-h-40 flex-grow justify-between">
+        <section className="md:px-6 py-4 flex flex-col ">
+            <div className="max-h-40 md:mx-0 mx-4 my-4 md:ml-20 flex flex-grow justify-between">
                 <div className="flex-grow items-center">
                     <h3 className="text-6xl font-semibold">
                         I make things
@@ -39,8 +41,8 @@ function WorkCompanyProjects() {
                     <ElectricBoltIcon
                         sx={{
                             fontSize: "85px",
-                            transform: "skew(-10deg)",
-                            transitionDuration: "300ms",
+                            transitionProperty: "color",
+                            transitionDuration: "500ms",
                             ...(activeProjects > 0
                                 ? {
                                       color: WorkCompanyProjectsData[
@@ -52,11 +54,12 @@ function WorkCompanyProjects() {
                     />
                 </div>
             </div>
-            <div className="md:ml-20 mb-2 grid max-w-6xls md:grid-cols-3 gap-5">
+
+            <div className="md:mx-0 mx-6 md:ml-20 grid md:grid-cols-3 gap-5">
                 {WorkCompanyProjectsData.map((projects, index) => {
                     return (
                         <div
-                            className="px-3 py-4 h-[190px] hover:scale-105 duration-300 rounded-xl"
+                            className="px-3 py-4 min-h-[190px] hover:shadow-lg hover:scale-105 duration-300 rounded-xl"
                             style={{
                                 background: projects.bgColor,
                             }}
@@ -65,12 +68,16 @@ function WorkCompanyProjects() {
                             onMouseLeave={handleOnMouseLeave}
                         >
                             <img
-                                className="h-[60px]"
+                                className="h-[55px]"
                                 src={projects.logo}
                                 alt={projects.title}
                             />
-                            <h3 className="mt-2 font-bold">{projects.title}</h3>
-                            <h5>{projects.description}</h5>
+                            <h3 className="mt-2 font-bold tracking-wide">
+                                {projects.title}
+                            </h3>
+                            <h5 className="leading-snug">
+                                {projects.description}
+                            </h5>
                         </div>
                     );
                 })}

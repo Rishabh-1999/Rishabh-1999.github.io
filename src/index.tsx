@@ -1,17 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/* Main */
-import Main from "./Main";
+/* Layout */
+import Layout from "./layout";
+
+/* Context */
+import { ThemeProvider } from "context";
 
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
+
 root.render(
     <React.StrictMode>
-        <Main />
+        <ThemeProvider>
+            <Layout />
+        </ThemeProvider>
     </React.StrictMode>
 );
 

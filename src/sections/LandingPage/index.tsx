@@ -97,7 +97,7 @@ function LandingPage() {
                         </p>
 
                         <a
-                            href="#about_me_page"
+                            href="#about-me_page"
                             className="text-highlightColor tracking-wide flex items-end text-[1.1rem] font-bold"
                         >
                             Learn more

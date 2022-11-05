@@ -31,14 +31,14 @@ function LeftSection() {
                         rel="noreferrer"
                         target="_blank"
                         bgColor="transparent"
-                        fgColor={"#dadada"}
+                        fgColor={"var(--layout-primaryColor-color)"}
                         network={social.iconName ?? social.label}
                         className="hover:scale-110 delay-100"
                         label={social.label}
                     />
                 ))}
 
-            <div className="h-[150px] w-[2px] bg-primaryColor"></div>
+            <div className="h-[150px] w-[2px] bg-[var(--layout-primaryColor-color)]"></div>
         </motion.div>
     );
 }

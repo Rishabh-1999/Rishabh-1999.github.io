@@ -3,7 +3,7 @@
     <style>
       .cls-1 {
         font-size: 300px;
-        fill: #ebebec;
+        fill: var( --layout-brand-color);
         font-family: Mistral;
       }
 

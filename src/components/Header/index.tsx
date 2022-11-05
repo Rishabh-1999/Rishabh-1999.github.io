@@ -1,20 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 
+/* Animation */
 import { motion } from "framer-motion";
 
-/* Utils */
-import { useDarkTheme } from "utils/darkTheme";
-import { themeConstants } from "utils/theme.constants";
-/* Assets */
-import { ReactComponent as RiLogoSVG } from "assets/svg/RiLogo.svg";
+/* Context */
+import { ThemeContext } from "context";
 
-// import MusicNoteIcon from "@mui/icons-material/MusicNote";
+/* Material UI */
 import MusicOffIcon from "@mui/icons-material/MusicOff";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 
+/* Assets */
+import { ReactComponent as RiLogoSVG } from "assets/svg/RiLogo.svg";
+
+/* Data */
+import { ThemeTypes } from "data/theme";
+
 const Settings = () => {
-    const { theme, toggleDarkTheme } = useDarkTheme();
+    const { theme, setTheme } = useContext(ThemeContext);
 
     return (
         <motion.div
@@ -29,11 +33,17 @@ const Settings = () => {
             <span className="mx-1">
                 <MusicOffIcon className="hover:text-highlightColor hover:scale-110" />
             </span>
-            <span className="mx-1" onClick={toggleDarkTheme}>
-                {theme === themeConstants.dark ? (
-                    <DarkModeIcon className="hover:text-highlightColor hover:scale-110" />
+            <span className="mx-1">
+                {theme === ThemeTypes.Dark ? (
+                    <DarkModeIcon
+                        className="hover:text-highlightColor hover:scale-110"
+                        onClick={() => setTheme(ThemeTypes.Light)}
+                    />
                 ) : (
-                    <Brightness4Icon className="hover:text-highlightColor hover:scale-110" />
+                    <Brightness4Icon
+                        className="hover:text-highlightColor hover:scale-110"
+                        onClick={() => setTheme(ThemeTypes.Dark)}
+                    />
                 )}
             </span>
         </motion.div>
@@ -56,13 +66,7 @@ function Header() {
             </a>
 
             <div className="md:flex hidden flex-grow justify-end items-center text-primaryColor font-bold text-[1rem]">
-                <a
-                    className="mx-3 px-1 animating-underline cursor-pointer"
-                    href="#landing_page"
-                >
-                    Home
-                </a>
-                <a className="mx-3 px-1 animating-underline" href="#about_me">
+                <a className="mx-3 px-1 animating-underline" href="#about-me">
                     About Me
                 </a>
 

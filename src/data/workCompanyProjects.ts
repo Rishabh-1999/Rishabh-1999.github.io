@@ -4,7 +4,7 @@ import BackendPng from "assets/images/backend.png";
 import ETLPng from "assets/images/etl.png";
 import DeploymentPng from "assets/images/deployment.png";
 import MultiPng from "assets/images/multi.png";
-import BotPng from "assets/images/bot.png";
+// import BotPng from "assets/images/bot.png";
 
 export interface WorkCompanyProjectsType {
     title: string;

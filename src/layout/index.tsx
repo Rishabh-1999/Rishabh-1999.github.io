@@ -21,7 +21,7 @@ import WorkExperiencePage from "sections/WorkExperiencePage";
 import WorkCompanyProjects from "sections/WorkCompanyProjects";
 import SkillsPage from "sections/SkillsPage";
 import CertificatesPage from "sections/CertificatesPage";
-import ContactMePage from "sections/ContactMePage";
+// import ContactMePage from "sections/ContactMePage";
 
 /* Data */
 import { ThemeTypes } from "data/theme";

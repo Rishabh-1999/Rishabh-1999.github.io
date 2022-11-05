@@ -65,6 +65,7 @@ function LandingPage() {
                             className="max-w-full h-[500px] object-cover"
                             src={MyPhoto}
                             alt="Rishabh Anand"
+                            loading="eager"
                         />
                     </motion.div>
 

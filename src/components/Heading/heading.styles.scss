@@ -1,44 +1,40 @@
 @import "scss/_variables.scss";
 
-@tailwind components;
+.ri-heading {
+    margin: 1rem;
 
-@layer components {
-    .ri-heading {
-        @apply m-4;
-        @apply relative;
-        @apply flex;
-        @apply flex-col;
-        @apply justify-center;
-        @apply items-center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        h1 {
-            @apply font-headingFont;
-            @apply font-semibold;
-            @apply text-3xl;
-            @apply tracking-[4px];
-            @apply uppercase;
+    h1 {
+        font-family: Concert One, cursive;
+        font-weight: 600;
+        font-size: 1.875rem /* 30px */;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+    }
+
+    h3 {
+        position: relative;
+
+        span {
+            margin: 0 1.75rem;
+            padding: 0 0.25rem;
+            position: relative;
+            z-index: 5;
         }
 
-        h3 {
-            @apply relative;
-
-            span {
-                @apply mx-7;
-                @apply px-1;
-                @apply relative;
-                @apply z-[5];
-            }
-
-            &::before {
-                content: "";
-                display: block;
-                border-top: solid 2px $highlightColor;
-                width: 100%;
-                height: 1px;
-                position: absolute;
-                top: 50%;
-                z-index: 1;
-            }
+        &::before {
+            content: "";
+            display: block;
+            border-top: solid 2px $highlightColor;
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            z-index: 1;
         }
     }
 }

@@ -1,17 +1,15 @@
-import React from "react";
+import { useState, MouseEvent } from "react";
 
 /* Material UI */
 import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
 
 /* Data */
-import { WorkCompanyProjectsData } from "data/workCompanyProjects";
+import WorkCompanyProjectsData from "data/workCompanyProjects";
 
 function WorkCompanyProjects() {
-    const [activeProjects, setActiveProjects] = React.useState<number>(0);
+    const [activeProjects, setActiveProjects] = useState<number>(0);
 
-    const handleOnMouseEnter = (
-        event: React.MouseEvent<HTMLDivElement>
-    ): void => {
+    const handleOnMouseEnter = (event: MouseEvent<HTMLDivElement>): void => {
         setActiveProjects(
             parseInt(
                 event.currentTarget.getAttribute("data-project-index") ?? "0"

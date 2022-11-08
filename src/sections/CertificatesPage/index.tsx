@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useMemo, useEffect } from "react";
 
 /* Style Utils */
 import classnames from "classnames";
@@ -13,13 +13,13 @@ import { widths, getWindowDimension } from "utils/window";
 import CertificatesArray, { CertificateType } from "data/certificates";
 
 function CertificatesPage() {
-    const [width, setWidth] = React.useState<number>(getWindowDimension());
+    const [width, setWidth] = useState<number>(getWindowDimension());
 
-    const [filterByStack, setFilterByStack] = React.useState<string>("all");
+    const [filterByStack, setFilterByStack] = useState<string>("all");
     const [activeCertificateIndex, setActiveCertificateIndex] =
-        React.useState<number>(0);
+        useState<number>(0);
 
-    const allStacks = React.useMemo<string[]>((): string[] => {
+    const allStacks = useMemo<string[]>((): string[] => {
         const certificates = new Set<string>();
 
         CertificatesArray.forEach((certificate: CertificateType): void => {
@@ -31,7 +31,7 @@ function CertificatesPage() {
         return Array.from(certificates);
     }, []);
 
-    const filteredCertificates = React.useMemo<CertificateType[]>(() => {
+    const filteredCertificates = useMemo<CertificateType[]>(() => {
         if (filterByStack === "all") {
             return CertificatesArray;
         } else {
@@ -43,7 +43,7 @@ function CertificatesPage() {
         }
     }, [filterByStack]);
 
-    const selectedCertificate = React.useMemo<CertificateType>(() => {
+    const selectedCertificate = useMemo<CertificateType>(() => {
         return filteredCertificates[activeCertificateIndex];
     }, [activeCertificateIndex, filteredCertificates]);
 
@@ -52,7 +52,7 @@ function CertificatesPage() {
         setWidth(width);
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         window.addEventListener("resize", setWindowSize);
         return () => {
             window.removeEventListener("resize", setWindowSize);

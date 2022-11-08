@@ -17,7 +17,7 @@ const FigmaWebp = require("assets/images/tech/figma.webp");
 const GitPng = require("assets/images/tech/git.png");
 const LinuxPng = require("assets/images/tech/linux.png");
 
-export const imagesMapping: {
+const imagesMapping: {
     [key: string]: any;
 } = {
     React: ReactPng,
@@ -39,3 +39,5 @@ export const imagesMapping: {
     Git: GitPng,
     Linux: LinuxPng,
 };
+
+export default imagesMapping;

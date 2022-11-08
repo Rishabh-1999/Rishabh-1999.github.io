@@ -1,4 +1,4 @@
-import React from "react";
+import { useMemo } from "react";
 
 /* Animation */
 import { motion } from "framer-motion";
@@ -7,28 +7,28 @@ import { motion } from "framer-motion";
 import Heading from "components/Heading";
 
 /* Data */
-import { skills, SkillsType } from "data/skills";
-import { imagesMapping } from "data/imagesMapping";
+import SkillsData, { SkillsType } from "data/skills";
+import imagesMapping from "data/imagesMapping";
 
 function SkillsPage() {
-    const SkillsComponents = React.useMemo(() => {
-        return skills.map((skill: SkillsType) => {
+    const SkillsComponents = useMemo(() => {
+        return SkillsData.map((skill: SkillsType) => {
             const imageComponent = imagesMapping[skill.name];
 
             if (imageComponent) {
                 return (
                     <div
                         key={skill.name}
-                        className="p-2 md:w-[90px] w-[80px] md:h-[90px] h-[80px] duration-300 hover:scale-105 bg-slate-600 rounded-full flex justify-center items-center group"
+                        className="p-2 md:w-[90px] w-[80px] md:h-[90px] h-[80px] relative duration-300 hover:scale-105 bg-slate-600 rounded-full flex justify-center items-center group"
                     >
-                        <div className="group-hover:hidden flex justify-center items-center">
+                        <div className="absolute group-hover:opacity-10 flex justify-center items-center">
                             <img
                                 src={imageComponent}
                                 alt={skill.name}
                                 className="w-[60%] h-[60%] object-cover"
                             />
                         </div>
-                        <div className="hidden text-center group-hover:flex justify-end flex-col items-center">
+                        <div className="absolute hidden text-center group-hover:flex justify-end flex-col items-center">
                             <span className="md:block hidden text-[0.95rem] font-bold text-zinc-200">
                                 {skill.name}
                             </span>

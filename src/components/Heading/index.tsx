@@ -1,14 +1,14 @@
-import React from "react";
+import { memo } from "react";
 
 /* Styles */
 import "./heading.styles.scss";
 
-type Props = {
+type HeadingProps = {
     heading: string;
     subHeading?: string;
 };
 
-function Heading({ heading, subHeading }: Props) {
+function Heading({ heading, subHeading }: HeadingProps) {
     return (
         <div className="flex-grow-0 ri-heading">
             <h1>{heading}</h1>
@@ -21,4 +21,4 @@ function Heading({ heading, subHeading }: Props) {
     );
 }
 
-export default React.memo(Heading);
+export default memo(Heading);

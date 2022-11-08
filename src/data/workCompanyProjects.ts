@@ -13,8 +13,7 @@ export interface WorkCompanyProjectsType {
     color: string;
     logo: any;
 }
-
-export const WorkCompanyProjectsData: WorkCompanyProjectsType[] = [
+const WorkCompanyProjectsData: WorkCompanyProjectsType[] = [
     {
         title: "Dashboards",
         bgColor: "linear-gradient(220.55deg, #3793FF 0%, #0017E4 100%)",
@@ -60,3 +59,5 @@ export const WorkCompanyProjectsData: WorkCompanyProjectsType[] = [
     //     description: "",
     // },
 ];
+
+export default WorkCompanyProjectsData;

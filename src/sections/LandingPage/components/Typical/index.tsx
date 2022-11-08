@@ -1,4 +1,4 @@
-import React from "react";
+import { useRef, useEffect, memo, RefObject } from "react";
 
 import { type, type as loopedType } from "@camwiegert/typical";
 
@@ -9,9 +9,9 @@ const Typical = ({
     steps: (string | number)[];
     loop: "string" | typeof Infinity | "number";
 }) => {
-    const typicalRef = React.useRef<HTMLElement>(null);
+    const typicalRef = useRef<HTMLElement>(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         if (loop === Infinity) {
             type(typicalRef.current, ...steps, loopedType);
         } else if (typeof loop === "number") {
@@ -21,7 +21,7 @@ const Typical = ({
         }
     });
 
-    return <p ref={typicalRef as React.RefObject<HTMLDivElement>} />;
+    return <p ref={typicalRef as RefObject<HTMLDivElement>} />;
 };
 
-export default React.memo(Typical);
+export default memo(Typical);

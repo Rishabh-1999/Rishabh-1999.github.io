@@ -1,12 +1,12 @@
-import React from "react";
+import { createContext, useState } from "react";
 
 /* Data */
 import { ContextType, ThemeType } from "types/context.type";
 
 /* Data */
-import { ThemeTypes } from "data/theme";
+import ThemeTypes from "data/theme";
 
-export const ThemeContext = React.createContext<ContextType>({
+export const ThemeContext = createContext<ContextType>({
     theme: ThemeTypes.Dark,
 } as ContextType);
 
@@ -15,7 +15,7 @@ export const ThemeProvider = ({
 }: {
     children: JSX.Element | JSX.Element[];
 }) => {
-    const [theme, setTheme] = React.useState<ThemeType>(ThemeTypes.Dark);
+    const [theme, setTheme] = useState<ThemeType>(ThemeTypes.Dark);
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme }}>

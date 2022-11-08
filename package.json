@@ -8,13 +8,13 @@
     "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.11",
-    "@mui/styles": "^5.10.10",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "framer-motion": "^7.6.1",
     "node-sass": "^7.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-responsive-carousel": "^3.2.23",
     "react-scripts": "5.0.1",
     "react-social-icons": "^5.15.0",
     "typescript": "^4.8.4",
@@ -45,17 +45,17 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.18",
-    "react-error-overlay": "^6.0.11",
-    "tailwind-scrollbar": "^2.0.1",
-    "tailwindcss": "^3.2.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.68",
     "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6"
+    "@types/react-dom": "^18.0.6",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
+    "react-error-overlay": "^6.0.11",
+    "tailwind-scrollbar": "^2.0.1",
+    "tailwindcss": "^3.2.1"
   }
 }

@@ -7,7 +7,7 @@ import classnames from "classnames";
 import "./button.styles.scss";
 
 /* Types */
-import { ButtonType } from "./button.type";
+import { ButtonType as ButtonProps } from "./button.type";
 
 function Button({
     className = "",
@@ -15,7 +15,7 @@ function Button({
     children,
     outline = false,
     ...props
-}: ButtonType) {
+}: ButtonProps) {
     return (
         <button
             {...props}

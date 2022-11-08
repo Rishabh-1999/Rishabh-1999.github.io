@@ -1,4 +1,6 @@
-export enum ThemeTypes {
+enum ThemeTypes {
     Light = "light",
     Dark = "dark",
 }
+
+export default ThemeTypes;

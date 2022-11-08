@@ -3,7 +3,7 @@ export interface SkillsType {
     rating: number;
 }
 
-export const skills: SkillsType[] = [
+const SkillsData: SkillsType[] = [
     {
         name: "React",
         rating: 90,
@@ -81,3 +81,5 @@ export const skills: SkillsType[] = [
         rating: 90,
     },
 ];
+
+export default SkillsData;

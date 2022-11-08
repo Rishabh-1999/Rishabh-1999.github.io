@@ -1,4 +1,4 @@
-import React from "react";
+import { memo, useState } from "react";
 
 /* Styling Utils */
 import classnames from "classnames";
@@ -16,8 +16,8 @@ import Heading from "components/Heading";
 import { DialogBox } from "components/ModalBox";
 
 /* Data */
-import { experienceData, WorkExperiencesDataType } from "data/experience";
-import { imagesMapping } from "data/imagesMapping";
+import ExperienceData, { WorkExperiencesDataType } from "data/experience";
+import imagesMapping from "data/imagesMapping";
 
 interface WorkExperienceModalType extends WorkExperiencesDataType {
     open: boolean;
@@ -39,12 +39,12 @@ const WorkExperienceModal = ({
             onSubmitClose={true}
             handleClose={toggleModal}
         >
-            {children}
+            <div className="px-6 py-4">{children}</div>
         </DialogBox>
     );
 };
 
-const ExperienceCard = React.memo(
+const ExperienceCard = memo(
     ({
         companyName,
         companyLink,
@@ -55,7 +55,7 @@ const ExperienceCard = React.memo(
         skills,
         descriptions,
     }: WorkExperiencesDataType) => {
-        const [expandModal, setExpandModal] = React.useState<boolean>(false);
+        const [expandModal, setExpandModal] = useState<boolean>(false);
 
         const toggleExpandModal = (): void => {
             setExpandModal((oldValue) => !oldValue);
@@ -108,7 +108,7 @@ const ExperienceCard = React.memo(
                             })}
                         />
                     </motion.div>
-                    <h3 className="mb-1 text-[1.3rem] group-hover:underline">
+                    <h3 className="text-[1.3rem] group-hover:underline">
                         {position}
                     </h3>
                     <a
@@ -240,8 +240,8 @@ function WorkExperiencePage() {
             />
 
             <div className="max-w-5xl mx-6 my-4 pb-4 flex lg:flex-row lg:space-x-6 md:space-x-4 md:space-y-0 space-y-4 flex-col justify-center overflow-x-auto snap-x snap-mandatory scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor">
-                {Array.isArray(experienceData) &&
-                    experienceData.map((experience, index) => (
+                {Array.isArray(ExperienceData) &&
+                    ExperienceData.map((experience, index) => (
                         <ExperienceCard
                             key={experience.companyName + index}
                             {...experience}

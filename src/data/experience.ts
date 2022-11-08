@@ -11,7 +11,7 @@ export interface WorkExperiencesDataType {
     skills?: string[];
 }
 
-export const experienceData: WorkExperiencesDataType[] = [
+const ExperienceData: WorkExperiencesDataType[] = [
     {
         position: "Full Stack Developer",
         companyName: "PreScience Decision Solutions",
@@ -74,3 +74,5 @@ export const experienceData: WorkExperiencesDataType[] = [
         ],
     },
 ];
+
+export default ExperienceData;

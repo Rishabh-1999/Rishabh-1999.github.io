@@ -1,4 +1,4 @@
-import React from "react";
+import { memo, MouseEvent as ReactMouseEvent } from "react";
 
 /* Styles Utils */
 import classnames from "classnames";
@@ -9,32 +9,12 @@ import MuiDialogTitle from "@mui/material/DialogTitle";
 import MuiDialogContent from "@mui/material/DialogContent";
 import MuiDialogActions from "@mui/material/DialogActions";
 import IconButton from "@mui/material/IconButton";
-import { makeStyles } from "@mui/styles";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 /* Components */
 import Button from "../Button";
 
-const useStyles = makeStyles(() => ({
-    custom_dialog_root: {
-        borderRadius: "16px",
-        background: "transparent",
-    },
-    custom_dialog_paperScrollPaper: {
-        height: "100%",
-    },
-    custom_dialog_title_root: {
-        height: 60,
-        background: "#333333",
-        padding: "24px 40px",
-        display: "flex",
-        color: "white",
-        alignItems: "center",
-        justifyContent: "space-between",
-    },
-}));
-
-const DialogTitle = React.memo(
+const DialogTitle = memo(
     ({
         title,
         handleClose,
@@ -43,16 +23,20 @@ const DialogTitle = React.memo(
         title: string;
         handleClose?: Function;
     }) => {
-        const classes = useStyles();
-
         return (
             <MuiDialogTitle
                 {...props}
-                classes={{
-                    root: classes.custom_dialog_title_root,
+                sx={{
+                    height: 60,
+                    background: "#333333",
+                    padding: "24px 40px",
+                    display: "flex",
+                    color: "white",
+                    alignItems: "center",
+                    justifyContent: "space-between",
                 }}
             >
-                <p className="lg:text-xl md:text-lg text-base">{title}</p>
+                <p className="lg:text-2xl md:text-xl text-base">{title}</p>
                 {handleClose && (
                     <IconButton
                         aria-label="close"
@@ -69,7 +53,7 @@ const DialogTitle = React.memo(
     }
 );
 
-const DialogContent = React.memo(
+const DialogContent = memo(
     ({
         children,
         sx = {},
@@ -81,13 +65,13 @@ const DialogContent = React.memo(
     }) => {
         return (
             <MuiDialogContent {...props} sx={sx} dividers>
-                <div className="p-6 flex flex-col">{children}</div>
+                <div className="flex flex-col">{children}</div>
             </MuiDialogContent>
         );
     }
 );
 
-const DialogActions = React.memo(
+const DialogActions = memo(
     ({
         children,
         sx = {},
@@ -115,12 +99,11 @@ const DialogActions = React.memo(
     }
 );
 
-type DialogBoxType = {
+type DialogBoxProps = {
     open: boolean;
     children: JSX.Element | JSX.Element[];
     className?: string;
     classesStyles?: object;
-    fullHeight?: boolean;
     maxWidth?: any;
     showTitle?: boolean;
     title?: string;
@@ -135,13 +118,13 @@ type DialogBoxType = {
     onSubmitClose?: boolean;
 };
 
-const DialogBox = React.memo(
+const DialogBox = memo(
     ({
         open,
         children,
         className = "",
         classesStyles = {},
-        fullHeight = false,
+
         maxWidth = "md",
         showTitle = true,
         title,
@@ -155,28 +138,15 @@ const DialogBox = React.memo(
         onSubmitFunc,
         onSubmitClose = true,
         ...props
-    }: DialogBoxType) => {
-        const classes = useStyles();
-
+    }: DialogBoxProps) => {
         const handleOnSubmitFunc = (
-            e: React.MouseEvent<HTMLElement, MouseEvent>
+            e: ReactMouseEvent<HTMLElement, MouseEvent>
         ): void => {
             if (e.type === "click" && onSubmitFunc) {
                 onSubmitFunc();
             }
             if (onSubmitClose && handleClose) handleClose();
         };
-
-        let classes_var: { [key: string]: any } = {
-            paper: classes.custom_dialog_root,
-        };
-
-        if (fullHeight) {
-            classes_var = {
-                ...classes_var,
-                paperScrollPaper: classes.custom_dialog_paperScrollPaper,
-            };
-        }
 
         return (
             <>
@@ -187,8 +157,9 @@ const DialogBox = React.memo(
                     onClose={handleClose}
                     sx={{
                         borderRadius: "16px",
+                        height: "100vh",
+                        background: "transparent",
                     }}
-                    classes={{ ...classes_var, ...classesStyles }}
                     fullWidth={true}
                 >
                     {showTitle && title && (
@@ -199,6 +170,7 @@ const DialogBox = React.memo(
                         className={classnames(className)}
                         sx={{
                             backgroundColor: "#e5e5e5",
+                            padding: "0",
                         }}
                     >
                         {children}

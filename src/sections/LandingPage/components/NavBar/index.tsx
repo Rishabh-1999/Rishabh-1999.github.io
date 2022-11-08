@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 
 /* Animation */
 import { motion } from "framer-motion";
@@ -15,7 +15,7 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import { ReactComponent as RiLogoSVG } from "assets/svg/RiLogo.svg";
 
 /* Data */
-import { ThemeTypes } from "data/theme";
+import ThemeTypes from "data/theme";
 
 const Settings = () => {
     const { theme, setTheme } = useContext(ThemeContext);
@@ -50,7 +50,7 @@ const Settings = () => {
     );
 };
 
-function Header() {
+function NavBar() {
     return (
         <motion.div
             initial={{
@@ -82,12 +82,7 @@ function Header() {
                 >
                     Skills
                 </a>
-                <a
-                    className="mx-3 px-1 animating-underline"
-                    href="#projects_page"
-                >
-                    Projects
-                </a>
+
                 <a
                     className="mx-3 px-1 animating-underline"
                     href="#certificate_page"
@@ -95,11 +90,8 @@ function Header() {
                     Certificates
                 </a>
 
-                <a
-                    className="animating-underline"
-                    href="#education-details_page"
-                >
-                    Education
+                <a className="animating-underline" href="#contact-me">
+                    Contact Me
                 </a>
             </div>
             <Settings />
@@ -107,4 +99,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default NavBar;

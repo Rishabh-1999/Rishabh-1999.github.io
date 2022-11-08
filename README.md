@@ -6,9 +6,9 @@
     -   [x] Base Structure
     -   [x] Data
     -   [x] Animation
--   [ ] About Me Page
-    -   [ ] Base Structure
-    -   [ ] Animation
+-   [x] About Me Page
+    -   [x] Base Structure
+    -   [x] Animation
 -   [x] Work Experience Page
     -   [x] Base Structure
     -   [x] Data
@@ -16,7 +16,7 @@
     -   [x] Expanded Modal Details
 -   [ ] Work Company Projects
     -   [x] Base Structure
-    -   [ ] Data
+    -   [x] Data
     -   [x] Animation
 -   [x] Skills Page
     -   [x] Base Structure
@@ -30,12 +30,17 @@
     -   [ ] Base Structure
     -   [ ] Data
     -   [ ] Animation
--   [ ] Contact Page
-    -   [ ] Base Structure
+-   [ ] Testimonials Page
+    -   [x] Base Structure
     -   [ ] Data
     -   [ ] Animation
-    -   [ ] Modal Contact
+-   [ ] Contact Page
+    -   [x] Base Structure
+    -   [ ] Data
+    -   [ ] Animation
+    -   [x] Modal Contact
     -   [ ] Validation Formik Implementation
+    -   [ ] Email JS
 
 # Major Features
 

@@ -1,5 +1,5 @@
 /* Data */
-import { ThemeTypes } from "data/theme";
+import ThemeTypes from "data/theme";
 
 export type ThemeType = `${ThemeTypes}`;
 

@@ -18,6 +18,11 @@
     color: var(--layout-primaryColor-color);
 }
 
+.control-arrow {
+    z-index: 20 !important;
+    background-color: grey;
+}
+
 .animating-underline {
     & {
         cursor: pointer;

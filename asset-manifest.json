@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.d88e5818.css",
-    "main.js": "/static/js/main.8bd9744b.js",
+    "main.css": "/static/css/main.91c4ea55.css",
+    "main.js": "/static/js/main.5b29c2a8.js",
     "static/js/787.952888aa.chunk.js": "/static/js/787.952888aa.chunk.js",
     "static/media/linux.png": "/static/media/linux.dd9b2b983d6afb0c6c49.png",
-    "static/media/MyPhoto.png": "/static/media/MyPhoto.ee88f25f2a7dea12dd51.png",
     "static/media/flask.png": "/static/media/flask.fcc0cfbdfb8d523c61a0.png",
     "static/media/redux.png": "/static/media/redux.03d3a4748d2231e18fd2.png",
     "static/media/python.png": "/static/media/python.6a9a1acdc4906f7a419e.png",
@@ -12,6 +11,7 @@
     "static/media/postgres.png": "/static/media/postgres.ca31e7da2db949c11dd0.png",
     "static/media/react.png": "/static/media/react.fb677bf23bfd9d39de51.png",
     "static/media/memoji-alt.png": "/static/media/memoji-alt.eb4fbbe2427151b465e7.png",
+    "static/media/MyPhoto.webp": "/static/media/MyPhoto.692d865c8cde9f48daf7.webp",
     "static/media/tailwind.webp": "/static/media/tailwind.bea616369577d2977f33.webp",
     "static/media/javascript.png": "/static/media/javascript.266bd9fb2663dcc057b4.png",
     "static/media/typescript.webp": "/static/media/typescript.e5b32a4d754c001cf435.webp",
@@ -22,12 +22,12 @@
     "static/media/figma.webp": "/static/media/figma.1187f578dc7459bf1e8c.webp",
     "index.html": "/index.html",
     "static/media/RiLogo.svg": "/static/media/RiLogo.8ebc10b1d74ee4f5514597c1517bd72b.svg",
-    "main.d88e5818.css.map": "/static/css/main.d88e5818.css.map",
-    "main.8bd9744b.js.map": "/static/js/main.8bd9744b.js.map",
+    "main.91c4ea55.css.map": "/static/css/main.91c4ea55.css.map",
+    "main.5b29c2a8.js.map": "/static/js/main.5b29c2a8.js.map",
     "787.952888aa.chunk.js.map": "/static/js/787.952888aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d88e5818.css",
-    "static/js/main.8bd9744b.js"
+    "static/css/main.91c4ea55.css",
+    "static/js/main.5b29c2a8.js"
   ]
 }

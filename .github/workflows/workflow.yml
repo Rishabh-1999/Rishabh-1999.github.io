@@ -19,9 +19,9 @@ jobs:
 
             - name: Install and build
               env:
-                  REACT_APP_EMAIL_SERVICE_ID: ${{ secrets.REACT_APP_EMAIL_SERVICE_ID }}
-                  REACT_APP_EMAIL_PUBLIC_ID: ${{ secrets.REACT_APP_EMAIL_PUBLIC_ID }}
-                  REACT_APP_EMAIL_TEMPLATE: ${{ secrets.REACT_APP_EMAIL_TEMPLATE }}
+                  REACT_APP_EMAIL_SERVICE_ID: "${{ secrets.REACT_APP_EMAIL_SERVICE_ID }}"
+                  REACT_APP_EMAIL_PUBLIC_ID: "${{ secrets.REACT_APP_EMAIL_PUBLIC_ID }}"
+                  REACT_APP_EMAIL_TEMPLATE: "${{ secrets.REACT_APP_EMAIL_TEMPLATE }}"
               run: |
                   echo " Secrets ${{ env.REACT_APP_EMAIL_SERVICE_ID }}, ${{ env.REACT_APP_EMAIL_PUBLIC_ID }}, ${{ env.REACT_APP_EMAIL_TEMPLATE }} " |
                   npm install --force && npm run build

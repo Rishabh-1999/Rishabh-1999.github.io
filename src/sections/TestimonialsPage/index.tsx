@@ -34,8 +34,8 @@ const WaveSVG = ({
             className={className}
         >
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M0 26.4431L18.5993 18.7792C37.7153 11.1152 74.9139 -4.21267 112.629 1.09314C149.828 6.39895 187.543 31.7489 225.258 47.0768C262.457 62.4047 300.172 67.7105 337.371 62.4047C375.086 57.6884 412.285 42.3605 431.401 34.1071L450 26.4431V119H431.401C412.285 119 375.086 119 337.371 119C300.172 119 262.457 119 225.258 119C187.543 119 149.828 119 112.629 119C74.9139 119 37.7153 119 18.5993 119H0V26.4431Z"
                 fill={color}
             />
@@ -88,6 +88,7 @@ const TestimonialCard = ({
                     <div className="text-sm">{subTitle}</div>
                     {social?.map((temp) => (
                         <SocialIcon
+                            key={temp.name}
                             url={temp.link}
                             rel="noreferrer"
                             target="_blank"
@@ -125,10 +126,10 @@ function Testimonials() {
                 showThumbs={true}
                 showArrows={true}
             >
-                {TestimonialsData.map((testimonial) => {
+                {TestimonialsData.map((testimonial, index) => {
                     return (
                         <TestimonialCard
-                            key={testimonial.name}
+                            key={testimonial.name + "-" + index}
                             {...testimonial}
                         />
                     );

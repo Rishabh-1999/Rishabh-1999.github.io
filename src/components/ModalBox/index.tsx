@@ -5,6 +5,7 @@ import classnames from "classnames";
 
 /* Material UI */
 import MuiDialog from "@mui/material/Dialog";
+import Slide from "@mui/material/Slide";
 import MuiDialogTitle from "@mui/material/DialogTitle";
 import MuiDialogContent from "@mui/material/DialogContent";
 import MuiDialogActions from "@mui/material/DialogActions";
@@ -162,51 +163,61 @@ const DialogBox = memo(
                     }}
                     fullWidth={true}
                 >
-                    {showTitle && title && (
-                        <DialogTitle handleClose={handleClose} title={title} />
-                    )}
-
-                    <DialogContent
-                        className={classnames(className)}
-                        sx={{
-                            backgroundColor: "#e5e5e5",
-                            padding: "0",
-                        }}
-                    >
-                        {children}
-                    </DialogContent>
-
-                    {showActions && (
-                        <DialogActions
-                            sx={{
-                                ...(!showSubmitButton && {
-                                    justifyContent: "right",
-                                }),
-                                ...(!showCancelButton && {
-                                    justifyContent: "right",
-                                }),
-                            }}
-                        >
-                            {showCancelButton ? (
-                                <Button onClick={handleClose} outline={true}>
-                                    {cancelText}
-                                </Button>
-                            ) : (
-                                <></>
+                    <Slide in={open} timeout={750}>
+                        <div className="flex flex-col">
+                            {showTitle && title && (
+                                <DialogTitle
+                                    handleClose={handleClose}
+                                    title={title}
+                                />
                             )}
 
-                            {showSubmitButton ? (
-                                <Button
-                                    onClick={handleOnSubmitFunc}
-                                    disabled={submitDisabled}
+                            <DialogContent
+                                className={classnames(className)}
+                                sx={{
+                                    backgroundColor: "#e5e5e5",
+                                    padding: "0",
+                                }}
+                            >
+                                {children}
+                            </DialogContent>
+
+                            {showActions && (
+                                <DialogActions
+                                    sx={{
+                                        ...(!showSubmitButton && {
+                                            justifyContent: "right",
+                                        }),
+                                        ...(!showCancelButton && {
+                                            justifyContent: "right",
+                                        }),
+                                    }}
                                 >
-                                    {submitText}
-                                </Button>
-                            ) : (
-                                <></>
+                                    {showCancelButton ? (
+                                        <Button
+                                            onClick={handleClose}
+                                            outline={true}
+                                        >
+                                            {cancelText}
+                                        </Button>
+                                    ) : (
+                                        <></>
+                                    )}
+
+                                    {showSubmitButton ? (
+                                        <Button
+                                            onClick={handleOnSubmitFunc}
+                                            disabled={submitDisabled}
+                                        >
+                                            {submitText}
+                                        </Button>
+                                    ) : (
+                                        <></>
+                                    )}
+                                </DialogActions>
                             )}
-                        </DialogActions>
-                    )}
+                        </div>
+                    </Slide>
                 </MuiDialog>
             </>
         );

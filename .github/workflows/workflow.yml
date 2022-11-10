@@ -18,6 +18,11 @@ jobs:
               uses: actions/checkout@v1
 
             - name: Install and build
+              env:
+                  REACT_APP_EMAIL_SERVICE_ID: ${{ secrets.REACT_APP_EMAIL_SERVICE_ID }}
+                  REACT_APP_EMAIL_PUBLIC_ID: ${{ secrets.REACT_APP_EMAIL_PUBLIC_ID }}
+                  REACT_APP_EMAIL_TEMPLATE: ${{ secrets.REACT_APP_EMAIL_TEMPLATE }}
+
               run: npm install --force && npm run build
 
             - name: Deploy

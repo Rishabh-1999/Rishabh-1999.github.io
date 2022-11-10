@@ -1,54 +1,54 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 
 /* Animation */
 import { motion } from "framer-motion";
 
 /* Context */
-import { ThemeContext } from "context";
+// import { ThemeContext } from "context";
 
 /* Material UI */
-import MusicOffIcon from "@mui/icons-material/MusicOff";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
+// import MusicOffIcon from "@mui/icons-material/MusicOff";
+// import DarkModeIcon from "@mui/icons-material/DarkMode";
+// import Brightness4Icon from "@mui/icons-material/Brightness4";
 
 /* Assets */
 import { ReactComponent as RiLogoSVG } from "assets/svg/RiLogo.svg";
 
 /* Data */
-import ThemeTypes from "data/theme";
+// import ThemeTypes from "data/theme";
 
-const Settings = () => {
-    const { theme, setTheme } = useContext(ThemeContext);
+// const Settings = () => {
+//     const { theme, setTheme } = useContext(ThemeContext);
 
-    return (
-        <motion.div
-            initial={{
-                x: 100,
-                opacity: 0.5,
-            }}
-            animate={{ x: 0, opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="ml-2 pl-2 border-l solid border-l-1 border-l-primaryColor"
-        >
-            <span className="mx-1">
-                <MusicOffIcon className="hover:text-highlightColor hover:scale-110" />
-            </span>
-            <span className="mx-1">
-                {theme === ThemeTypes.Dark ? (
-                    <DarkModeIcon
-                        className="hover:text-highlightColor hover:scale-110"
-                        onClick={() => setTheme(ThemeTypes.Light)}
-                    />
-                ) : (
-                    <Brightness4Icon
-                        className="hover:text-highlightColor hover:scale-110"
-                        onClick={() => setTheme(ThemeTypes.Dark)}
-                    />
-                )}
-            </span>
-        </motion.div>
-    );
-};
+//     return (
+//         <motion.div
+//             initial={{
+//                 x: 100,
+//                 opacity: 0.5,
+//             }}
+//             animate={{ x: 0, opacity: 1, scale: 1 }}
+//             transition={{ duration: 0.5 }}
+//             className="ml-2 pl-2 border-l solid border-l-1 border-l-primaryColor"
+//         >
+//             <span className="mx-1">
+//                 <MusicOffIcon className="hover:text-highlightColor hover:scale-110" />
+//             </span>
+//             <span className="mx-1">
+//                 {theme === ThemeTypes.Dark ? (
+//                     <DarkModeIcon
+//                         className="hover:text-highlightColor hover:scale-110"
+//                         onClick={() => setTheme(ThemeTypes.Light)}
+//                     />
+//                 ) : (
+//                     <Brightness4Icon
+//                         className="hover:text-highlightColor hover:scale-110"
+//                         onClick={() => setTheme(ThemeTypes.Dark)}
+//                     />
+//                 )}
+//             </span>
+//         </motion.div>
+//     );
+// };
 
 function NavBar() {
     return (
@@ -94,7 +94,7 @@ function NavBar() {
                     Contact Me
                 </a>
             </div>
-            <Settings />
+            {/* <Settings /> */}
         </motion.div>
     );
 }

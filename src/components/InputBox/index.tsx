@@ -1,6 +1,7 @@
-import classNames from "classnames";
-
 import { memo, useState, useEffect, ChangeEvent } from "react";
+
+/* Styling Utils */
+import classNames from "classnames";
 
 export type InputType = "text" | "number" | "email";
 export type InputTypeValues = string | number;
@@ -11,8 +12,11 @@ type InputBoxProps = {
     value: InputTypeValues;
     inputType?: InputType | "textarea";
     className?: string;
-    onChange?: (name: string, value: InputTypeValues) => void;
+    onChange?: Function;
     defaultValue?: InputTypeValues;
+    onBlur?: Function;
+    errorMsg?: string;
+    onlyValue?: boolean;
 };
 
 function InputBox({
@@ -23,6 +27,10 @@ function InputBox({
     className = "",
     defaultValue = "",
     onChange,
+    onBlur,
+    errorMsg,
+    onlyValue = false,
+    ...props
 }: InputBoxProps) {
     const [textValue, setTextValue] = useState<InputTypeValues>(
         value ?? defaultValue ?? ""
@@ -36,7 +44,8 @@ function InputBox({
 
     useEffect(() => {
         if (onChange) {
-            onChange(name, textValue);
+            if (onlyValue) onChange(name, textValue);
+            onChange(textValue);
         }
         // eslint-disable-next-line
     }, [textValue]);
@@ -52,21 +61,26 @@ function InputBox({
             )}
             {inputType !== "textarea" ? (
                 <input
+                    {...props}
                     name={name}
                     type={inputType ?? "text"}
                     value={textValue}
-                    className="h-8 p-1 min-w-[250px] outline-0 border-gray-700 border rounded-md"
                     onChange={onTextChange}
+                    onBlur={onBlur as React.FocusEventHandler<HTMLInputElement>}
                 />
             ) : (
                 <textarea
+                    {...props}
                     name={name}
                     value={textValue}
                     rows={5}
-                    className="min-w-[450px] p-1 outline-0 border-gray-700 border rounded-md"
                     onChange={onTextChange}
+                    onBlur={
+                        onBlur as React.FocusEventHandler<HTMLTextAreaElement>
+                    }
                 />
             )}
+            {errorMsg && <div className="text-red-600 text-sm">{errorMsg}</div>}
         </div>
     );
 }

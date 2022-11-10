@@ -23,6 +23,86 @@
     background-color: grey;
 }
 
+#layout.dark {
+    --layout-primary-color-odd: #{$blue-tuna};
+    --layout-primaryColor-color: #{$grey-alto};
+    --layout-primary-color-even: #{$light-blue-tuna};
+    --layout-brand-color: #ebebec;
+    --layout-secondary-color: #{$orange-anzac};
+}
+
+#layout.light {
+    --layout-primary-color-odd: #{$alabaster};
+    --layout-primaryColor-color: #{$grey-scorpion};
+    --layout-primary-color-even: #{$mischka};
+    --layout-brand-color: #{$blue-tuna};
+    --layout-secondary-color: #{$orange-anzac};
+}
+
+section {
+    @apply min-h-screen;
+    @apply min-w-full;
+    @apply snap-center;
+    @apply overflow-x-hidden;
+
+    color: var(--layout-primaryColor-color);
+
+    &:nth-of-type(n) {
+        background-color: var(--layout-primary-color-odd);
+
+        .ri-heading-subHeading > span {
+            background-color: var(--layout-primary-color-odd);
+        }
+    }
+
+    &:nth-of-type(2n) {
+        background-color: var(--layout-primary-color-even);
+
+        .ri-heading-subHeading > span {
+            background-color: var(--layout-primary-color-even);
+        }
+    }
+
+    &:last-of-type {
+        padding-bottom: 15px;
+    }
+}
+
+label {
+    font-weight: 700;
+    font-family: $secondaryFont;
+    font-size: 1rem;
+}
+
+input,
+textarea,
+select {
+    outline-width: 0px;
+    border: 1px solid #333333;
+    border-radius: 0.375rem /* 6px */;
+    padding: 4px 4px 4px 6px;
+}
+
+input,
+select {
+    height: 2rem /* 32px */;
+    min-width: 250px;
+
+    @media (max-width: $md) {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+textarea {
+    min-width: 450px;
+
+    @media (max-width: $md) {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
 .animating-underline {
     & {
         cursor: pointer;

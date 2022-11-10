@@ -16,7 +16,7 @@
     -   [x] Expanded Modal Details
 -   [ ] Work Company Projects
     -   [x] Base Structure
-    -   [x] Data
+    -   [ ] Data
     -   [x] Animation
 -   [x] Skills Page
     -   [x] Base Structure
@@ -36,11 +36,12 @@
     -   [ ] Animation
 -   [ ] Contact Page
     -   [x] Base Structure
-    -   [ ] Data
-    -   [ ] Animation
+    -   [x] Data
+    -   [ ] Three JS animation
+    -   [x] Animation
     -   [x] Modal Contact
-    -   [ ] Validation Formik Implementation
-    -   [ ] Email JS
+    -   [x] Validation Formik Implementation
+    -   [x] Email JS
 
 # Major Features
 

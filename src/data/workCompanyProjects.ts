@@ -20,7 +20,7 @@ const WorkCompanyProjectsData: WorkCompanyProjectsType[] = [
         color: "#0017E4",
         logo: DashboardPng,
         description:
-            "I create Dashboard/Reports with the focus on visualizing a whole story in a form of tabular and charts to understand and take critical decisions.",
+            "I create Dashboards with the idea of visualizing a whole story in tabular and charts to take leaders visualize and take critical decisions.",
     },
     {
         title: "Backend",
@@ -34,7 +34,7 @@ const WorkCompanyProjectsData: WorkCompanyProjectsType[] = [
         color: "#434343",
         logo: ETLPng,
         description:
-            "I create custom ETL for client with customizable triggers, with customizable feedbacks, and on the run data validation.",
+            "I create custom ETL for client with customizable triggers, customizable feedbacks, and on the run data validation.",
     },
     {
         title: "Deployment",

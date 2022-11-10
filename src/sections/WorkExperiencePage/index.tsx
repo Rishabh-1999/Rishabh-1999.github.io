@@ -135,6 +135,7 @@ const ExperienceCard = memo(
                                 if (imageComp)
                                     return (
                                         <motion.img
+                                            key={skill}
                                             initial={{
                                                 opacity: 0.5,
                                                 scale: 0,
@@ -179,7 +180,7 @@ const ExperienceCard = memo(
                                     );
                                 } else
                                     return (
-                                        <p key={desc} className="my-1">
+                                        <p key={index} className="my-1">
                                             {desc}
                                         </p>
                                     );

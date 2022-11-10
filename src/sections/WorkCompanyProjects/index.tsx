@@ -57,6 +57,7 @@ function WorkCompanyProjects() {
                 {WorkCompanyProjectsData.map((projects, index) => {
                     return (
                         <div
+                            key={projects.title}
                             className="px-3 py-4 min-h-[190px] hover:shadow-lg hover:scale-105 duration-300 rounded-xl"
                             style={{
                                 background: projects.bgColor,
@@ -73,7 +74,7 @@ function WorkCompanyProjects() {
                             <h3 className="mt-2 font-bold tracking-wide">
                                 {projects.title}
                             </h3>
-                            <h5 className="leading-snug">
+                            <h5 className="leading-snug text-[15px]">
                                 {projects.description}
                             </h5>
                         </div>

@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.91c4ea55.css",
-    "main.js": "/static/js/main.5b29c2a8.js",
+    "main.css": "/static/css/main.a10499eb.css",
+    "main.js": "/static/js/main.83af6f85.js",
+    "static/js/306.77b41967.chunk.js": "/static/js/306.77b41967.chunk.js",
     "static/js/787.952888aa.chunk.js": "/static/js/787.952888aa.chunk.js",
+    "static/js/748.fccca44d.chunk.js": "/static/js/748.fccca44d.chunk.js",
     "static/media/linux.png": "/static/media/linux.dd9b2b983d6afb0c6c49.png",
     "static/media/flask.png": "/static/media/flask.fcc0cfbdfb8d523c61a0.png",
+    "static/media/contact_me_hero.png": "/static/media/contact_me_hero.bc2b15ae6177b1c0ad15.png",
     "static/media/redux.png": "/static/media/redux.03d3a4748d2231e18fd2.png",
     "static/media/python.png": "/static/media/python.6a9a1acdc4906f7a419e.png",
     "static/media/spring.png": "/static/media/spring.1e5bf8c3fba08be252fa.png",
@@ -22,12 +25,14 @@
     "static/media/figma.webp": "/static/media/figma.1187f578dc7459bf1e8c.webp",
     "index.html": "/index.html",
     "static/media/RiLogo.svg": "/static/media/RiLogo.8ebc10b1d74ee4f5514597c1517bd72b.svg",
-    "main.91c4ea55.css.map": "/static/css/main.91c4ea55.css.map",
-    "main.5b29c2a8.js.map": "/static/js/main.5b29c2a8.js.map",
-    "787.952888aa.chunk.js.map": "/static/js/787.952888aa.chunk.js.map"
+    "main.a10499eb.css.map": "/static/css/main.a10499eb.css.map",
+    "main.83af6f85.js.map": "/static/js/main.83af6f85.js.map",
+    "306.77b41967.chunk.js.map": "/static/js/306.77b41967.chunk.js.map",
+    "787.952888aa.chunk.js.map": "/static/js/787.952888aa.chunk.js.map",
+    "748.fccca44d.chunk.js.map": "/static/js/748.fccca44d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91c4ea55.css",
-    "static/js/main.5b29c2a8.js"
+    "static/css/main.a10499eb.css",
+    "static/js/main.83af6f85.js"
   ]
 }

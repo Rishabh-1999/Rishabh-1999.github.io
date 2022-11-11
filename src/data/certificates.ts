@@ -35,11 +35,11 @@ const CertificatesArray: CertificateType[] = [
         url: "https://drive.google.com/file/d/1rS34utrZ1-LXFEeL9soq6urLqM_pg3R5/preview",
         stack: ["Programming Language", "Python", "Others"],
     },
-    {
-        name: "Getting Started with Data Analytics on AWS (Coursera)",
-        url: "https://drive.google.com/file/d/1z9IiytFDkr1lCNdVe1_Dm9Eu21GUVqxv/preview",
-        stack: ["Data Analytics"],
-    },
+    // {
+    //     name: "Getting Started with Data Analytics on AWS (Coursera)",
+    //     url: "https://drive.google.com/file/d/1z9IiytFDkr1lCNdVe1_Dm9Eu21GUVqxv/preview",
+    //     stack: ["Data Analytics"],
+    // },
     {
         name: "Introduction to Git and GitHub (Coursera)",
         url: "https://drive.google.com/file/d/1nbN0QKmEkp0-ajR7HrnuNK5jfJS_MfCR/preview",

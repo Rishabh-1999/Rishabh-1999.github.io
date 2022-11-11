@@ -22,11 +22,11 @@
     -   [x] Base Structure
     -   [x] Data
     -   [x] Animation
--   [ ] Certificates Page
-    -   [ ] Base Structure
+-   [x] Certificates Page
+    -   [x] Base Structure
     -   [x] Data
-    -   [ ] Animation
--   [ ] Education
+    -   [x] Animation
+-   [ ] Education (Cancelled)
     -   [ ] Base Structure
     -   [ ] Data
     -   [ ] Animation

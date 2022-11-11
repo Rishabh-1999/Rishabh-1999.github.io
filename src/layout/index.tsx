@@ -36,7 +36,7 @@ function Routes() {
         <main
             id="layout"
             className={classNames(
-                "h-screen overflow-y-auto relative lg:snap-y snap-none snap-mandatory scroll-smooth",
+                "h-screen overflow-y-auto relative lg:snap-y snap-none snap-mandatory scroll-smooth scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor scrollbar-thumb-rounded-xl scrollbar-[8px]",
                 {
                     light: theme === ThemeTypes.Light,
                     dark: theme === ThemeTypes.Dark,

@@ -1,4 +1,13 @@
-import { useState, useMemo, useEffect } from "react";
+import {
+    useState,
+    useMemo,
+    useEffect,
+    MouseEvent as ReactMouseEvent,
+    ChangeEvent,
+} from "react";
+
+/* Animation */
+import { motion } from "framer-motion";
 
 /* Style Utils */
 import classnames from "classnames";
@@ -59,8 +68,19 @@ function CertificatesPage() {
         };
     }, []);
 
-    const handleSelect = (stack: string): void => {
-        setFilterByStack(stack);
+    const handleOnClickFilter = (
+        event: ReactMouseEvent<HTMLElement, MouseEvent>
+    ): void => {
+        setFilterByStack(
+            event.currentTarget.getAttribute("data-certificate-filter") ?? "all"
+        );
+        setActiveCertificateIndex(0);
+    };
+
+    const handleOnSelectFilter = (
+        event: ChangeEvent<HTMLSelectElement>
+    ): void => {
+        setFilterByStack(event.target.value);
         setActiveCertificateIndex(0);
     };
 
@@ -72,16 +92,25 @@ function CertificatesPage() {
                 {Array.isArray(allStacks) && (
                     <>
                         {width > widths.mdWidth ? (
-                            <div className="mb-2 flex flex-wrap">
+                            <motion.div
+                                initial={{
+                                    y: -100,
+                                    opacity: 0.5,
+                                }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.75 }}
+                                className="mb-2 px-1 py-2 rounded-2xl flex-wrap bg-[var(--layout-primary-color-odd)] flex"
+                            >
                                 <button
                                     className={classnames(
-                                        "p-1.5 rounded-md hover:text-gray-400 hover:bg-slate-200 font-bold",
+                                        "mx-0.5 px-1.5 rounded-lg hover:text-gray-600 hover:bg-gray-300 font-bold",
                                         {
-                                            "m-1 rounded-lg bg-greyScorpion":
+                                            "bg-greyScorpion":
                                                 filterByStack === "all",
                                         }
                                     )}
-                                    onClick={() => handleSelect("all")}
+                                    data-certificate-filter={"all"}
+                                    onClick={handleOnClickFilter}
                                 >
                                     All Certificates :
                                 </button>
@@ -90,25 +119,32 @@ function CertificatesPage() {
                                     <button
                                         key={stack}
                                         className={classnames(
-                                            "p-1.5 rounded-md hover:text-gray-600 hover:bg-slate-400",
+                                            "mx-0.5 p-1.5 rounded-lg hover:text-gray-600 hover:bg-gray-300",
                                             {
-                                                "m-1 rounded-lg bg-greyScorpion":
+                                                "bg-greyScorpion font-bold":
                                                     filterByStack === stack,
                                             }
                                         )}
-                                        onClick={() => handleSelect(stack)}
+                                        data-certificate-filter={stack}
+                                        onClick={handleOnClickFilter}
                                     >
                                         {stack}
                                     </button>
                                 ))}
-                            </div>
+                            </motion.div>
                         ) : (
                             <>
                                 {Array.isArray(allStacks) && (
-                                    <select
-                                        onChange={(e): void =>
-                                            handleSelect(e.target.value)
-                                        }
+                                    <motion.select
+                                        initial={{
+                                            y: -100,
+                                            opacity: 0.5,
+                                        }}
+                                        whileInView={{ y: 0, opacity: 1 }}
+                                        transition={{ duration: 0.75 }}
+                                        className="h-9 mb-1.5 p-1 text-lg bg-[var(--layout-primary-color-odd)]"
+                                        value={filterByStack}
+                                        onChange={handleOnSelectFilter}
                                     >
                                         <option value={"all"}>
                                             Show all Certificates
@@ -123,7 +159,7 @@ function CertificatesPage() {
                                                 </option>
                                             );
                                         })}
-                                    </select>
+                                    </motion.select>
                                 )}
                             </>
                         )}
@@ -131,11 +167,11 @@ function CertificatesPage() {
                 )}
 
                 <div className="flex md:flex-row flex-col">
-                    <div className="md:mr-4 max-h-[450px] md:w-[35%] flex-0 overflow-y-auto active:bg-greyScorpion active:border-b-4 active:border-highlightColor scroll-thin scrollbar-thumb-rounded scrollbar-thumb-slate-500 certificate_list">
+                    <div className="md:mr-4 pr-2 max-h-[450px] md:w-[35%] flex-0 overflow-y-auto active:bg-greyScorpion active:border-b-4 active:border-highlightColor scrollbar scrollbar-thumb-rounded-sm scrollbar-thumb-gray-300">
                         {widths.mdWidth > width ? (
                             <>
                                 <select
-                                    className="w-11/12 text-ellipsis"
+                                    className="my-1 mb-2 text-ellipsis bg-[var(--layout-primary-color-odd)]"
                                     onChange={(e): void =>
                                         setActiveCertificateIndex(
                                             parseInt(e.target.value)
@@ -175,9 +211,9 @@ function CertificatesPage() {
                                                 <div
                                                     key={certificate.name}
                                                     className={classnames(
-                                                        "my-2 p-1.5 cursor-pointer hover:rounded-md hover:bg-grey-scorpion text-lg font-bold",
+                                                        "my-2 mr-1 p-1.5 cursor-pointer rounded-xl hover:bg-gray-700 text-lg font-bold",
                                                         {
-                                                            "active rounded-t-md":
+                                                            "bg-greyScorpion":
                                                                 index ===
                                                                 activeCertificateIndex,
                                                         }
@@ -193,17 +229,23 @@ function CertificatesPage() {
                         )}
                     </div>
 
-                    <div className="w-full flex-1">
-                        <div className="show active">
-                            <iframe
-                                title={selectedCertificate.name}
-                                src={selectedCertificate.url}
-                                width="100%"
-                                className="md:h-[450px] h-[325px]"
-                                allowFullScreen={true}
-                            />
-                        </div>
-                    </div>
+                    <motion.div
+                        initial={{
+                            x: 200,
+                            opacity: 0.5,
+                        }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.75 }}
+                        className="w-full flex-1"
+                    >
+                        <iframe
+                            title={selectedCertificate.name}
+                            src={selectedCertificate.url}
+                            width="100%"
+                            className="md:h-[450px] h-[325px]"
+                            allowFullScreen={true}
+                        />
+                    </motion.div>
                 </div>
             </div>
         </section>

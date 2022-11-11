@@ -18,7 +18,7 @@ function ContactMePage() {
         <section id="contact-me" className="flex flex-col items-center">
             <Heading heading="Contact Me" subHeading="Have a Chat ?" />
 
-            <div className="max-w-4xl mx-4 p-6 rounded-md bg-gray-200 text-black flex-grow flex flex-col items-center">
+            <div className="max-w-4xl mx-6 p-6 rounded-md bg-gray-200 text-black flex-grow flex flex-col items-center">
                 <h3 className="mb-4 text-center text-3xl font-bold underline tracking-wide font-headingFont">
                     Get In Touch
                 </h3>

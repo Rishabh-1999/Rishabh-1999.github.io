@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.82b8e78b.css",
-    "main.js": "/static/js/main.cbefb96f.js",
+    "main.css": "/static/css/main.472aea1c.css",
+    "main.js": "/static/js/main.603f79c1.js",
     "static/js/306.bbd324cd.chunk.js": "/static/js/306.bbd324cd.chunk.js",
     "static/js/787.952888aa.chunk.js": "/static/js/787.952888aa.chunk.js",
     "static/js/748.fccca44d.chunk.js": "/static/js/748.fccca44d.chunk.js",
@@ -25,14 +25,14 @@
     "static/media/figma.webp": "/static/media/figma.1187f578dc7459bf1e8c.webp",
     "index.html": "/index.html",
     "static/media/RiLogo.svg": "/static/media/RiLogo.8ebc10b1d74ee4f5514597c1517bd72b.svg",
-    "main.82b8e78b.css.map": "/static/css/main.82b8e78b.css.map",
-    "main.cbefb96f.js.map": "/static/js/main.cbefb96f.js.map",
+    "main.472aea1c.css.map": "/static/css/main.472aea1c.css.map",
+    "main.603f79c1.js.map": "/static/js/main.603f79c1.js.map",
     "306.bbd324cd.chunk.js.map": "/static/js/306.bbd324cd.chunk.js.map",
     "787.952888aa.chunk.js.map": "/static/js/787.952888aa.chunk.js.map",
     "748.fccca44d.chunk.js.map": "/static/js/748.fccca44d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.82b8e78b.css",
-    "static/js/main.cbefb96f.js"
+    "static/css/main.472aea1c.css",
+    "static/js/main.603f79c1.js"
   ]
 }

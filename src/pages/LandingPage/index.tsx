@@ -137,13 +137,13 @@ function LandingPage() {
                             INTRODUCTION
                         </h3>
                         <h3 className="font-bold">
-                            Full Stack Developer <br />@
+                            Software Engineer <br />@
                             <a
                                 href="https://www.prescienceds.com/"
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                PreScience DS
+                                Autodesk
                             </a>
                         </h3>
                         <p>FullStack Developer | React JS | Node JS</p>

@@ -1,5 +1,6 @@
 /* Assets */
 import PreScienceLogo from "assets/images/prescience.png";
+import AutodeskLogo from "assets/images/autodesk.png";
 
 export interface WorkExperiencesDataType {
     position: string;
@@ -15,12 +16,34 @@ export interface WorkExperiencesDataType {
 
 const WorkExperiences: WorkExperiencesDataType[] = [
     {
-        position: "Software Engineer - 1 (Full-Stack)",
+        position: "Software Engineer - II (Full-Stack)",
+        companyName: "Autodesk",
+        companyLink: "https://www.autodesk.com/",
+        logo: AutodeskLogo,
+        from: "Dec 2022",
+        currently: true,
+        descriptions: [
+        ],
+        skills: [
+            "React",
+            "Node JS",
+            "GraphQL",
+            "JavaScript",
+            "TypeScript",
+            "Docker",
+            "Postgres",
+            "Figma",
+            "Jira",
+            "Git",
+        ],
+    },
+    {
+        position: "Software Engineer - I (Full-Stack)",
         companyName: "PreScience Decision Solutions",
         companyLink: "https://www.prescienceds.com",
         logo: PreScienceLogo,
         from: "June 2021",
-        currently: true,
+        to: "Dec 2022",
         descriptions: [
             [
                 "• Build various custom Dashboard/Report in Web, PDF, and Excel for various Clients like Banks, and B2B.",

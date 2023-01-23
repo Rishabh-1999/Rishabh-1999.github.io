@@ -25,7 +25,7 @@ function AboutMePage() {
           </h1>
           <h2 className="text-lg">
             Currently working as a&nbsp; Software Enginner - II @
-            <span>PreScience Decision Solutions</span>
+            <span>Autodesk</span>
             <br />I build modern web application tools and service from scratch,
             with focus on user experience and with a blend on solving problem in
             an optimal way.

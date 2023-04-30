@@ -1,7 +1,12 @@
+/**
+ * Owner: Rishabh Anand
+ * Desc: Layout Component
+ **/
+
 import React from "react";
 
 /* Styling Utils */
-import classNames from "classnames";
+import classnames from "classnames";
 
 /* Styles */
 import "scss/global.scss";
@@ -9,68 +14,38 @@ import "scss/theme.scss";
 
 /* Components */
 import LeftSection from "components/LeftSection";
-import TopUpButton from "components/TopUpButton";
-
-/* Context */
-import { ThemeContext } from "context";
 
 /* Sections */
 import LandingPage from "sections/LandingPage";
-import AboutMePage from "sections/AboutMePage";
-import WorkExperiencePage from "sections/WorkExperiencePage";
-import WorkCompanyProjects from "sections/WorkCompanyProjects";
-import SkillsPage from "sections/SkillsPage";
-import CertificatesPage from "sections/CertificatesPage";
-// import TestimonialsPage from "sections/TestimonialsPage";
+import EducationPage from "sections/EducationPage";
 
-/* Data */
-import ThemeTypes from "data/theme";
+/* Context */
+import { AppContext } from "context";
 
-/* Lazy Sections */
-const ContactMePage = React.lazy(() => import("sections/ContactMePage"));
+/* Types */
+import { ThemeModeTypes } from "types";
+import { useDarkTheme } from "utils/darkLightMode";
 
 function Routes() {
-    const { theme } = React.useContext(ThemeContext);
+  const { theme } = useDarkTheme();
 
-    return (
-        <main
-            id="layout"
-            className={classNames(
-                "h-screen overflow-y-auto relative lg:snap-y snap-none snap-mandatory scroll-smooth scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor scrollbar-thumb-rounded-xl scrollbar-[8px]",
-                {
-                    light: theme === ThemeTypes.Light,
-                    dark: theme === ThemeTypes.Dark,
-                }
-            )}
-        >
-            <LeftSection />
-            <TopUpButton />
+  return (
+    <main
+      id="layout"
+      className={classnames(
+        "h-screen overflow-y-auto relative lg:snap-y snap-none snap-mandatory scroll-smooth scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor scrollbar-thumb-rounded-xl scrollbar-[8px]"
+      )}
+    >
+      {/* Overflow Segements */}
+      <LeftSection />
 
-            {/* Landing Page */}
-            <LandingPage />
+      {/* Landing Page */}
+      <LandingPage />
 
-            {/* About Me Page */}
-            <AboutMePage />
-
-            {/* Work Experience Page */}
-            <WorkExperiencePage />
-            <WorkCompanyProjects />
-
-            {/* Skills Page */}
-            <SkillsPage />
-
-            {/* Certificates Page */}
-            <CertificatesPage />
-
-            {/* Testimonials Page */}
-            {/* <TestimonialsPage /> */}
-
-            {/* Contact Me Page */}
-            <React.Suspense fallback={<></>}>
-                <ContactMePage />
-            </React.Suspense>
-        </main>
-    );
+      {/* Landing Page */}
+      <EducationPage />
+    </main>
+  );
 }
 
 export default Routes;

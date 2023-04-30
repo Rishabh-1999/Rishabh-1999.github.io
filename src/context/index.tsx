@@ -1,25 +1,63 @@
-import { createContext, useState } from "react";
+/**
+ * Owner: Rishabh Anand
+ * Desc: React Context - Theme
+ **/
 
-/* Data */
-import { ContextType, ThemeType } from "types/context.type";
+import React, { Dispatch, useReducer } from "react";
 
-/* Data */
-import ThemeTypes from "data/theme";
+/* Constants */
+import { ThemeBrowserStorage } from "constants/index";
 
-export const ThemeContext = createContext<ContextType>({
-    theme: ThemeTypes.Dark,
-} as ContextType);
+/* Types */
+import { ContextType, ThemeModeTypes, ReducerAction } from "types";
 
-export const ThemeProvider = ({
-    children,
+/* Utils */
+import { getItemFromLocalStorage } from "utils/storage";
+
+/* Context Constants */
+import { ContextConstants } from "./context.constants";
+
+const initalContext: ContextType = {
+  themeMode:
+    (getItemFromLocalStorage(ThemeBrowserStorage) as ThemeModeTypes) ??
+    ThemeModeTypes.DARK,
+};
+
+export const AppContext = React.createContext<{
+  state: ContextType;
+  dispatch: Dispatch<ReducerAction>;
+}>({ state: initalContext, dispatch: () => null });
+
+function mainReducer(state: ContextType, action: ReducerAction) {
+  switch (action.type) {
+    case ContextConstants.TOGGLE_THEME_MODE: {
+      const tempMode =
+        action?.payload === ThemeModeTypes.DARK
+          ? ThemeModeTypes.LIGHT
+          : ThemeModeTypes.DARK;
+
+      return {
+        ...state,
+        themeMode: tempMode,
+      };
+    }
+
+    default: {
+      return state;
+    }
+  }
+}
+
+export const AppContextProvider = ({
+  children,
 }: {
-    children: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[];
 }) => {
-    const [theme, setTheme] = useState<ThemeType>(ThemeTypes.Dark);
+  const [state, dispatch] = useReducer(mainReducer, initalContext);
 
-    return (
-        <ThemeContext.Provider value={{ theme, setTheme }}>
-            {children}
-        </ThemeContext.Provider>
-    );
+  return (
+    <AppContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AppContext.Provider>
+  );
 };

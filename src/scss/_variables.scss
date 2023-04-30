@@ -1,23 +1,30 @@
+/*
+ * Owner: Rishabh Anand
+ * Desc: SCSS variables fonts, color , responsive size
+*/
+
+// Fonts
+$primary-font: "Open Sans", sans-serif;
+$secondary-font: "Architects Daughter", "cursive";
+
+// Colors
+$white: #ffffff;
+$grey-alto: #dadada;
 $blue-tuna: #2e2e35;
 $light-blue-tuna: #34343b;
-$grey-nobel: #b8b7b7;
-$lightgray: #e5e5e5;
 $grey-scorpion: #5e5e5e;
-$orange-anzac: #e4aa48;
-$grey-alto: #dadada;
-$white: #fff;
 $alabaster: #fafafa;
-$mischka: #d2d3db;
 
-$primaryFont: "Open Sans", sans-serif;
-$secondaryFont: "Architects Daughter", "cursive";
-
-$primaryColor: $grey-alto;
-$secondaryColor: $blue-tuna;
-$highlightColor: $orange-anzac;
-
+// Responsive size
 $xs: 0;
 $sm: 480px;
 $md: 768px;
 $lg: 1024px;
 $xl: 1536px;
+
+/* -------------------------------------------------------------------- */
+
+$grey-nobel: #b8b7b7;
+$lightgray: #e5e5e5;
+$orange-anzac: #e4aa48;
+$mischka: #d2d3db;

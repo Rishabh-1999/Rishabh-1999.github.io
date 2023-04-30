@@ -1,142 +1,91 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@300;400;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+/*
+ * Owner: Rishabh Anand
+ * Desc: Style Theme
+*/
 
-@import "./_components";
 @import "./_variables";
 
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #root {
-    font-family: $primaryFont;
-    background-color: var(--layout-primary-color-even);
-    color: var(--layout-primaryColor-color);
+  font-family: $primary-font;
 }
 
-.control-arrow {
-    z-index: 20 !important;
-    background-color: grey;
+// Theme Type Colors
+body.dark {
+  // New
+
+  // Common
+  --layout-color-font: #{$grey-alto};
+  --layout-color-util-1: #{$grey-alto};
+
+  // Odd
+  --layout-color-odd-bg: #{$blue-tuna};
+
+  // Even
+  --layout-color-even-bg: #{$light-blue-tuna};
+
+  // Old
+  --layout-primary-color-odd: #{$blue-tuna};
+  --layout-primaryColor-color: #{$grey-alto};
+  --layout-primary-color-even: #{$light-blue-tuna};
+  --layout-brand-color: #ebebec;
+  --layout-secondary-color: #{$orange-anzac};
 }
 
-#layout.dark {
-    --layout-primary-color-odd: #{$blue-tuna};
-    --layout-primaryColor-color: #{$grey-alto};
-    --layout-primary-color-even: #{$light-blue-tuna};
-    --layout-brand-color: #ebebec;
-    --layout-secondary-color: #{$orange-anzac};
-}
+body.light {
+  // New
 
-#layout.light {
-    --layout-primary-color-odd: #{$alabaster};
-    --layout-primaryColor-color: #{$grey-scorpion};
-    --layout-primary-color-even: #{$mischka};
-    --layout-brand-color: #{$blue-tuna};
-    --layout-secondary-color: #{$orange-anzac};
+  // Common
+  --layout-color-font: #{$grey-scorpion};
+  --layout-color-util-1: #{$grey-scorpion};
+
+  // Odd
+  --layout-color-odd-bg: #{$alabaster};
+
+  // Even
+  --layout-color-even-bg: #{$white};
+
+  // Old
+  --layout-primary-color-odd: #{$alabaster};
+  --layout-primaryColor-color: #{$grey-scorpion};
+  --layout-primary-color-even: #{$mischka};
+  --layout-brand-color: #{$blue-tuna};
+  --layout-secondary-color: #{$orange-anzac};
 }
 
 section {
-    @apply min-h-screen;
-    @apply min-w-full;
-    @apply snap-center;
-    @apply overflow-x-hidden;
+  @apply min-h-screen;
+  @apply min-w-full;
+  @apply snap-center;
+  @apply overflow-x-hidden;
 
-    color: var(--layout-primaryColor-color);
+  color: var(--layout-color-font);
 
-    &:nth-of-type(n) {
-        background-color: var(--layout-primary-color-odd);
+  &:nth-of-type(n) {
+    background-color: var(--layout-color-odd-bg);
 
-        .ri-heading-subHeading > span {
-            background-color: var(--layout-primary-color-odd);
-        }
+    .ri-heading-subHeading > span {
+      background-color: var(--layout-primary-color-odd);
     }
+  }
 
-    &:nth-of-type(2n) {
-        background-color: var(--layout-primary-color-even);
+  &:nth-of-type(2n) {
+    background-color: var(--layout-color-even-bg);
 
-        .ri-heading-subHeading > span {
-            background-color: var(--layout-primary-color-even);
-        }
+    .ri-heading-subHeading > span {
+      background-color: var(--layout-primary-color-even);
     }
+  }
 
-    &:last-of-type {
-        padding-bottom: 15px;
-    }
-}
-
-label {
-    font-weight: 700;
-    font-family: $secondaryFont;
-    font-size: 1rem;
-}
-
-input,
-textarea,
-select {
-    outline-width: 0px;
-    border: 1px solid #333333;
-    border-radius: 0.375rem /* 6px */;
-    padding: 4px 4px 4px 6px;
-}
-
-input,
-select {
-    height: 2rem /* 32px */;
-    min-width: 250px;
-
-    @media (max-width: $md) {
-        min-width: unset;
-        width: 100%;
-    }
-}
-
-textarea {
-    min-width: 450px;
-
-    @media (max-width: $md) {
-        min-width: unset;
-        width: 100%;
-    }
-}
-
-.animating-underline {
-    & {
-        cursor: pointer;
-        position: relative;
-        display: block;
-    }
-
-    &:hover::after {
-        -webkit-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-        transform: scaleX(1);
-        -webkit-transform-origin: left;
-        -ms-transform-origin: left;
-        transform-origin: left;
-    }
-
-    &::after {
-        position: absolute;
-        content: "";
-        top: 110%;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: $highlightColor;
-        -webkit-transform: scaleX(0);
-        -ms-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transition: -webkit-transform 0.5s;
-        transition: -webkit-transform 0.5s;
-        -o-transition: transform 0.5s;
-        transition: transform 0.5s;
-        transition: transform 0.5s, -webkit-transform 0.5s;
-        -webkit-transform-origin: right;
-        -ms-transform-origin: right;
-        transform-origin: right;
-    }
+  &:last-of-type {
+    padding-bottom: 15px;
+  }
 }

@@ -1,7 +1,12 @@
+/*
+ * Owner: Rishabh Anand
+ * Desc: Global SCSS
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
-    @import "./_components";
+  @import "./_components";
 }

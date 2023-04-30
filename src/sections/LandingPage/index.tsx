@@ -1,3 +1,8 @@
+/*
+ * Owner: Rishabh Anand
+ * Desc: Landing Page Component
+ */
+
 /* Styles */
 import "./landingPage.styles.scss";
 
@@ -11,7 +16,7 @@ import Typical from "./components/Typical";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 /* Assets */
-import MyPhoto from "assets/images/me/MyPhoto.webp";
+import MyPhoto from "assets/images/me/MyPhoto.png";
 
 const typewriterSteps = [
   ["Full Stack Developer  ⚛️", 2500],

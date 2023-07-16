@@ -1,7 +1,7 @@
 /*
  * Owner: Rishabh Anand
- * Desc: Export Common Types
+ * Desc: Types - Common - Exports
  */
 
-export * from "./browserStorage.type";
+export * from "./browser.type";
 export * from "./theme.type";

@@ -1,4 +1,5 @@
-import { BrowserStorageType } from "types/common/browserStorage.type";
+/* Types */
+import { BrowserStorageTypes } from "types/common/browser.type";
 
 // Local Storage
 export function getItemFromLocalStorage(key: string): string | null {
@@ -19,23 +20,27 @@ export function setItemFromSessionStorage(key: string, item: string): void {
 }
 
 // Common
-export function setItemStorage(
-  storageType: BrowserStorageType,
+export function setItemInStorage(
+  storageType: BrowserStorageTypes,
   key: string,
   item: string
 ): void {
-  const storageInst =
-    storageType === BrowserStorageType.LOCAL ? localStorage : sessionStorage;
+  const setItemFunc =
+    storageType === BrowserStorageTypes.LOCAL
+      ? setItemFromLocalStorage
+      : setItemFromSessionStorage;
 
-  storageInst.setItem(key, item);
+  setItemFunc(key, item);
 }
 
-export function getItemStorage(
-  storageType: BrowserStorageType,
+export function getItemFromStorage(
+  storageType: BrowserStorageTypes,
   key: string
 ): string | null {
-  const storageInst =
-    storageType === BrowserStorageType.LOCAL ? localStorage : sessionStorage;
+  const getItemFun =
+    storageType === BrowserStorageTypes.LOCAL
+      ? getItemFromLocalStorage
+      : getItemFromSessionStorage;
 
-  return storageInst.getItem(key);
+  return getItemFun(key);
 }

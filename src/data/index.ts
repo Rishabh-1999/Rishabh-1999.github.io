@@ -1,6 +1,21 @@
 /**
  * Owner: Rishabh Anand
- * Desc: Export Data(s)
+ * Desc: Data - Exports
  **/
 
-export * from "./socialMedia";
+export { default as AppSettings } from "./AppSettings";
+export type { AppSettingsType } from "./AppSettings";
+
+export { default as ImageMappings } from "./ImageMappings";
+
+export { default as PersonalDetails } from "./PersonalDetails";
+export type { PersonalDetailsType } from "./PersonalDetails";
+
+export { default as SkillsData } from "./Skills";
+export type { SkillsDataType } from "./Skills";
+
+export { default as SocialMediaData } from "./SocialMedia";
+export type { SocialMediaDataType } from "./SocialMedia";
+
+export { default as WorkExperiencesData } from "./WorkExperiences";
+export type { WorkExperiencesDataType } from "./WorkExperiences";

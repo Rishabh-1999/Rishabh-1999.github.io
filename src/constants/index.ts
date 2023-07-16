@@ -1,6 +1,7 @@
 /**
  * Owner: Rishabh Anand
- * Desc: Export constants
+ * Desc: Constants - Exports
  **/
 
-export * from "./theme";
+export * from "./context.constants";
+export * from "./theme.constants";

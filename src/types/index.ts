@@ -1,8 +1,6 @@
 /*
  * Owner: Rishabh Anand
- * Desc: Export Types
+ * Desc: Types - Export
  */
 
 export * from "./common/index.type";
-export * from "./context/context.type";
-export * from "./data/index.type";

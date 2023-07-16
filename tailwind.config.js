@@ -1,25 +1,35 @@
+/**
+ * Owner: Rishabh Anand
+ * Desc: Tailwind Config
+ **/
+
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
-    content: ["./src/**/*.{js,jsx,ts,tsx}"],
-    theme: {
-        extend: {
-            colors: {
-                primaryColor: "#b8b7b7",
-                secondaryColor: "#2e2e35",
-                highlightColor: "#e4aa48",
-                greyScorpion: "#5e5e5e",
-                "blue-tuna": "#2e2e35",
-                "grey-nobel": "#b8b7b7",
-                "grey-alto": "#dadada",
-                alabaster: "#fafafa",
-                mischka: "#d2d3db",
-            },
-            fontFamily: {
-                secondaryFont: ["Nunito"],
-                headingFont: ["Concert One", "cursive"],
-            },
-        },
+  content: ["./src/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        primaryColor: "#b8b7b7",
+        secondaryColor: "#2e2e35",
+        highlightColor: "#e4aa48",
+        greyScorpion: "#5e5e5e",
+        "blue-tuna": "#2e2e35",
+        "grey-nobel": "#b8b7b7",
+        "grey-alto": "#dadada",
+        alabaster: "#fafafa",
+        mischka: "#d2d3db",
+      },
+      fontFamily: {
+        secondaryFont: ["Nunito"],
+        ConcertOne: ["Concert One", "cursive"],
+      },
+      maxWidth: {
+        "5.5xl": "68rem",
+        "8.5xl": "92rem",
+      },
     },
-    plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
-    darkMode: "class",
+  },
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
+  darkMode: "class",
 };

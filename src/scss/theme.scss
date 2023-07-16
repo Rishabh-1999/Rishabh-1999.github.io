@@ -1,9 +1,13 @@
 /*
  * Owner: Rishabh Anand
- * Desc: Style Theme
+ * Desc: SCSS - Main Theme
 */
 
 @import "./_variables";
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Open+Sans:wght@300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
 
 *,
 *::before,
@@ -16,15 +20,22 @@
 
 #root {
   font-family: $primary-font;
+
+  --layout-font-heading: #{$tertiary-font};
 }
 
 // Theme Type Colors
 body.dark {
   // New
 
+  color: #{$grey-alto};
+
   // Common
   --layout-color-font: #{$grey-alto};
+  --layout-color-font-light: #{$grey-nobel};
   --layout-color-util-1: #{$grey-alto};
+  --layout-color-highlight: #{$orange-anzac};
+  --layout-color-bg: #{$baltic-sea};
 
   // Odd
   --layout-color-odd-bg: #{$blue-tuna};
@@ -33,19 +44,23 @@ body.dark {
   --layout-color-even-bg: #{$light-blue-tuna};
 
   // Old
-  --layout-primary-color-odd: #{$blue-tuna};
-  --layout-primaryColor-color: #{$grey-alto};
-  --layout-primary-color-even: #{$light-blue-tuna};
-  --layout-brand-color: #ebebec;
-  --layout-secondary-color: #{$orange-anzac};
+  // --layout-primary-color-odd: #{$blue-tuna};
+  // --layout-primaryColor-color: #{$grey-alto};
+  // --layout-primary-color-even: #{$light-blue-tuna};
+  // --layout-brand-color: #ebebec;
+  // --layout-secondary-color: #{$orange-anzac};
 }
 
 body.light {
   // New
 
+  color: #{$grey-scorpion};
+
   // Common
   --layout-color-font: #{$grey-scorpion};
   --layout-color-util-1: #{$grey-scorpion};
+  --layout-color-highlight: #{$orange-anzac};
+  --layout-color-bg: #{$baltic-sea};
 
   // Odd
   --layout-color-odd-bg: #{$alabaster};
@@ -54,11 +69,11 @@ body.light {
   --layout-color-even-bg: #{$white};
 
   // Old
-  --layout-primary-color-odd: #{$alabaster};
-  --layout-primaryColor-color: #{$grey-scorpion};
-  --layout-primary-color-even: #{$mischka};
-  --layout-brand-color: #{$blue-tuna};
-  --layout-secondary-color: #{$orange-anzac};
+  // --layout-primary-color-odd: #{$alabaster};
+  // --layout-primaryColor-color: #{$grey-scorpion};
+  // --layout-primary-color-even: #{$mischka};
+  // --layout-brand-color: #{$blue-tuna};
+  // --layout-secondary-color: #{$orange-anzac};
 }
 
 section {
@@ -72,16 +87,16 @@ section {
   &:nth-of-type(n) {
     background-color: var(--layout-color-odd-bg);
 
-    .ri-heading-subHeading > span {
-      background-color: var(--layout-primary-color-odd);
+    .text-subHeading > span {
+      background-color: var(--layout-color-odd-bg);
     }
   }
 
   &:nth-of-type(2n) {
     background-color: var(--layout-color-even-bg);
 
-    .ri-heading-subHeading > span {
-      background-color: var(--layout-primary-color-even);
+    .text-subHeading > span {
+      background-color: var(--layout-color-even-bg);
     }
   }
 

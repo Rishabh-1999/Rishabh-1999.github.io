@@ -1,44 +1,43 @@
 /**
  * Owner: Rishabh Anand
- * Desc: React Context - Theme
+ * Desc: Context
  **/
 
-import React, { Dispatch, useReducer } from "react";
-
-/* Constants */
-import { ThemeBrowserStorage } from "constants/index";
-
-/* Types */
-import { ContextType, ThemeModeTypes, ReducerAction } from "types";
+import { createContext, Dispatch, useReducer } from "react";
 
 /* Utils */
 import { getItemFromLocalStorage } from "utils/storage";
 
-/* Context Constants */
-import { ContextConstants } from "./context.constants";
+/* Data */
+import { AppSettings } from "data";
 
-const initalContext: ContextType = {
+/* Constants */
+import { ThemeBrowserStorageKeyStr, ContextConstants } from "constants/index";
+
+/* Types */
+import type { AppContextType, AppReducerActionType } from "./context.type";
+import { ThemeModesTypes } from "types";
+
+/* Re-Export */
+export { ContextConstants };
+
+const initalContextData: AppContextType = {
   themeMode:
-    (getItemFromLocalStorage(ThemeBrowserStorage) as ThemeModeTypes) ??
-    ThemeModeTypes.DARK,
+    (getItemFromLocalStorage(ThemeBrowserStorageKeyStr) as ThemeModesTypes) ??
+    AppSettings.prefferedThemeMode,
 };
 
-export const AppContext = React.createContext<{
-  state: ContextType;
-  dispatch: Dispatch<ReducerAction>;
-}>({ state: initalContext, dispatch: () => null });
+export const AppContext = createContext<{
+  state: AppContextType;
+  dispatch: Dispatch<AppReducerActionType>;
+}>({ state: initalContextData, dispatch: () => null });
 
-function mainReducer(state: ContextType, action: ReducerAction) {
+function mainReducer(state: AppContextType, action: AppReducerActionType) {
   switch (action.type) {
-    case ContextConstants.TOGGLE_THEME_MODE: {
-      const tempMode =
-        action?.payload === ThemeModeTypes.DARK
-          ? ThemeModeTypes.LIGHT
-          : ThemeModeTypes.DARK;
-
+    case ContextConstants.SET_THEME_MODE: {
       return {
         ...state,
-        themeMode: tempMode,
+        themeMode: action.payload,
       };
     }
 
@@ -53,7 +52,7 @@ export const AppContextProvider = ({
 }: {
   children: JSX.Element | JSX.Element[];
 }) => {
-  const [state, dispatch] = useReducer(mainReducer, initalContext);
+  const [state, dispatch] = useReducer(mainReducer, initalContextData);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>

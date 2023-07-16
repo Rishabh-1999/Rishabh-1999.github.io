@@ -3,8 +3,6 @@
  * Desc: Layout Component
  **/
 
-import React from "react";
-
 /* Styling Utils */
 import classnames from "classnames";
 
@@ -14,26 +12,24 @@ import "scss/theme.scss";
 
 /* Components */
 import LeftSection from "components/LeftSection";
-
 /* Sections */
 import LandingPage from "sections/LandingPage";
-import EducationPage from "sections/EducationPage";
+import AboutPage from "sections/AboutPage";
+import SkillsPage from "sections/SkillsPage";
+import WorkExperiencesPage from "sections/WorkExperiencesPage";
+// import ContactPage from "sections/ContactPage";
 
-/* Context */
-import { AppContext } from "context";
+/* Utils */
+import { useThemeMode } from "utils/hooks/themeMode";
 
-/* Types */
-import { ThemeModeTypes } from "types";
-import { useDarkTheme } from "utils/darkLightMode";
-
-function Routes() {
-  const { theme } = useDarkTheme();
+function Routes(): JSX.Element {
+  const _ = useThemeMode();
 
   return (
     <main
       id="layout"
       className={classnames(
-        "h-screen overflow-y-auto relative lg:snap-y snap-none snap-mandatory scroll-smooth scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor scrollbar-thumb-rounded-xl scrollbar-[8px]"
+        "relative h-screen overflow-y-auto lg:snap-y snap-none snap-mandatory scroll-smooth scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor scrollbar-thumb-rounded-xl scrollbar-[6px]"
       )}
     >
       {/* Overflow Segements */}
@@ -42,8 +38,17 @@ function Routes() {
       {/* Landing Page */}
       <LandingPage />
 
-      {/* Landing Page */}
-      <EducationPage />
+      {/* About Page */}
+      <AboutPage />
+
+      {/* Work Experience Page */}
+      <WorkExperiencesPage />
+
+      {/* Skills Page */}
+      <SkillsPage />
+
+      {/* Contact Page */}
+      {/* <ContactPage /> */}
     </main>
   );
 }

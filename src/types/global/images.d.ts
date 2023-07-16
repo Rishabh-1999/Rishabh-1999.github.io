@@ -1,3 +1,8 @@
+/*
+ * Owner: Rishabh Anand
+ * Desc: Types - Global Types - Images / SVG Assets
+ */
+
 declare module "*.jpg";
 declare module "*.png";
 declare module "*.webp";

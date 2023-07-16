@@ -1,16 +1,16 @@
 /*
  * Owner: Rishabh Anand
- * Desc: Custom @camwiegert-typical global types
+ * Desc: Types - Global Types - Custom @camwiegert-typical
  */
 
 declare module "@camwiegert/typical" {
   export function type(node: HTMLElement | null, ...args: any[]): Promise<void>;
 
-  declare function edit(node: HTMLElement, text: string): Promise<void>;
+  function edit(node: HTMLElement, text: string): Promise<void>;
 
-  declare function wait(ms: number): Promise<void>;
+  function wait(ms: number): Promise<void>;
 
-  declare function perform(
+  function perform(
     node: HTMLElement,
     edits: any,
     speed?: number

@@ -14,16 +14,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "noImplicitAny": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
+    // "downlevelIteration": true,
     "paths": {
+      "assets/*": ["./assets/*"],
       "components/*": ["./components/*"],
-      "utils/*": ["./utils/*"],
+      "constants/*": ["./constants/*"],
+      "data/*": ["./data/*"],
       "scss/*": ["./scss/*"],
       "sections/*": ["./sections/*"],
-      "assets/*": ["./assets/*"],
-      "constants/*": ["./constants/*"],
-      "types/*": ["./types/*"]
+      "types/*": ["./types/*"],
+      "utils/*": ["./utils/*"]
     },
     "typeRoots": ["node_modules/@types", "src/types"],
     "types": ["node"]

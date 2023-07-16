@@ -1,9 +1,9 @@
 /*
  * Owner: Rishabh Anand
- * Desc: Theme Mode Type
+ * Desc: Type - Common - Theme Modes Types
  */
 
-export enum ThemeModeTypes {
+export enum ThemeModesTypes {
   "DARK" = "dark",
   "LIGHT" = "light",
 }

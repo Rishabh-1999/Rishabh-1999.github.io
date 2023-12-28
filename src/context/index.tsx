@@ -1,36 +1,40 @@
 /**
- * Owner: Rishabh Anand
- * Desc: Context
+ * @Owner: Rishabh Anand
+ * @Desc: Context
  **/
 
 import { createContext, Dispatch, useReducer } from "react";
 
 /* Utils */
-import { getItemFromLocalStorage } from "utils/storage";
+import { getItemFromBrowserStorage } from "utils/storage";
 
 /* Data */
 import { AppSettings } from "data";
 
 /* Constants */
-import { ThemeBrowserStorageKeyStr, ContextConstants } from "constants/index";
+import { ContextConstants } from "./context.constants";
+import { ThemeBrowserStorageKeyStr } from "../constants/index";
 
 /* Types */
 import type { AppContextType, AppReducerActionType } from "./context.type";
 import { ThemeModesTypes } from "types";
+import { BrowserStorageTypes } from "types/common/browser.type";
 
 /* Re-Export */
 export { ContextConstants };
 
-const initalContextData: AppContextType = {
+const initialContextData: AppContextType = {
   themeMode:
-    (getItemFromLocalStorage(ThemeBrowserStorageKeyStr) as ThemeModesTypes) ??
-    AppSettings.prefferedThemeMode,
+    getItemFromBrowserStorage<ThemeModesTypes>(
+      BrowserStorageTypes.LOCAL,
+      ThemeBrowserStorageKeyStr
+    ) ?? AppSettings.preferredThemeMode,
 };
 
 export const AppContext = createContext<{
   state: AppContextType;
   dispatch: Dispatch<AppReducerActionType>;
-}>({ state: initalContextData, dispatch: () => null });
+}>({ state: initialContextData, dispatch: () => null });
 
 function mainReducer(state: AppContextType, action: AppReducerActionType) {
   switch (action.type) {
@@ -52,7 +56,7 @@ export const AppContextProvider = ({
 }: {
   children: JSX.Element | JSX.Element[];
 }) => {
-  const [state, dispatch] = useReducer(mainReducer, initalContextData);
+  const [state, dispatch] = useReducer(mainReducer, initialContextData);
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>

@@ -1,6 +1,6 @@
 /**
- * Owner: Rishabh Anand
- * Desc: Main Index
+ * @Owner: Rishabh Anand
+ * @Desc: Main Index Component
  **/
 
 import React from "react";

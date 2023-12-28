@@ -1,26 +1,52 @@
+/**
+ * @Owner: Rishabh Anand
+ * @Desc: Utils - Storage utility functions
+ **/
+
 /* Types */
 import { BrowserStorageTypes } from "types/common/browser.type";
 
-// Local Storage
-export function getItemFromLocalStorage(key: string): string | null {
+/** Local Storage **/
+/**
+ * @param {string} key
+ * @return {*}  {(string | null)}
+ */
+function getItemFromLocalStorage(key: string): string | null {
   return localStorage.getItem(key);
 }
 
-export function setItemFromLocalStorage(key: string, item: string): void {
+/**
+ * @param {string} key
+ * @param {string} item
+ */
+function setItemFromLocalStorage(key: string, item: string): void {
   localStorage.setItem(key, item);
 }
 
-// Session Storage
-export function getItemFromSessionStorage(key: string): string | null {
+/** Session Storage **/
+/**
+ * @param {string} key
+ * @return {*}  {(string | null)}
+ */
+function getItemFromSessionStorage(key: string): string | null {
   return sessionStorage.getItem(key);
 }
 
-export function setItemFromSessionStorage(key: string, item: string): void {
+/**
+ * @param {string} key
+ * @param {string} item
+ */
+function setItemFromSessionStorage(key: string, item: string): void {
   sessionStorage.setItem(key, item);
 }
 
-// Common
-export function setItemInStorage(
+/** Common **/
+/**
+ * @param {BrowserStorageTypes} storageType
+ * @param {string} key
+ * @param {string} item
+ */
+export function setItemInBrowserStorage(
   storageType: BrowserStorageTypes,
   key: string,
   item: string
@@ -33,14 +59,21 @@ export function setItemInStorage(
   setItemFunc(key, item);
 }
 
-export function getItemFromStorage(
+/**
+ * @param {BrowserStorageTypes} storageType
+ * @param {string} key
+ * @return {*}  {(T | null)}
+ * @export
+ * @template T
+ */
+export function getItemFromBrowserStorage<T = String>(
   storageType: BrowserStorageTypes,
   key: string
-): string | null {
+): T | null {
   const getItemFun =
     storageType === BrowserStorageTypes.LOCAL
       ? getItemFromLocalStorage
       : getItemFromSessionStorage;
 
-  return getItemFun(key);
+  return getItemFun(key) as T;
 }

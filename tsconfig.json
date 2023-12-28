@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "allowJs": false,
+    "skipLibCheck": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -17,7 +17,6 @@
     "noImplicitAny": true,
     "jsx": "react-jsx",
     "baseUrl": "./src",
-    // "downlevelIteration": true,
     "paths": {
       "assets/*": ["./assets/*"],
       "components/*": ["./components/*"],

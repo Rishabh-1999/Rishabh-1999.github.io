@@ -5,14 +5,16 @@
 
 /* Types */
 import { ThemeModesTypes } from "types/index";
-import { AppSettingsType } from "./appSettings.type";
 
-/* Re-Export */
-export type { AppSettingsType };
+export interface AppSettingsType {
+  enableThemes: boolean;
+  preferredThemeMode: ThemeModesTypes;
+  enableAudio: boolean;
+}
 
 const AppSettings: AppSettingsType = {
   enableThemes: true,
-  prefferedThemeMode: ThemeModesTypes.DARK,
+  preferredThemeMode: ThemeModesTypes.DARK,
   enableAudio: true,
 };
 

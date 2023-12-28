@@ -1,9 +1,7 @@
-/*
- * Owner: Rishabh Anand
- * Desc: Webpack - Production(Prod) Config
- */
-
-const Path = require("path");
+/**
+ * @Owner: Rishabh Anand
+ * @Desc: Webpack - Production(Prod) Config
+ **/
 
 /* Webpack Configs */
 const CommonWebpackConfig = require("./webpack.common");

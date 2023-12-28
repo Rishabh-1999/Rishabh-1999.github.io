@@ -1,4 +1,4 @@
-# Coding Stnadards
+# Coding Standards
 
 ## Naming Standards
 
@@ -18,12 +18,12 @@
 
 ---
 
-- React Exports Libaray
-- Third Party Libaraies
+- React Exports Library
+- Third Party Libraries
   - Styling Utils
-  - Animation Libaraies
-  - \*\* Third Party Libaraies
-- Component Libaray ( MUI )
+  - Animation Libraries
+  - \*\* Third Party Libraries
+- Component Library ( MUI )
 - Styles
 - Components / Sections
 - Context

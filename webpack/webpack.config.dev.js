@@ -1,7 +1,7 @@
-/*
- * Owner: Rishabh Anand
- * Desc: Webpack - Development(Dev) Config
- */
+/**
+ * @Owner: Rishabh Anand
+ * @Desc:  Webpack - Development(Dev) Config
+ **/
 
 const Path = require("path");
 

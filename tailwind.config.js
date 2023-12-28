@@ -1,6 +1,6 @@
 /**
- * Owner: Rishabh Anand
- * Desc: Tailwind Config
+ * @Owner: Rishabh Anand
+ * @Desc: Tailwind Configuration
  **/
 
 /** @type {import('tailwindcss').Config} */

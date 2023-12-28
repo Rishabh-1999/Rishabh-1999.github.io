@@ -1,7 +1,7 @@
-/*
- * Owner: Rishabh Anand
- * Desc: Webpack - Constants
- */
+/**
+ * @Owner: Rishabh Anand
+ * @Desc: Webpack - Constants
+ **/
 
 module.exports = {
   PRODUCTION: "production",

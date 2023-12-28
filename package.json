@@ -1,12 +1,15 @@
 {
   "name": "rishabh-1999.github.io",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Rishabh Anand's Portfolio",
   "main": "src/index.tsx",
   "author": "Rishabh Anand",
-  "license": "UNLICESNSE",
+  "license": "UNLICENSED",
   "private": true,
   "scripts": {
+    "clean": "npm run clean:all",
+    "clean:all": "rm -rf ./node_modules && npm run clean:build",
+    "clean:build": "rm -rf ./build",
     "start": "webpack serve --config ./webpack/webpack.config.dev.js",
     "build": "webpack --config ./webpack/webpack.config.prod.js"
   },
@@ -17,8 +20,8 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.0",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "autoprefixer": "^10.2.5",
     "babel-loader": "^9.1.2",
     "classnames": "^2.3.2",
@@ -40,20 +43,19 @@
     "webpack-pwa-manifest": "^4.3.0",
     "yup": "^1.0.2"
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
   "dependencies": {
     "@camwiegert/typical": "^0.1.1",
-    "@emailjs/browser": "^3.10.0",
-    "@emotion/core": "^11.0.0",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/icons-material": "^5.11.11",
-    "@mui/styled-engine": "^5.11.11",
     "date-fns": "^2.29.3",
     "formik": "^2.2.9",
     "framer-motion": "6.2.4",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-social-icons": "^5.15.0",
+    "styled-components": "^6.1.6",
     "tailwind-scrollbar": "^2.0.1",
     "tailwindcss": "^3.2.7"
   }

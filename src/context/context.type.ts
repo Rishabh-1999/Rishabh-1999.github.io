@@ -1,7 +1,7 @@
-/*
- * Owner: Rishabh Anand
- * Desc: Context - Type
- */
+/**
+ * @Owner: Rishabh Anand
+ * @Desc: Context - Types
+ **/
 
 /* Types */
 import { ThemeModesTypes } from "../types/common/index.type";

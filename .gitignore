@@ -1,6 +1,6 @@
 #
 # Owner: Rishabh Anand
-# Desc: Git ignore file
+# Desc: Git ignore files
 #
 
 # dependencies
@@ -11,9 +11,6 @@ yarn.lock
 
 # production
 /build
-/src copy
 
 # temp
-# TASK: Pending - Need to remove
-# /src copy
-node_modules
+/src copy

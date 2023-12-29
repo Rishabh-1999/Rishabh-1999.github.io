@@ -49,6 +49,9 @@
   },
   "dependencies": {
     "@camwiegert/typical": "^0.1.1",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.2",
     "date-fns": "^2.29.3",
     "formik": "^2.2.9",
     "framer-motion": "6.2.4",

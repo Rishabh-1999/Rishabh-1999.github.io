@@ -13,6 +13,9 @@ import "scss/theme.scss";
 /* Components */
 import LeftSection from "components/LeftSection";
 
+/* Sections */
+import LandingPage from "sections/LandingPage";
+
 /* Utils */
 import { useThemeMode } from "utils/hooks/themeMode";
 
@@ -28,6 +31,8 @@ function Routes(): JSX.Element {
     >
       {/* Overflow Segments */}
       <LeftSection />
+      {/* Landing Page */}
+      <LandingPage />
       Under Development
     </main>
   );

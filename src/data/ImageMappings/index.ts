@@ -24,6 +24,7 @@ import GitPng from "assets/images/techs/git.png";
 import LinuxImg from "assets/images/techs/linux.png";
 import NPMImg from "assets/images/techs/npm.png";
 import JenkinsPng from "assets/images/techs/jenkins.png";
+import GraphQLPng from "assets/images/techs/graphql.png";
 
 const ImageMappings: {
   [key: string]: any;
@@ -48,6 +49,7 @@ const ImageMappings: {
   Linux: LinuxImg,
   NPM: NPMImg,
   Jenkins: JenkinsPng,
+  GraphQL: GraphQLPng,
 };
 
 export default ImageMappings;

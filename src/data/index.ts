@@ -11,6 +11,9 @@ export { default as ImageMappings } from "./ImageMappings";
 export { default as PersonalDetails } from "./PersonalDetails";
 export type { PersonalDetailsType } from "./PersonalDetails";
 
+export { default as SkillsData } from "./Skills";
+export type { SkillsDataType } from "./Skills";
+
 export { default as SocialMediaData } from "./SocialMedia";
 export type { SocialMediaDataType } from "./SocialMedia";
 

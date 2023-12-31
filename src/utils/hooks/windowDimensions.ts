@@ -16,7 +16,7 @@ function getWindowDimensions() {
   };
 }
 
-function getBreakpoint(width: number) {
+function getBreakpoint(width: number): DesignBreakpoint {
   const designBreakpoints = Object.entries(DesignBreakpoint);
 
   for (let i = 0; i < designBreakpoints.length; i++) {
@@ -24,11 +24,11 @@ function getBreakpoint(width: number) {
     const [_key, breakPoint] = designBreakpoint;
 
     if (typeof breakPoint === "number" && breakPoint < width) {
-      return DesignBreakpoint[breakPoint];
+      return DesignBreakpoint[breakPoint] as unknown as DesignBreakpoint;
     }
   }
 
-  return undefined;
+  return DesignBreakpoint.SM;
 }
 
 export function useWindowDimensions() {

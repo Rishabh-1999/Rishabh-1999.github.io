@@ -15,6 +15,7 @@ import LeftSection from "components/LeftSection";
 
 /* Sections */
 import LandingPage from "sections/LandingPage";
+import SkillsPage from "sections/SkillsPage";
 
 /* Utils */
 import { useThemeMode } from "utils";
@@ -31,8 +32,12 @@ function Routes(): JSX.Element {
     >
       {/* Overflow Segments */}
       <LeftSection />
+
       {/* Landing Page */}
       <LandingPage />
+
+      {/* Skills Page */}
+      <SkillsPage />
     </main>
   );
 }

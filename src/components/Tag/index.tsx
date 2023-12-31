@@ -1,6 +1,6 @@
 /**
  * @Owner: Rishabh Anand
- * @Desc: Components - Tag
+ * @Desc: Global Components - Tag
  **/
 
 function Tag({ imgSrc, title }: { imgSrc?: string; title: string }) {

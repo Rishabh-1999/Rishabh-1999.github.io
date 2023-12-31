@@ -5,27 +5,31 @@
 
 import { useState, useEffect } from "react";
 
-type useAudioPlayerType = string;
+let audio: HTMLAudioElement | undefined;
 
-export function useAudioPlayer(url: useAudioPlayerType) {
-  const audio = new Audio(url);
+export function useAudioPlayer(url: string) {
   const [isPlaying, setIsPlaying] = useState(false);
-
-  audio.loop = true;
 
   const toggleAudioPlay = () => setIsPlaying(!isPlaying);
 
   useEffect(() => {
-    isPlaying ? audio.play() : audio.pause();
+    if (isPlaying) {
+      audio = new Audio(url);
+      audio.loop = true;
+      audio.play();
+    } else {
+      audio?.pause();
+      audio = undefined;
+    }
   }, [isPlaying]);
 
   useEffect(() => {
-    audio.addEventListener("ended", () => setIsPlaying(false));
+    audio && audio.addEventListener("ended", () => setIsPlaying(false));
 
     return () => {
-      audio.removeEventListener("ended", () => setIsPlaying(false));
+      audio && audio.removeEventListener("ended", () => setIsPlaying(false));
     };
-  }, []);
+  }, [isPlaying]);
 
   return { isPlaying, toggleAudioPlay };
 }

@@ -3,4 +3,4 @@
  * @Desc: Constants - Theme
  **/
 
-export const ThemeBrowserStorageKeyStr = "theme";
+export const THEME_BROWSER_STORAGE_KEY_Str = "theme";

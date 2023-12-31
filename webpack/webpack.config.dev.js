@@ -1,20 +1,20 @@
 /**
  * @Owner: Rishabh Anand
- * @Desc:  Webpack - Development(Dev) Config
+ * @Desc: Webpack - Development Config
  **/
 
 const Path = require("path");
 
-/* Webpack Configs */
-const CommonWebpackConfig = require("./webpack.common");
-
 /* Global Webpack Constants */
 const { DEVELOPMENT } = require("./webpack.constants");
 
+/* Webpack Configs */
+const CommonWebpackConfig = require("./webpack.common");
+
 module.exports = () => {
   const {
-    entry,
-    output,
+    entryPoint,
+    outputBuild,
     resolve,
     commonModuleRules,
     commonPlugins,
@@ -22,8 +22,8 @@ module.exports = () => {
   } = CommonWebpackConfig;
 
   return {
-    entry,
-    output,
+    entry: entryPoint,
+    output: outputBuild,
     mode: DEVELOPMENT,
     resolve,
     optimization,

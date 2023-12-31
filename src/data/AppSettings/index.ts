@@ -1,6 +1,6 @@
 /**
- * Owner: Rishabh Anand
- * Desc: Data - App Settings
+ * @Owner: Rishabh Anand
+ * @Desc: Data - App Settings
  **/
 
 /* Types */
@@ -8,13 +8,13 @@ import { ThemeModesTypes } from "types/index";
 
 export interface AppSettingsType {
   enableThemes: boolean;
-  preferredThemeMode: ThemeModesTypes;
+  defaultTheme: ThemeModesTypes;
   enableAudio: boolean;
 }
 
 const AppSettings: AppSettingsType = {
   enableThemes: true,
-  preferredThemeMode: ThemeModesTypes.DARK,
+  defaultTheme: ThemeModesTypes.DARK,
   enableAudio: true,
 };
 

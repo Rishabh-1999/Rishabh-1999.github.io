@@ -16,10 +16,10 @@ import { useAudioPlayer } from "utils/hooks/audioPlayer";
 /* Assets */
 import BaseMusic from "assets/audio/base_audio.mp3";
 
-function AudioPlayer() {
+function AudioPlayer(): JSX.Element {
   const { isPlaying, toggleAudioPlay } = useAudioPlayer(BaseMusic);
 
-  const AudioIcon = isPlaying ? MusicOffIcon : MusicNoteIcon;
+  const AudioIcon = !isPlaying ? MusicOffIcon : MusicNoteIcon;
 
   return (
     <span className="mx-1">

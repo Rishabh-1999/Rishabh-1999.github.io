@@ -1,11 +1,10 @@
 #
-# Owner: Rishabh Anand
-# Desc: Git ignore files
+# @Owner: Rishabh Anand
+# @Desc: Git ignore files
 #
 
 # dependencies
 /node_modules
-
 yarn.lock
 
 # production

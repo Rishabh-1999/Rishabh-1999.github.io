@@ -1,6 +1,6 @@
 /**
- * Owner: Rishabh Anand
- * Desc: Data - Social Media
+ * @Owner: Rishabh Anand
+ * @Desc: Data - Social Media
  **/
 
 export interface SocialMediaDataType {

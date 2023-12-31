@@ -5,18 +5,22 @@
 
 import { useEffect, useContext } from "react";
 
+/* Constants */
+import { THEME_BROWSER_STORAGE_KEY_Str } from "constants/index";
+
 /* Context */
 import { AppContext, ContextConstants } from "context";
 
 /* Utils */
 import { setItemInBrowserStorage } from "utils/storage";
 
-/* Constants */
-import { ThemeBrowserStorageKeyStr } from "constants/index";
-
 /* Types */
 import { BrowserStorageTypes, ThemeModesTypes } from "types/index";
 
+/**
+ * @param {ThemeModesTypes} themeType
+ * @return {ThemeModesTypes}
+ */
 function getOppositeTheme(themeType: ThemeModesTypes): ThemeModesTypes {
   return ThemeModesTypes.DARK === themeType
     ? ThemeModesTypes.LIGHT
@@ -29,14 +33,15 @@ export function useThemeMode() {
   const { dispatch, state } = useContext(AppContext);
 
   useEffect(() => {
-    if (!root.classList.contains(state.themeMode))
+    if (!root.classList.contains(state.themeMode)) {
       root.classList.add(state.themeMode);
 
-    setItemInBrowserStorage(
-      BrowserStorageTypes.LOCAL,
-      ThemeBrowserStorageKeyStr,
-      state.themeMode
-    );
+      setItemInBrowserStorage(
+        BrowserStorageTypes.LOCAL,
+        THEME_BROWSER_STORAGE_KEY_Str,
+        state.themeMode
+      );
+    }
   }, []);
 
   const toggleTheme = () => {
@@ -52,7 +57,7 @@ export function useThemeMode() {
 
     setItemInBrowserStorage(
       BrowserStorageTypes.LOCAL,
-      ThemeBrowserStorageKeyStr,
+      THEME_BROWSER_STORAGE_KEY_Str,
       oppositeTheme
     );
   };

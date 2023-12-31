@@ -8,9 +8,17 @@ import { memo, useContext } from "react";
 /* Animation */
 import { motion } from "framer-motion";
 
+/* Constants */
+import { DesignBreakpoint } from "constants/designBreakpoints.constants";
+
 /* Material UI */
+import MenuIcon from "@mui/icons-material/Menu";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
+
+import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
+import "@szhsin/react-menu/dist/index.css";
+import "@szhsin/react-menu/dist/transitions/slide.css";
 
 /* Components */
 import AudioPlayer from "./components/AudioPlayer";
@@ -19,7 +27,7 @@ import AudioPlayer from "./components/AudioPlayer";
 import { AppContext } from "context";
 
 /* Utils */
-import { useThemeMode } from "utils/hooks/themeMode";
+import { useThemeMode, useWindowDimensions } from "utils";
 
 /* Data */
 import AppSettings from "data/AppSettings";
@@ -31,7 +39,13 @@ import { ThemeModesTypes } from "types";
 import RiLogoSVG_Dark from "assets/svg/RiLogo_dark.svg";
 import RiLogoSVG_Light from "assets/svg/RiLogo_light.svg";
 
-const Settings = () => {
+const Settings = ({
+  leftBorder = true,
+  rightBorder = false,
+}: {
+  leftBorder?: boolean;
+  rightBorder?: boolean;
+}) => {
   const { theme, toggleTheme } = useThemeMode();
 
   const ThemeIcon =
@@ -45,7 +59,15 @@ const Settings = () => {
       }}
       animate={{ x: 0, opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.25 }}
-      className="pl-2 border-l border-l-1 border-l-[var(--layout-color-font-light)]"
+      className={`pl-2 mx-1 ${
+        leftBorder &&
+        "border-l border-l-1 border-l-[var(--layout-color-font-light)]"
+      }
+      ${
+        rightBorder &&
+        "border-r border-r-1 border-r-[var(--layout-color-font-light)]"
+      }
+      `}
     >
       {AppSettings.enableAudio && <AudioPlayer />}
 
@@ -61,8 +83,35 @@ const Settings = () => {
   );
 };
 
+const NavBarMenu = ({
+  margin = true,
+  href,
+  children,
+}: {
+  margin?: boolean;
+  href: string;
+  children: string;
+}) => {
+  return (
+    <a
+      className={`px-1 animating-underline hover:text-[var(--layout-color-highlight)] hover:scale-110 ${
+        margin ? "mx-3" : ""
+      }`}
+      href={href}
+    >
+      {children}
+    </a>
+  );
+};
+
 function NavBar() {
   const { state } = useContext(AppContext);
+
+  const {
+    windowDimensions: { width },
+  } = useWindowDimensions();
+
+  const menuEnabled = width <= DesignBreakpoint.MD;
 
   return (
     <motion.div
@@ -73,7 +122,7 @@ function NavBar() {
       }}
       animate={{ y: 0, opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
-      className="max-w-8.5xl mx-auto sm:pt-6 pt-4 px-4 flex items-center justify-between"
+      className="max-w-7.5xl mx-auto pt-4 px-4 flex items-center justify-between"
     >
       <a className="flex-grow-0 relative" href="/">
         <img
@@ -87,43 +136,64 @@ function NavBar() {
         />
       </a>
 
-      <div className="md:flex hidden flex-grow justify-end items-center text-[var(--layout-color-font-light)] font-bold text-[1rem]">
-        <a
-          className="mx-3 px-1 animating-underline hover:text-[var(--layout-color-highlight)] hover:scale-110"
-          href="#about_me"
-        >
-          About Me
-        </a>
+      {menuEnabled ? (
+        <div className="flex flex-grow justify-end items-center">
+          <Settings leftBorder={false} rightBorder={true} />
 
-        <a
-          className="mx-3 px-1 animating-underline hover:text-[var(--layout-color-highlight)] hover:scale-110"
-          href="#work_experiences"
-        >
-          Work Experience
-        </a>
-        <a
-          className="mx-3 px-1 animating-underline hover:text-[var(--layout-color-highlight)] hover:scale-110"
-          href="#skills_page"
-        >
-          Skills
-        </a>
+          <Menu
+            menuButton={
+              <MenuButton>
+                <MenuIcon fontSize={"large"} />
+              </MenuButton>
+            }
+            transition
+          >
+            <MenuItem>
+              <NavBarMenu margin={false} href="#about_me">
+                About Me
+              </NavBarMenu>
+            </MenuItem>
 
-        <a
-          className="mx-3 px-1 animating-underline hover:text-[var(--layout-color-highlight)] hover:scale-110"
-          href="#certificate_page"
-        >
-          Certificates
-        </a>
+            <MenuItem>
+              <NavBarMenu margin={false} href="#work_experiences">
+                Work Experience
+              </NavBarMenu>
+            </MenuItem>
 
-        <a
-          className="mx-3 px-1 animating-underline hover:text-[var(--layout-color-highlight)] hover:scale-110"
-          href="#contact_me"
-        >
-          Contact Me
-        </a>
+            <MenuItem>
+              <NavBarMenu margin={false} href="#skills_page">
+                Skills
+              </NavBarMenu>
+            </MenuItem>
 
-        <Settings />
-      </div>
+            <MenuItem>
+              <NavBarMenu margin={false} href="#certificate_page">
+                Certificates
+              </NavBarMenu>
+            </MenuItem>
+
+            <MenuItem>
+              <NavBarMenu margin={false} href="#contact_me">
+                Contact Me
+              </NavBarMenu>
+            </MenuItem>
+          </Menu>
+        </div>
+      ) : (
+        <div className="md:flex hidden flex-grow justify-end items-center text-[var(--layout-color-font-light)] font-bold text-[1rem]">
+          <NavBarMenu href="#about_me">About Me</NavBarMenu>
+
+          <NavBarMenu href="#work_experiences">Work Experience</NavBarMenu>
+
+          <NavBarMenu href="#skills_page">Skills</NavBarMenu>
+
+          <NavBarMenu href="#certificate_page">Certificates</NavBarMenu>
+
+          <NavBarMenu href="#contact_me">Contact Me</NavBarMenu>
+
+          <Settings />
+        </div>
+      )}
     </motion.div>
   );
 }

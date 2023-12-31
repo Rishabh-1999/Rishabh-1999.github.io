@@ -1,21 +1,21 @@
 /**
  * @Owner: Rishabh Anand
- * @Desc: Webpack - Production(Prod) Config
+ * @Desc: Webpack - Production Config
  **/
-
-/* Webpack Configs */
-const CommonWebpackConfig = require("./webpack.common");
 
 /* Global Webpack Constants */
 const { PRODUCTION } = require("./webpack.constants");
 
+/* Webpack Configs */
+const CommonWebpackConfig = require("./webpack.common");
+
 module.exports = () => {
-  const { entry, output, resolve, commonModuleRules, commonPlugins } =
+  const { entryPoint, outputBuild, resolve, commonModuleRules, commonPlugins } =
     CommonWebpackConfig;
 
   return {
-    entry,
-    output,
+    entry: entryPoint,
+    output: outputBuild,
     mode: PRODUCTION,
     resolve,
     module: {

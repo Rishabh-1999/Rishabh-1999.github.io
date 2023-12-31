@@ -17,7 +17,7 @@ import LeftSection from "components/LeftSection";
 import LandingPage from "sections/LandingPage";
 
 /* Utils */
-import { useThemeMode } from "utils/hooks/themeMode";
+import { useThemeMode } from "utils";
 
 function Routes(): JSX.Element {
   const _ = useThemeMode();
@@ -26,14 +26,13 @@ function Routes(): JSX.Element {
     <main
       id="layout"
       className={classnames(
-        "relative h-screen overflow-y-auto lg:snap-y snap-none snap-mandatory scroll-smooth scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor scrollbar-thumb-rounded-xl scrollbar-[6px]"
+        "relative h-screen overflow-y-auto lg:snap-y snap-none snap-mandatory scroll-smooth scrollbar scrollbar-track-[#2a2a2a] scrollbar-thumb-highlightColor scrollbar-thumb-rounded-xl scrollbar-[4px]"
       )}
     >
       {/* Overflow Segments */}
       <LeftSection />
       {/* Landing Page */}
       <LandingPage />
-      Under Development
     </main>
   );
 }

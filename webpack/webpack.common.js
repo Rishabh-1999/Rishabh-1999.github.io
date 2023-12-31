@@ -1,16 +1,16 @@
 /*
- * Owner: Rishabh Anand
- * Desc: Webpack - Common Config
+ * @Owner: Rishabh Anand
+ * @Desc: Webpack - Common Config
  */
 
 const Path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // Entry Point
-const entry = Path.join(__dirname, "..", "src", "index.tsx");
+const entryPoint = Path.join(__dirname, "..", "src", "index.tsx");
 
 // Output Build
-const output = {
+const outputBuild = {
   path: Path.join(__dirname, "..", "build"),
   filename: "index.bundle.js",
 };
@@ -25,28 +25,9 @@ const resolve = {
 
 // Common Module Rules
 let commonModuleRules = [
-  // Images
-  // {
-  //   test: /\.(jpe?g|png|gif|svg)$/i,
-  //   type: "asset",
-  // use: [
-  //   {
-  //     // Optimize Image
-  //     loader: `img-optimize-loader`,
-  //     options: {
-  //       compress: {
-  //         // This will transform your png/jpg into webp.
-  //         webp: true,
-  //         disableOnDevelopment: false,
-  //       },
-  //       name: "[name].[contenthash].[ext]",
-  //       outputPath: "static/images",
-  //     },
-  //   },
-  // ],
-  // },
   {
-    test: /\.(jpe?g|png|gif|svg)$/i,
+    // Image / SVG files
+    test: /\.(jpe?g|png|gif|svg|webp)$/i,
     use: [
       {
         loader: `file-loader`,
@@ -58,20 +39,7 @@ let commonModuleRules = [
     ],
   },
   {
-    // Note: On passing optimzed Webp to futher optimizing, images are getting less clarity on using 'img-optimize-loader'
-    test: /\.(webp)$/,
-    use: [
-      {
-        loader: `file-loader`,
-        options: {
-          name: "[name].[contenthash].[ext]",
-          outputPath: "static/images",
-        },
-      },
-    ],
-  },
-  {
-    // Custom Fonts
+    // Custom Fonts files
     test: /\.(eot|ttf|woff|woff2)$/,
     use: [
       {
@@ -84,7 +52,7 @@ let commonModuleRules = [
     ],
   },
   {
-    // Audios
+    // Audio files
     test: /\.(mp3)$/,
     use: [
       {
@@ -103,14 +71,13 @@ let commonModuleRules = [
     use: ["babel-loader"],
   },
   {
-    // TSX / TS Files
     test: /\.(ts|tsx)$/,
     exclude: /node_modules/,
     use: {
       loader: "ts-loader",
       options: {
         compilerOptions: {
-          noEmit: false, // this option will solve the issue
+          noEmit: false,
         },
       },
     },
@@ -142,8 +109,8 @@ const commonPlugins = [
 ];
 
 module.exports = {
-  entry,
-  output,
+  entryPoint,
+  outputBuild,
   resolve,
   commonModuleRules,
   commonPlugins,

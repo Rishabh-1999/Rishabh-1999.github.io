@@ -1,6 +1,6 @@
 /**
  * @Owner: Rishabh Anand
- * @Desc: Context - Constants - Context
+ * @Desc: Context - Context Constants
  **/
 
 export enum ContextConstants {

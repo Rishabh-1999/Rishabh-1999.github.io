@@ -5,17 +5,16 @@
 
 export interface PersonalDetailsType {
   name: string;
-  youInSteps: [string, number][];
+  typicalSteps: [string, number][];
 }
 
 const PersonalDetails: PersonalDetailsType = {
   name: "Rishabh Anand",
-  youInSteps: [
+  typicalSteps: [
     ["Full Stack Developer ⚛️", 2500],
-    ["Software Engineer - II 🧑🏻‍💻", 2500],
-    ["Defense Expert", 2500],
+    ["Defense Expert", 2000],
     ["Anime Lover", 1000],
-    ["Indian 🕉️", 2500],
+    ["Bharatiyan (Indian) 🕉️", 2500],
   ],
 };
 

@@ -4,12 +4,12 @@
  **/
 
 /* Types */
-import { BrowserStorageTypes } from "types/common/browser.type";
+import { BrowserStorageTypes } from "types";
 
 /** Local Storage **/
 /**
  * @param {string} key
- * @return {*}  {(string | null)}
+ * @return {(string | null)}
  */
 function getItemFromLocalStorage(key: string): string | null {
   return localStorage.getItem(key);
@@ -18,6 +18,7 @@ function getItemFromLocalStorage(key: string): string | null {
 /**
  * @param {string} key
  * @param {string} item
+ * @returns {void}
  */
 function setItemFromLocalStorage(key: string, item: string): void {
   localStorage.setItem(key, item);
@@ -26,7 +27,7 @@ function setItemFromLocalStorage(key: string, item: string): void {
 /** Session Storage **/
 /**
  * @param {string} key
- * @return {*}  {(string | null)}
+ * @return {(string | null)}
  */
 function getItemFromSessionStorage(key: string): string | null {
   return sessionStorage.getItem(key);
@@ -35,6 +36,7 @@ function getItemFromSessionStorage(key: string): string | null {
 /**
  * @param {string} key
  * @param {string} item
+ * @returns {void}
  */
 function setItemFromSessionStorage(key: string, item: string): void {
   sessionStorage.setItem(key, item);
@@ -45,6 +47,7 @@ function setItemFromSessionStorage(key: string, item: string): void {
  * @param {BrowserStorageTypes} storageType
  * @param {string} key
  * @param {string} item
+ * @returns {void}
  */
 export function setItemInBrowserStorage(
   storageType: BrowserStorageTypes,
@@ -62,7 +65,7 @@ export function setItemInBrowserStorage(
 /**
  * @param {BrowserStorageTypes} storageType
  * @param {string} key
- * @return {*}  {(T | null)}
+ * @return {(T | null)}
  * @export
  * @template T
  */

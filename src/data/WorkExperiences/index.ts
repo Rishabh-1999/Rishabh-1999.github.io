@@ -22,15 +22,15 @@ const WorkExperienceData: WorkExperiencesDataType[] = [
   {
     position: "Software Engineer - II",
     name: "Autodesk",
-    link: "https://www.autodesk.com/",
+    link: "https://www.autodesk.com",
     logo: AutodeskLogo,
     from: "2022-12-12",
     descriptions: [""],
     skills: [
       "React",
+      "TypeScript",
       "Node JS",
       "JavaScript",
-      "TypeScript",
       "GraphQL",
       "Docker",
       "Postgres",
@@ -52,7 +52,7 @@ const WorkExperienceData: WorkExperiencesDataType[] = [
         "•	Have developed various REST APIs using Node JS, Spring Boot, and Flask for multiple interfaces under various projects.",
         "•	Have led a team for multiple projects, which has increased the growth of the Company to a new extent.",
         "• Created standardized code structures for writing code, testing, and deployment for React JS, Node JS projects",
-        "• Developed various chatbots using ReactJS, Node JS, Socket.io, Google TTS and integrated with Rasa / Dialog flow for various clients",
+        "• Developed various chatbot using ReactJS, Node JS, Socket.io, Google TTS and integrated with Rasa / Dialog flow for various clients",
         "• Responsible for managing VM(s) and deploying various applications using containers",
         "• Developed custom-made WordPress Plugins using ReactJS for various Clients",
         "• Interacted with various clients for various projects as a project lead/manager",
@@ -86,7 +86,7 @@ const WorkExperienceData: WorkExperiencesDataType[] = [
     descriptions: [
       [
         "• Responsible for design and development of web applications using modern UI design systems with expandable, scalable, and secured backend",
-        "• Developed chatbots using ReactJS, Socket.io, and integrated with Rasa",
+        "• Developed chatbot using ReactJS, Socket.io, and integrated with Rasa",
         "• Responsible for managing VM(s) and deploying various applications using containers",
         "• Modified existing applications to detect and correct errors, improve performance, and upgrade interfaces.",
       ],

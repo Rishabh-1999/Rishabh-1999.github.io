@@ -13,11 +13,11 @@ import { AppSettings } from "data";
 
 /* Constants */
 import { ContextConstants } from "./context.constants";
-import { ThemeBrowserStorageKeyStr } from "../constants/index";
+import { THEME_BROWSER_STORAGE_KEY_Str } from "../constants";
 
 /* Types */
 import type { AppContextType, AppReducerActionType } from "./context.type";
-import { ThemeModesTypes } from "types";
+import type { ThemeModesTypes } from "types";
 import { BrowserStorageTypes } from "types/common/browser.type";
 
 /* Re-Export */
@@ -27,8 +27,8 @@ const initialContextData: AppContextType = {
   themeMode:
     getItemFromBrowserStorage<ThemeModesTypes>(
       BrowserStorageTypes.LOCAL,
-      ThemeBrowserStorageKeyStr
-    ) ?? AppSettings.preferredThemeMode,
+      THEME_BROWSER_STORAGE_KEY_Str
+    ) ?? AppSettings.defaultTheme,
 };
 
 export const AppContext = createContext<{

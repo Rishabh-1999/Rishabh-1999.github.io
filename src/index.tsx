@@ -4,7 +4,7 @@
  **/
 
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 /* Components */
 /* Main Layout */
@@ -13,11 +13,13 @@ import Layout from "./layout";
 /* Context */
 import { AppContextProvider } from "./context";
 
-ReactDOM.render(
+const rootElement = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+rootElement.render(
   <React.StrictMode>
     <AppContextProvider>
       <Layout />
     </AppContextProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

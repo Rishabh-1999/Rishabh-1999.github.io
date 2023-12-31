@@ -8,7 +8,7 @@ import { memo } from "react";
 /* Styles */
 import "./landingPage.styles.scss";
 
-/* Animation Libarary */
+/* Animation Library */
 import { motion } from "framer-motion";
 
 /* Material Icons */
@@ -17,12 +17,28 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 /* Components */
 import NavBar from "./components/NavBar";
 import Typical from "./components/Typical";
+import Tag from "components/Tag";
 
 /* Assets */
 import MyPhoto from "assets/images/me/MyPhoto.png";
 
 /* Data */
-import { PersonalDetails, WorkExperienceData } from "data";
+import { ImageMappings, PersonalDetails, WorkExperienceData } from "data";
+
+function TagList({ list }: { list: string[] }) {
+  return (
+    <>
+      {list.map((skill, index) => {
+        return (
+          <>
+            <Tag imgSrc={ImageMappings[skill]} title={skill} />
+            {list.length - 1 != index && <>&nbsp;|&nbsp;</>}
+          </>
+        );
+      })}
+    </>
+  );
+}
 
 function LandingPage() {
   const latestJob = WorkExperienceData[0];
@@ -43,17 +59,17 @@ function LandingPage() {
             transition={{ duration: 0.25 }}
             className="left md:pt-28"
           >
-            <h3 className="relative -left-3 text-lg text-[var(--layout-color-font-light)] font-ConcertOne">
-              Hello, I am
-            </h3>
-            <h1 className="font-extrabold text-5xl leading-10">
-              {PersonalDetails.name}
+            <h1 className="font-extrabold text-6xl leading-[3.25rem]">
+              Rishabh
+              <br />
+              Anand
               <span className="text-[var(--layout-color-highlight)]">.</span>
             </h1>
 
-            <div className="h-[5px] w-[200px] mt-6 mb-4 bg-[var(--layout-color-highlight)]"></div>
+            <div className="h-[4px] w-[200px] mt-6 mb-4 bg-[var(--layout-color-highlight)]"></div>
+
             <Typical
-              steps={PersonalDetails.youInSteps.flat()}
+              steps={PersonalDetails.typicalSteps.flat()}
               loop={Infinity}
             />
           </motion.div>
@@ -69,7 +85,7 @@ function LandingPage() {
             className="flex flex-grow justify-center sm:items-center items-end"
           >
             <img
-              className="max-w-full h-[450px] object-cover"
+              className="max-w-full ml-[4%]  h-[475px] object-cover"
               src={MyPhoto}
               alt={PersonalDetails.name}
               loading="eager"
@@ -85,37 +101,39 @@ function LandingPage() {
             transition={{ duration: 0.25 }}
             className="right lg:pt-28 xl:block hidden"
           >
-            <h3 className="font-bold text-3xl text-left text-[var(--layout-color-highlight)] tracking-wide">
+            <h3 className="font-extrabold text-4xl text-[var(--layout-color-highlight)] tracking-wide">
               INTRODUCTION
             </h3>
 
-            <h3 className="font-bold text-[1.1rem]">
+            <h3 className="font-bold text-[1.3rem]">
               {latestJob.position}&nbsp;
               <a
                 href={latestJob.link}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="tracking-wide flex items-center relative w-fit"
+                className="text-[0.9rem] text-[var(--layout-color-font-light)] tracking-wide hover:opacity-75 font-bold relative w-fit uppercase"
               >
-                @&nbsp;{latestJob.name}
+                @{latestJob.name}
                 <img
-                  className="w-[38px] h-[38px] absolute -right-10"
+                  className="w-[28px] h-[16px] absolute -right-8 top-0.5"
                   src={latestJob.logo}
                   alt={latestJob.name}
                 />
               </a>
             </h3>
 
-            <p className="break-normal text-[var(--layout-color-font-light)]">
-              {latestJob.skills?.slice(0, 5).join(" | ")}
-            </p>
+            {latestJob.skills && (
+              <p className="flex break-normal text-[var(--layout-color-font-light)]">
+                <TagList list={latestJob.skills.slice(0, 4)} />
+              </p>
+            )}
 
             <a
               href="#about-me"
-              className="text-[var(--layout-color-highlight)] tracking-wide flex items-end text-[1.1rem] font-bold"
+              className="mt-2 bg-[var(--layout-color-highlight)] text-[var(--layout-color-bg)]  w-fit px-3 rounded-xl flex items-end text-[0.8rem] uppercase font-extrabold"
             >
-              Learn more
-              <ExpandMoreIcon />
+              Learn More
+              <ExpandMoreIcon fontSize={"small"} />
             </a>
           </motion.div>
         </div>
